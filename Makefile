@@ -4,7 +4,7 @@
 # Originally from : http://tex.stackexchange.com/a/40759
 
 
-PROJNAME=thesis_main
+PROJNAME=master_thesis
 OUT_DIR=out
 .PHONY: $(PROJNAME).pdf all clean
 
