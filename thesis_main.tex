@@ -13,13 +13,13 @@
     \hypersetup{pageanchor=false}
     
     % enable/disable, depending on your chosen language
-    \input{chapters/0_0-titlepage_en}
-    \input{chapters/0_0-titlepage_de}
+    \input{chapters/title}
     
     \pagestyle{plain} % remove chapter name from top, page number at the bottom
     \frontmatter  % roman page numbers
-    \input{chapters/0_1-declaration}
-    \input{chapters/0_2-abstract}
+    \input{chapters/declaration}
+    \input{chapters/acknowledgment}
+    \input{chapters/abstract}
     \tableofcontents
     \listoffigures
     \listoftables
@@ -27,13 +27,12 @@
     \hypersetup{pageanchor=true}  % re-enable hyperlinking
 
     \mainmatter  % Arabic page numbers
-    \input{chapters/1-introduction}
-    \input{chapters/2-relatedwork}
-    \input{chapters/3-background}
-    \input{chapters/4-approach}
-    \input{chapters/5-experiments}
-    \input{chapters/6-conclusions}
-    \input{chapters/7-acknowledgments}
+    \input{chapters/introduction}
+    \input{chapters/approach}
+    \input{chapters/experiments}
+    \input{chapters/results_analysis}
+    \input{chapters/conclusion}
+    \input{chapters/futurework}
 
     % bibliography is not in the table of contents per default, add it manually
     % enable the \renewcommand for german header
