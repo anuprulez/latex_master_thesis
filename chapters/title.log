@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.10.5)  23 APR 2018 23:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.2)  24 APR 2018 10:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **title.tex
 (./title.tex
-LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 78 languages loaded.
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
 
 ! LaTeX Error: Environment titlepage undefined.
 
@@ -38,7 +38,7 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 2--2
 
 ! Undefined control sequence.
 l.6 {\Large
-            Master Thesis}\\[1.3cm]
+            Master Thesis}\\[2cm]
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -64,7 +64,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.11 \begin{spacing}
+l.10 \begin{spacing}
                     {3}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -72,7 +72,7 @@ or  <return>  to continue without it.
 
 Missing character: There is no 3 in font nullfont!
 ! Undefined control sequence.
-l.12     {\huge
+l.11     {\huge
                 \bfseries Recommender System for } \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -81,37 +81,37 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (22.84016pt too wide) in paragraph at lines 11--12
+Overfull \hbox (22.84016pt too wide) in paragraph at lines 10--11
  \OT1/cmr/bx/n/10 Rec- 
  []
 
 
-Overfull \hbox (19.16656pt too wide) in paragraph at lines 11--12
+Overfull \hbox (19.16656pt too wide) in paragraph at lines 10--11
  \OT1/cmr/bx/n/10 om- 
  []
 
 
-Overfull \hbox (37.63872pt too wide) in paragraph at lines 11--12
+Overfull \hbox (37.63872pt too wide) in paragraph at lines 10--11
  \OT1/cmr/bx/n/10 mender 
  []
 
 
-Overfull \hbox (20.82765pt too wide) in paragraph at lines 11--12
+Overfull \hbox (20.82765pt too wide) in paragraph at lines 10--11
  \OT1/cmr/bx/n/10 Sys- 
  []
 
 
-Overfull \hbox (19.3263pt too wide) in paragraph at lines 11--12
+Overfull \hbox (19.3263pt too wide) in paragraph at lines 10--11
  \OT1/cmr/bx/n/10 tem 
  []
 
 
-Overfull \hbox (13.99994pt too wide) in paragraph at lines 11--12
+Overfull \hbox (13.99994pt too wide) in paragraph at lines 10--11
  \OT1/cmr/bx/n/10 for 
  []
 
 ! Undefined control sequence.
-l.13     {\huge
+l.12     {\huge
                 \bfseries Galaxy Tools and Workflows } \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -120,32 +120,32 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (35.55531pt too wide) in paragraph at lines 13--13
+Overfull \hbox (35.55531pt too wide) in paragraph at lines 12--12
  []\OT1/cmr/bx/n/10 Galaxy 
  []
 
 
-Overfull \hbox (26.5915pt too wide) in paragraph at lines 13--13
+Overfull \hbox (26.5915pt too wide) in paragraph at lines 12--12
  \OT1/cmr/bx/n/10 Tools 
  []
 
 
-Overfull \hbox (18.36794pt too wide) in paragraph at lines 13--13
+Overfull \hbox (18.36794pt too wide) in paragraph at lines 12--12
  \OT1/cmr/bx/n/10 and 
  []
 
 
-Overfull \hbox (31.31929pt too wide) in paragraph at lines 13--13
+Overfull \hbox (31.31929pt too wide) in paragraph at lines 12--12
  \OT1/cmr/bx/n/10 Work- 
  []
 
 
-Overfull \hbox (24.66096pt too wide) in paragraph at lines 13--13
+Overfull \hbox (24.66096pt too wide) in paragraph at lines 12--12
  \OT1/cmr/bx/n/10 flows 
  []
 
 ! Undefined control sequence.
-l.14     {\Large
+l.13     {\Large
                  \bfseries (Find similar tools and predict next tools in wor...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -154,67 +154,67 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (27.6804pt too wide) in paragraph at lines 14--14
+Overfull \hbox (27.6804pt too wide) in paragraph at lines 13--13
  []\OT1/cmr/bx/n/10 (Find 
  []
 
 
-Overfull \hbox (21.1471pt too wide) in paragraph at lines 14--14
+Overfull \hbox (21.1471pt too wide) in paragraph at lines 13--13
  \OT1/cmr/bx/n/10 sim- 
  []
 
 
-Overfull \hbox (7.02774pt too wide) in paragraph at lines 14--14
+Overfull \hbox (7.02774pt too wide) in paragraph at lines 13--13
  \OT1/cmr/bx/n/10 i- 
  []
 
 
-Overfull \hbox (13.52075pt too wide) in paragraph at lines 14--14
+Overfull \hbox (13.52075pt too wide) in paragraph at lines 13--13
  \OT1/cmr/bx/n/10 lar 
  []
 
 
-Overfull \hbox (24.02208pt too wide) in paragraph at lines 14--14
+Overfull \hbox (24.02208pt too wide) in paragraph at lines 13--13
  \OT1/cmr/bx/n/10 tools 
  []
 
 
-Overfull \hbox (18.36794pt too wide) in paragraph at lines 14--14
+Overfull \hbox (18.36794pt too wide) in paragraph at lines 13--13
  \OT1/cmr/bx/n/10 and 
  []
 
 
-Overfull \hbox (20.22908pt too wide) in paragraph at lines 14--14
+Overfull \hbox (20.22908pt too wide) in paragraph at lines 13--13
  \OT1/cmr/bx/n/10 pre- 
  []
 
 
-Overfull \hbox (19.16656pt too wide) in paragraph at lines 14--14
+Overfull \hbox (19.16656pt too wide) in paragraph at lines 13--13
  \OT1/cmr/bx/n/10 dict 
  []
 
 
-Overfull \hbox (22.20128pt too wide) in paragraph at lines 14--14
+Overfull \hbox (22.20128pt too wide) in paragraph at lines 13--13
  \OT1/cmr/bx/n/10 next 
  []
 
 
-Overfull \hbox (24.02208pt too wide) in paragraph at lines 14--14
+Overfull \hbox (24.02208pt too wide) in paragraph at lines 13--13
  \OT1/cmr/bx/n/10 tools 
  []
 
 
-Overfull \hbox (9.58328pt too wide) in paragraph at lines 14--14
+Overfull \hbox (9.58328pt too wide) in paragraph at lines 13--13
  \OT1/cmr/bx/n/10 in 
  []
 
 
-Overfull \hbox (28.37486pt too wide) in paragraph at lines 14--14
+Overfull \hbox (28.37486pt too wide) in paragraph at lines 13--13
  \OT1/cmr/bx/n/10 work- 
  []
 
 
-Overfull \hbox (29.13316pt too wide) in paragraph at lines 14--14
+Overfull \hbox (29.13316pt too wide) in paragraph at lines 13--13
  \OT1/cmr/bx/n/10 flows) 
  []
 
@@ -225,14 +225,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.15 \end{spacing}
+l.14 \end{spacing}
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.20 {\Large
+l.17 {\Large
              Anup Kumar } \\[2cm]
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -250,13 +250,13 @@ Missing character: There is no m in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 23.
+(Font)              <7> on input line 20.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 23.
+(Font)              <5> on input line 20.
 ! Undefined control sequence.
 <argument> >{\Large 
                     }l >{\Large }l
-l.23 \begin{tabular}[hc]{>{\Large}l >{\Large}l}
+l.20 \begin{tabular}[hc]{>{\Large}l >{\Large}l}
                                                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -267,7 +267,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> >{\Large }l >{\Large 
                                 }l
-l.23 \begin{tabular}[hc]{>{\Large}l >{\Large}l}
+l.20 \begin{tabular}[hc]{>{\Large}l >{\Large}l}
                                                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -282,7 +282,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.23 \begin{tabular}[hc]{>{\Large}l >{\Large}l}
+l.20 \begin{tabular}[hc]{>{\Large}l >{\Large}l}
                                                
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -294,7 +294,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.23 \begin{tabular}[hc]{>{\Large}l >{\Large}l}
+l.20 \begin{tabular}[hc]{>{\Large}l >{\Large}l}
                                                
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -306,7 +306,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.23 \begin{tabular}[hc]{>{\Large}l >{\Large}l}
+l.20 \begin{tabular}[hc]{>{\Large}l >{\Large}l}
                                                
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -318,36 +318,11 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.23 \begin{tabular}[hc]{>{\Large}l >{\Large}l}
+l.20 \begin{tabular}[hc]{>{\Large}l >{\Large}l}
                                                
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-Missing character: There is no A in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no v in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no : in font nullfont!
-Missing character: There is no D in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no B in font nullfont!
-Missing character: There is no j in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ¶ in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no G in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ¼ in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no g in font nullfont!
 Missing character: There is no E in font nullfont!
 Missing character: There is no x in font nullfont!
 Missing character: There is no a in font nullfont!
@@ -378,7 +353,9 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no f in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
-Missing character: There is no , in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
 Missing character: There is no P in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no o in font nullfont!
@@ -399,8 +376,33 @@ Missing character: There is no H in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no s in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no D in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no j in font nullfont!
+Missing character: There is no Ã in font nullfont!
+Missing character: There is no ¶ in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no G in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no Ã in font nullfont!
+Missing character: There is no ¼ in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
 ! Undefined control sequence.
-l.29 \Large
+l.27 \Large
             {
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -513,19 +515,19 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.38 \end{titlepage}
+l.36 \end{titlepage}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 41--41
+Overfull \hbox (20.0pt too wide) in paragraph at lines 39--39
 [] 
  []
 
+Missing character: There is no 1 in font nullfont!
 Missing character: There is no 0 in font nullfont!
-Missing character: There is no 9 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no 1 in font nullfont!
@@ -614,11 +616,11 @@ Missing character: There is no g in font nullfont!
 
  
 Here is how much of TeX's memory you used:
- 15 strings out of 493304
- 230 string characters out of 6139871
- 53880 words of memory out of 5000000
- 3574 multiletter control sequences out of 15000+600000
+ 15 strings out of 493029
+ 231 string characters out of 6136235
+ 55079 words of memory out of 5000000
+ 3651 multiletter control sequences out of 15000+600000
  3948 words of font info for 15 fonts, out of 8000000 for 9000
- 957 hyphenation exceptions out of 8191
- 19i,6n,16p,118b,140s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 1141 hyphenation exceptions out of 8191
+ 19i,6n,16p,115b,141s stack positions out of 5000i,500n,10000p,200000b,80000s
 !  ==> Fatal error occurred, no output PDF file produced!
