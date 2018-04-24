@@ -1,5 +1,5 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {subsection}{\numberline {1.0.1}What is Galaxy?}{1}{subsection.1.0.1}
+\contentsline {subsection}{\numberline {1.0.1}Galaxy}{1}{subsection.1.0.1}
 \contentsline {subsection}{\numberline {1.0.2}Galaxy tools}{1}{subsection.1.0.2}
 \contentsline {subsection}{\numberline {1.0.3}Tool categories}{1}{subsection.1.0.3}
 \contentsline {subsection}{\numberline {1.0.4}Motivation}{1}{subsection.1.0.4}
@@ -10,6 +10,8 @@
 \contentsline {subsection}{\numberline {2.1.3}Clean data}{2}{subsection.2.1.3}
 \contentsline {subsubsection}{\nonumberline Refine tokens}{2}{section*.6}
 \contentsline {section}{\numberline {2.2}Word embeddings}{2}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Latent semantic indexing}{2}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Paragraph vectors}{2}{subsection.2.2.2}
 \contentsline {section}{\numberline {2.3}Similarity measures}{2}{section.2.3}
 \contentsline {subsubsection}{\nonumberline Jaccard index}{2}{section*.7}
 \contentsline {subsubsection}{\nonumberline Cosine similarity}{2}{section*.8}
