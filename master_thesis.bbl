@@ -1,0 +1,13 @@
+\begin{thebibliography}{1}
+
+\bibitem{LiptonKEW15}
+Z.~C. Lipton, D.~C. Kale, C.~Elkan, and R.~C. Wetzel, ``Learning to diagnose
+  with {LSTM} recurrent neural networks,'' {\em CoRR}, vol.~abs/1511.03677,
+  2015.
+
+\bibitem{SakSB14}
+H.~Sak, A.~W. Senior, and F.~Beaufays, ``Long short-term memory based recurrent
+  neural network architectures for large vocabulary speech recognition,'' {\em
+  CoRR}, vol.~abs/1402.1128, 2014.
+
+\end{thebibliography}
