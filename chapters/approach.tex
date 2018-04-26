@@ -1,9 +1,25 @@
 \chapter{Approach}\label{chap:approach}
-\section{Data preprocessing}
-    \subsection{ Tools attributes}
-    \subsection{Data extraction}
-    \subsection{Clean data}
-    \subsubsection{Refine tokens}
+\section{Extract data}    
+There are multiple repositories of Galaxy tools stored at GitHub \footnote{One example:\url{https://github.com/galaxyproject/tools-iuc/tree/master/tools}}. In each of the tool repository, there are $xml$ files starting with a $<tool>$ tag. We read all of these $xml$ files, extract information from a few of the attributes and collect them in a $tabular$ file.
+    
+\subsection{Select tools attributes}
+A tool has multiple attributes like input and output file types, help text, name, description, citations and some more. But all of these attributes are not important and do not generally identify a tool exclusively. We consider some of these attributes:
+\begin{itemize}
+	\item Input and output file types
+	\item Name and description
+	\item Help text
+\end{itemize}
+Moreover, we combine the input and output file types and name and description respectively as they are of similar nature. These two combined attributes give complete information about a tool file types and its functionality. We also consider help text attribute which is larger in size compared to the previous two. At the same time, they are empty for few tools. Apart from being large in size, this attribute is noisy as well. It provides more information about the usage of a tool. Generally, in the first few lines, it gives a detailed explanation of the tool functions. Further, it explains how the input data should be supplied to a tool or how an input data looks like. Hence, much of the information present in this attribute is not important. Because of noise present in this attribute, we decide to use only upto first $4$ lines which really illustrates the core functionality of the tool. The rest of the information is discarded. 
+
+\subsection{Clean data}
+\subsubsection{Remove duplicates and stopwords}
+    The collected data for tools is raw containing lots of commonplace and duplicate items which do not add value. These items should be removed to get $tokens$ which are unique and useful. For example, a tool $bamleftalign$ has input files as $bam, fasta$ and output file as $bam$. While combining the file types, we discard the repeated file types and in this case, we consider file types as $bam, fasta$. The other attributes we deal with are different from the file types. The files types are discrete items but in attributes like name and description and help text, the account is in a human language. The explanation contains complete or partially complete sentences in $English$. Hence, to process this information, we need startegies that are prevalent in natural language processing \footnote{\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3168328/}}. The sentences we write in $English$ contain many words and has different parts. These parts include subject, object, preposition, interjection, verbs, adjectives, adverbs, articles and many others. For our processing, we need only those tokens (words) which categorize a tool uniquely and do away with multiple parts of speech present in the statements. For example, a tool named $tophat$ has name and description as "TopHat for Illumina Find splice junctions using RNA-seq data". The words like $for$, $using$ and $data$ do not give much value as they must be present for many tools. These words are called as "stop words" \footnote{\url{https://www.ranks.nl/stopwords}} and we selectively discard them. In addition, we remove numbers and convert all the tokens to lower case.
+   
+\subsubsection{Use stemming}
+After removing duplicates and stop words, our data is clean and contain tokens which uniquely identify corresponding tools. When we frame sentences, we follow grammar which constrains us to use different forms of the same word in varying contexts. For example, a word $regress$ can be used in multiple forms as $regresses$ or $regression$ or $regressed$. They share the same root and point towards the same concept. If many tools use this word in varying forms, it is beneficial to converge all the different forms of a word to one basic form. This is called stemming \footnote{\url{https://nlp.stanford.edu/IR-book/html/htmledition/stemming-and-lemmatization-1.html}}. We use nltk \footnote{\url{http://www.nltk.org/}} package for stemming.
+
+\subsubsection{Refine tokens}
+    <<BM25>>
 \section{Word embeddings}
     \subsection{Latent semantic indexing}
     \subsection{Paragraph vectors}
