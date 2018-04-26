@@ -19,13 +19,52 @@ Moreover, we combine the input and output file types and name and description re
 After removing duplicates and stop words, our data is clean and contain tokens which uniquely identify corresponding tools. When we frame sentences, we follow grammar which constrains us to use different forms of the same word in varying contexts. For example, a word $regress$ can be used in multiple forms as $regresses$ or $regression$ or $regressed$. They share the same root and point towards the same concept. If many tools use this word in varying forms, it is beneficial to converge all the different forms of a word to one basic form. This is called stemming \footnote{\url{https://nlp.stanford.edu/IR-book/html/htmledition/stemming-and-lemmatization-1.html}}. We use nltk \footnote{\url{http://www.nltk.org/}} package for stemming.
 
 \subsubsection{Refine tokens}
-    At this stage of tools preprocessing, we have a set of good tokens for each attribute whic are input and output file types, name and description and help text. The sets of tokens originally present in the sentences do not carry equal importance. It means that some tokens are more relevant than others. Let's call these sets as $documents$
+    At this stage of tools preprocessing, we have a set of good tokens for each attribute whic are input and output file types, name and description and help text. Let's call these sets as $documents$. The tokens present in these documents do not carry equal importance. Some tokens are more relevant to the document and some not so relevant . We need to find out importance factor for all tokens in a document. Using these factors, we can arrange them in big, sparse documents-tokens matrix. In this matrix, each row represents a document and each column belongs to one token. To compute these relevance scores, we use bestmatch25. Let's associate some variables to be used in explaining this algorithm.
+    \begin{itemize}
+	\item Token frequency \footnote{\url{https://nlp.stanford.edu/IR-book/pdf/06vect.pdf}} $tf$
+	\item Inverted document frequency $idf$
+	\item Average document length $|D|_{avg}$
+	\item Number of documents $N$
+	\item Size of a document $|D|$
+\end{itemize}
     
-    
-    https://dl.acm.org/citation.cfm?id=188561
-    http://www.staff.city.ac.uk/~sb317/papers/foundations_bm25_review.pdf
-        
-    
+First of all, token frequency ($tf$) specifies the count of a token's occurrence in a document. If a token $regress$ appears twice in a document, its $tf$ is $2$. This can also be understood as a weight given to this term. Inverted document frequency for a token is defined as:
+
+\begin{equation}
+idf = \log \frac{N}{df}
+\end{equation}
+ 
+where $df$ is the count of the documents in which this token is present and $N$ is the total number of documents. If we randomly sample a document, then the probability of this token to be present in this document is $ p_i = \frac{df}{N} $. From information theory, we can say that the information contained by this event is $ - \log p_i $. The entity $idf$ is higher when a token appears less number of documents which means that this token is a good candidate for representing the document and possesses higher power to distinguish between documents. The tokens which appear in many documents are not good representatives. Average document length is the average number tokens for all the documents. Size of a document is the count of all the tokens for that document \cite{Robertson:2009:PRF:1704809.1704810}. 
+
+
+\begin{equation}
+\alpha = (1-b) + \frac{b \cdot |D|}{|D|_{avg}}
+\end{equation}
+
+\begin{equation}
+tf^* = tf \cdot \frac{k+1}{k \cdot \alpha + tf}
+\end{equation}
+
+\begin{equation}
+BM25_{score} =tf^* \cdot idf
+\end{equation}
+
+where $k$ and $b$ are hyperparameters. Using the equation $4$, we compute the relevance score for each token in all the documents. Table 1 shows some sample scores for a few documents where the tokens are present with their respective relevance scores. In this way, we arrange document-tokens matrix for all the attributes of tools. For input and output file types, these matrix entries will have only two value, $1$ if a token is present for a document and $0$ if not. For other attributes, relevance scores are positive real numbers. This strategy of representing documents with their tokens is called vector space model as each document represents a vector of tokens.
+
+\begin{table}[ht]
+\begin{center}
+    \begin{tabular}{|l|l||l|l|l|l|}
+        \hline
+        Documents/tokens   & regress & linear & gap & mapper & perform \\ \hline
+        LinearRegression   & 5.22 & 4.1 & 0.0 & 0.0  & 3.84 \\ \hline
+        LogisticRegression & 3.54 & 0.0 & 0.0 & 0.0  & 2.61 \\ \hline
+        Tophat2            & 0.0  & 0.0 & 1.2 & 1.47 & 0.0 \\ \hline
+        Hisat              & 0.0  & 0.0 & 0.0 & 0.0  & 0.0 \\ \hline
+    \end{tabular}
+    \end{center}
+    \caption[Documents-tokens matrix]{\textbf{Document-tokens matrix}: it stores relevance scores for each token for all the documents\\}
+    \label{tab:accuracy}
+\end{table}
     
 \section{Word embeddings}
     \subsection{Latent semantic indexing}
