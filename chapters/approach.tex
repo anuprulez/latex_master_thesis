@@ -9,7 +9,7 @@ A tool has multiple attributes like input and output file types, help text, name
 	\item Name and description
 	\item Help text
 \end{itemize}
-Moreover, we combine the input and output file types and name and description respectively as they are of similar nature. These two combined attributes give complete information about a tool file types and its functionality. We also consider help text attribute which is larger in size compared to the previous two. At the same time, they are empty for few tools. Apart from being large in size, this attribute is noisy as well. It provides more information about the usage of a tool. Generally, in the first few lines, it gives a detailed explanation of the tool functions. Further, it explains how the input data should be supplied to a tool or how an input data looks like. Hence, much of the information present in this attribute is not important. Because of noise present in this attribute, we decide to use only upto first $4$ lines which really illustrates the core functionality of the tool. The rest of the information is discarded. 
+Moreover, we combine the input and output file types and name and description respectively as they are of similar nature. These two combined attributes give complete information about a tool file types and its functionality. We also consider help text attribute which is larger in size compared to the previous two. At the same time, they are empty for few tools. Apart from being large in size, this attribute is noisy as well. It provides more information about the usage of a tool. Generally, in the first few lines, it gives a detailed explanation of the tool functions. Further, it explains how the input data should be supplied to a tool or how an input data looks like. Hence, much of the information present in this attribute is not important. Because of noise present in this attribute, we decide to use only upto first $4$ lines which illustrates the core functionality of the tool. The decision to select only first $4$ lines is empirical. The rest of the information in help text is discarded. 
 
 \subsection{Clean data}
 \subsubsection{Remove duplicates and stopwords}
@@ -19,7 +19,14 @@ Moreover, we combine the input and output file types and name and description re
 After removing duplicates and stop words, our data is clean and contain tokens which uniquely identify corresponding tools. When we frame sentences, we follow grammar which constrains us to use different forms of the same word in varying contexts. For example, a word $regress$ can be used in multiple forms as $regresses$ or $regression$ or $regressed$. They share the same root and point towards the same concept. If many tools use this word in varying forms, it is beneficial to converge all the different forms of a word to one basic form. This is called stemming \footnote{\url{https://nlp.stanford.edu/IR-book/html/htmledition/stemming-and-lemmatization-1.html}}. We use nltk \footnote{\url{http://www.nltk.org/}} package for stemming.
 
 \subsubsection{Refine tokens}
-    <<BM25>>
+    At this stage of tools preprocessing, we have a set of good tokens for each attribute whic are input and output file types, name and description and help text. The sets of tokens originally present in the sentences do not carry equal importance. It means that some tokens are more relevant than others. Let's call these sets as $documents$
+    
+    
+    https://dl.acm.org/citation.cfm?id=188561
+    http://www.staff.city.ac.uk/~sb317/papers/foundations_bm25_review.pdf
+        
+    
+    
 \section{Word embeddings}
     \subsection{Latent semantic indexing}
     \subsection{Paragraph vectors}
