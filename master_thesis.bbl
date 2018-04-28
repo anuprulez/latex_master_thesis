@@ -14,4 +14,8 @@ H.~Sak, A.~W. Senior, and F.~Beaufays, ``Long short-term memory based recurrent
 S.~Robertson and H.~Zaragoza, ``The probabilistic relevance framework: Bm25 and
   beyond,'' {\em Found. Trends Inf. Retr.}, vol.~3, pp.~333--389, Apr. 2009.
 
+\bibitem{DBLP:journals/corr/Yang15b}
+J.~Yang, ``Notes on low-rank matrix factorization,'' {\em CoRR},
+  vol.~abs/1507.00333, 2015.
+
 \end{thebibliography}

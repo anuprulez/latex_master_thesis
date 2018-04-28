@@ -75,13 +75,11 @@ where $k$ and $b$ are hyperparameters. Using the equation $4$, we compute the re
 
 Figure 4 shows the heatmaps for documents-tokens matrices that belong to input and output file types and name and description. We can see that these plots are sparse. Each entry in these matrices contain BM25 score for each token in every document. The representation shows how to find tokens which are good representatives of documents with a weighted by their relevance factors. But, they do not tell un anything about the co-occurence of a few tokens in a document. It tells us that a token is important for a document if the BM25 score is higher but it does not tell us anything about its relation to other tokens. Due to this shortcoming, it does not acknowledge the presence of "concepts" or "context" hidden in a document. A concept in document can be realised when we see the relation among a few words. To illustrate this idea, let's take an example of three words - "New York City". These three words mean little or point to different things if looked at separately. But, if we see them together, it points towards a concept. This vector space model lacks the ability to find the correlation among tokens. To enable the vector space model to learn this hidden concepts and find correlation among multiple tokens, we explore two ideas
 \begin{itemize}
-\item Latent Semantic Indexing/Analysis
+\item Latent Semantic Indexing/Analysis \footnote{\url{http://lsa.colorado.edu/papers/dp1.LSAintro.pdf}}
 \item Paragraph Vectors
 \end{itemize}
 
 Using these approaches, we learn dense, $n$ dimensional vector for each document instead of using sparse vectors as shown in figure 5. 
-
-% http://lsa.colorado.edu/papers/dp1.LSAintro.pdf
 
 \begin{figure}[h]
 \begin{centering}
@@ -93,51 +91,60 @@ Using these approaches, we learn dense, $n$ dimensional vector for each document
     
 \section{Document embeddings}
 \subsection{Latent semantic indexing}
-    It is statistical way to learn the hidden concepts in documents by computing a low-rank representation of a documents-tokens matrix. This low-rank matrix is dense (figure 6). We use scalar value decomposition ($SVD$) to decompose the full-rank matrix into a significantly lower rank matrix. The optimal rank to which a matrix to be decomposed is empirical in nature. This decomposition follows the equation:
+    It is statistical way to learn the hidden concepts in documents by computing a low-rank representation of a documents-tokens matrix. This low-rank matrix is dense (figure 6). We use singular value decomposition ($SVD$) to decompose the full-rank matrix into a significantly lower rank matrix. The optimal rank to which a matrix to be decomposed is empirical in nature. The rank chosen still contains most of the singular values. This decomposition follows the equation:
     
     \begin{equation}
-    X_{nxm} = U_{nxn} \cdot S_{nxm} \cdot V_{mxm}^T
+    X_{n \times m} = U_{n \times n} \cdot S_{n \times m} \cdot V_{m \times m}^T
     \end{equation}
     
-    where $n$ is the number of documents and $m$ is the number of tokens. $S$ is a diagonal matrix containing the eigen values in descending order. It contains the weights of the concepts present in the matrix. The matrices $U$ and $V$ and orthogonal matrices which satisfy:
+    where $n$ is the number of documents and $m$ is the number of tokens. $S$ is a diagonal matrix containing the singular values in descending order. It contains the weights of the concepts present in the matrix. The matrices $U$ and $V$ and orthogonal matrices which satisfy:
     
     \begin{equation}
-    U^T \cdot U = I_{nxn}
+    U^T \cdot U = I_{n \times n}
     \end{equation}
     \begin{equation}
-    V^T \cdot V = I_{mxm}
+    V^T \cdot V = I_{m \times m}
     \end{equation}
     
-    The matrix $U$ contains information about how the tokens are mapped to concepts and matrix $V$ stores information about how the concepts are mapped to documents. 
+\begin{figure}[h]
+\begin{centering}
+    {\includegraphics[scale=0.8]{figures/usv.pdf}}
+    \caption[Pictorial representation of SVD]{\textbf{Pictorial representation of SVD}: the figure shows how singular value decomposition is done.}
+\end{centering}
+\end{figure}
     
-    The low-rank approximated matrix $X_k$ is computed as:
+    Figure 6 explains \footnote{\url{http://theory.stanford.edu/~tim/s15/l/l9.pdf}} 
+    how $SVD$ of a matrix is carried out. The matrix $U$ contains information about how the tokens, arraged along the columns, are mapped to concepts and matrix $V$ stores information about how the concepts are mapped to documents arranged along the rows. 
+    
+    \subsubsection{Low-rank approximation}
+    The low-rank approximation of a matrix is important to discard the features which are non-repeating or noise. Using this, we can collect the latent relations present in the documents-tokens matrices. We saw that our documents-tokens matrices suffer from sparseness and exhibit no relation among tokens. The approximation deals with these issues as well. The resulting matrices are dense and contain most of the singular values. The singular values which are small (the last entries of the $s$ matrix along the diagonal) are discarded \cite{DBLP:journals/corr/Yang15b}. The low-rank approximated matrix $X_k$ is computed as:
     \begin{equation}
     X_{nxm} = U_{k} \cdot S_{k} \cdot V_{k}^T
     \end{equation}
-    where $U_{k}$ is the first $k$ columns of $U$, $V_{k}$ is the first $k$ rows and $S$ is the first $k$ eigen values. $k$ is an empirical parameter. $X_k$ is called as the rank-k approximation of the full rank matrix $X$.
-    
-%https://arxiv.org/pdf/1011.4104.pdf
+    where $U_{k}$ is the first $k$ columns of $U$, $V_{k}$ is the first $k$ rows and $S$ is the first $k$ singular values. $k$ is an empirical parameter. $X_k$ is called as the rank-k approximation of the full rank matrix $X$. Figure 7 shows the variation of the sum of singular values with the percentage rank of matrices. The percentage rank is $k \div K$ where $1 <= k <= K$ and $K$ is the original (full) rank of a matrix. We take it as the original ranks of the three matrices are not comparable. By doing this, we can show them on one plot. Similar idea we use for the sum of the singular values of each matrix. From figure 7, we can say that if we reduce the ranks of matrices to $70\%$ of the full-rank, we can still capture $\approx 90\%$ of the singular values. The reduction to half of the full-rank achieves $\approx 80\%$ of the sum of singular values. 
 
 \begin{figure}[h]
 \begin{centering}
     {\includegraphics[scale=0.33]{figures/Rank_eigen_values.pdf}}
-    \caption[Rank eigen values]{\textbf{Matrix rank and eigen values}: the plot shows how the sum of principal eigen values vary with the rank of the documents-tokens matrix for all the attributes.}
+    \caption[Rank singular values]{\textbf{Matrix rank and singular values}: the plot shows how the sum of singular values vary with the rank of the documents-tokens matrix for all the attributes.}
 \end{centering}
 \end{figure}
 
-    
+We reduce the rank of the original documents-tokens matrices and compute the dense and approximated low-rank matrices. Figure 8 shows the low-rank matrices for input and output file types and name and description attributes. For computing this, we use only $40\%$ of the full-rank. We can compare it with figure 5 and deduce that figure 8 is denser than figure 5. In these low-rank matrices, we have dense vector representations for documents along the rows. In each matrix, each row contains a vector for one document. Using these documents vectors, we can compute the correlation or similarity using any similarity measure. There are multiple similarity measures that can be used like euclidean distance, cosine similarity, manhattan distance. We use cosine angle similarity to compute the correlation between vectors. By this, we get a positive real number between $0.0$ and $1.0$ specifying how similar a pair of documents are. The higher the score, higher is the similarity. Computing this similarity for all the documents give us a similarity matrix $S_{n \times n}$ where $n$ is the number of documents. This square, symmetric matrix is called as similarity or correlation matrix. We compute three such matrices each corresponding to one attribute.
+  
 \begin{figure}[h]
 \begin{centering}
     {\includegraphics[scale=0.33]{figures/Document_tokens_low_rank.pdf}}
     \caption[Documents-tokens matrices]{\textbf{Documents-tokens matrices}: the heatmap shows the documents-tokens low rank representation of the matrices.}
 \end{centering}
 \end{figure}
-    
-    \subsection{Paragraph vectors}
+
+\subsection{Paragraph vectors}
+
+
 \section{Similarity measures}
-    \subsubsection{Jaccard index}
     \subsubsection{Cosine similarity}
 
 \section{Optimization}
-    \subsubsection{Gradient descent}
-    \subsubsection{Backtracking line search}
+\subsubsection{Gradient descent}
+\subsubsection{Backtracking line search}
