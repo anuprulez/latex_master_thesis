@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.10.5)  28 APR 2018 14:36
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.10.5)  29 APR 2018 17:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -450,7 +450,7 @@ LaTeX Info: Redefining \pageref on input line 6369.
 )
 Package scrhack Info: hyperref hack deactivated because of
 (scrhack)             detection of hyperref version, that doesn't
-(scrhack)             need that hack, on input line 44.
+(scrhack)             need that hack, on input line 46.
 
 
 Package hyperref Message: Driver (autodetected): hpdftex.
@@ -769,8 +769,8 @@ Package microtype Info: Loading configuration file microtype.cfg.
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg
 File: microtype.cfg 2013/05/23 v2.5a microtype main configuration file (RS)
 ))
-Package hyperref Info: Option `pdfnewwindow' set `true' on input line 105.
-Package hyperref Info: Option `plainpages' set `false' on input line 105.
+Package hyperref Info: Option `pdfnewwindow' set `true' on input line 107.
+Package hyperref Info: Option `plainpages' set `false' on input line 107.
 )
 (./master_thesis.aux)
 \openout1 = `master_thesis.aux'.
@@ -940,7 +940,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--3
  _ Complement _ 1 & version = 1 . 0 . 1 & _ _ identifer =
  []
 
-<figures/image_Galaxy_1.pdf, id=230, 393.47pt x 81.30376pt>
+<figures/image_Galaxy_1.pdf, id=235, 393.47pt x 81.30376pt>
 File: figures/image_Galaxy_1.pdf Graphic file (type pdf)
 
 <use figures/image_Galaxy_1.pdf>
@@ -960,7 +960,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--17
 
 pdfTeX warning: pdflatex (file ./figures/image_Galaxy_1.pdf): PDF inclusion: in
 valid other resource which is no dict (key 'ProcSets', type <array>); ignored.
->] <figures/Venn_common_tools_info.pdf, id=258, 551.05875pt x 348.30125pt>
+>] <figures/Venn_common_tools_info.pdf, id=263, 551.05875pt x 348.30125pt>
 File: figures/Venn_common_tools_info.pdf Graphic file (type pdf)
 
 <use figures/Venn_common_tools_info.pdf>
@@ -972,7 +972,7 @@ Package pdftex.def Info: figures/Venn_common_tools_info.pdf used on input line
 pdfTeX warning: pdflatex (file ./figures/Venn_common_tools_info.pdf): PDF inclu
 sion: invalid other resource which is no dict (key 'ProcSets', type <array>); i
 gnored.
->] <figures/tools_sim_know_graph.pdf, id=275, 664.4825pt x 262.9825pt>
+>] <figures/tools_sim_know_graph.pdf, id=280, 664.4825pt x 262.9825pt>
 File: figures/tools_sim_know_graph.pdf Graphic file (type pdf)
 
 <use figures/tools_sim_know_graph.pdf>
@@ -1001,7 +1001,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--19
 tmledition / stemming-[]and-[]lemmatization-[]1 .
  []
 
-<figures/Tokens_dist.pdf, id=325, 1340.60847pt x 738.59943pt>
+<figures/Tokens_dist.pdf, id=330, 1340.60847pt x 738.59943pt>
 File: figures/Tokens_dist.pdf Graphic file (type pdf)
 
 <use figures/Tokens_dist.pdf>
@@ -1016,7 +1016,7 @@ Overfull \hbox (44.06352pt too wide) in paragraph at lines 23--24
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [6] [7 <./figures/Tokens_dist.pdf>] [8]
-<figures/Document_tokens_full_rank.pdf, id=398, 1340.60847pt x 738.59943pt>
+<figures/Document_tokens_full_rank.pdf, id=403, 1340.60847pt x 738.59943pt>
 File: figures/Document_tokens_full_rank.pdf Graphic file (type pdf)
 
 <use figures/Document_tokens_full_rank.pdf>
@@ -1031,7 +1031,7 @@ Overfull \hbox (44.06352pt too wide) in paragraph at lines 86--87
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[9] <figures/usv.pdf, id=405, 534.99875pt x 135.50626pt>
+[9] <figures/usv.pdf, id=410, 534.99875pt x 135.50626pt>
 File: figures/usv.pdf Graphic file (type pdf)
  <use figures/usv.pdf>
 Package pdftex.def Info: figures/usv.pdf used on input line 111.
@@ -1045,7 +1045,7 @@ Overfull \hbox (29.66093pt too wide) in paragraph at lines 111--112
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [10 <./figures/Document_tokens_full_rank.pdf>]
-<figures/Rank_eigen_values.pdf, id=462, 946.01428pt x 515.28508pt>
+<figures/Rank_eigen_values.pdf, id=467, 946.01428pt x 515.28508pt>
 File: figures/Rank_eigen_values.pdf Graphic file (type pdf)
 
 <use figures/Rank_eigen_values.pdf>
@@ -1059,7 +1059,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 pdfTeX warning: pdflatex (file ./figures/usv.pdf): PDF inclusion: invalid other
  resource which is no dict (key 'ProcSets', type <array>); ignored.
->] <figures/Document_tokens_low_rank.pdf, id=506, 1340.60847pt x 738.59943pt>
+>] <figures/Document_tokens_low_rank.pdf, id=511, 1340.60847pt x 738.59943pt>
 File: figures/Document_tokens_low_rank.pdf Graphic file (type pdf)
 
 <use figures/Document_tokens_low_rank.pdf>
@@ -1074,69 +1074,86 @@ Overfull \hbox (44.06352pt too wide) in paragraph at lines 137--138
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (./chapters/experiments.tex [12 <./figures/Rank_eigen_values.pdf>] [13 <./fig
-ures/Document_tokens_low_rank.pdf>]
+[12 <./figures/Rank_eigen_values.pdf>] [13 <./figures/Document_tokens_low_rank.
+pdf>] <figures/dm.png, id=612, 989.6975pt x 520.94624pt>
+File: figures/dm.png Graphic file (type png)
+ <use figures/dm.png>
+Package pdftex.def Info: figures/dm.png used on input line 159.
+(pdftex.def)             Requested size: 326.60118pt x 171.9128pt.
+
+<figures/dbow.png, id=613, 714.67pt x 483.8075pt>
+File: figures/dbow.png Graphic file (type png)
+ <use figures/dbow.png>
+Package pdftex.def Info: figures/dbow.png used on input line 169.
+(pdftex.def)             Requested size: 235.84183pt x 159.65697pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[14 <./figures/dm.png>] [15 <./figures/dbow.png>] [16] [17])
+(./chapters/experiments.tex [18]
 Chapter 3.
-) (./chapters/results_analysis.tex [14
+) (./chapters/results_analysis.tex [19
 
 
 ]
 Chapter 4.
-) (./chapters/conclusion.tex [15
+) (./chapters/conclusion.tex [20
 
 
 ]
 Chapter 5.
-) (./chapters/futurework.tex [16
+) (./chapters/futurework.tex [21
 
 
 ]
 Chapter 6.
-) (./master_thesis.bbl [17
+) (./master_thesis.bbl [22
 
 
-]) [18
+]) [23
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 49.
- [19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 49.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 48.
+ [24]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 48.
  (./master_thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 49.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 49.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 48.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 48.
 Package rerunfilecheck Info: File `master_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 86DAC1D63EF5558A33EE56619D716D4E;5624.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 49.
+(rerunfilecheck)             Checksum: 06A315731432578B9FABC922EE54EBAC;5807.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
  ) 
 Here is how much of TeX's memory you used:
- 23827 strings out of 493304
- 402364 string characters out of 6139871
- 532614 words of memory out of 5000000
- 26624 multiletter control sequences out of 15000+600000
- 29499 words of font info for 124 fonts, out of 8000000 for 9000
+ 23880 strings out of 493304
+ 403042 string characters out of 6139871
+ 532699 words of memory out of 5000000
+ 26638 multiletter control sequences out of 15000+600000
+ 29829 words of font info for 130 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  68i,9n,71p,1719b,637s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1
-095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/
-texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/pu
-blic/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm08
-00.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/t
-exmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/pub
-lic/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx109
-5.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1200.pfb></usr/share/te
-xmf/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf/fonts/type1/publ
-ic/cm-super/sfti1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0900
-.pfb>
-Output written on master_thesis.pdf (27 pages, 732705 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1095.pfb></usr/
+share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/ty
+pe1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/
+sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/s
+hare/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/typ
+e1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
+frm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1095.pfb></usr/sh
+are/texmf/fonts/type1/public/cm-super/sfsx1200.pfb></usr/share/texmf/fonts/type
+1/public/cm-super/sfsx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
+ti1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0900.pfb>
+Output written on master_thesis.pdf (32 pages, 853176 bytes).
 PDF statistics:
- 715 PDF objects out of 1000 (max. 8388607)
- 487 compressed objects within 5 object streams
- 101 named destinations out of 1000 (max. 500000)
- 22349 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 780 PDF objects out of 1000 (max. 8388607)
+ 542 compressed objects within 6 object streams
+ 125 named destinations out of 1000 (max. 500000)
+ 22367 words of extra memory for PDF output out of 24883 (max. 10000000)
 
