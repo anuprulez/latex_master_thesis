@@ -1,43 +1,44 @@
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Galaxy}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Galaxy tools}{2}{section.1.2}
-\contentsline {section}{\numberline {1.3}Motivation}{3}{section.1.3}
-\contentsline {chapter}{\numberline {2}Approach}{5}{chapter.2}
-\contentsline {section}{\numberline {2.1}Extract data}{5}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Select tools attributes}{5}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Clean data}{6}{subsection.2.1.2}
-\contentsline {subsubsection}{\nonumberline Remove duplicates and stopwords}{6}{section*.9}
-\contentsline {subsubsection}{\nonumberline Use stemming}{6}{section*.10}
-\contentsline {subsubsection}{\nonumberline Refine tokens}{7}{section*.12}
-\contentsline {section}{\numberline {2.2}Document embeddings}{9}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Latent semantic indexing}{9}{subsection.2.2.1}
-\contentsline {subsubsection}{\nonumberline Low-rank approximation}{11}{section*.16}
-\contentsline {subsection}{\numberline {2.2.2}Paragraph vectors}{12}{subsection.2.2.2}
-\contentsline {subsubsection}{\nonumberline Approach}{13}{section*.19}
-\contentsline {section}{\numberline {2.3}Similarity measures}{15}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Cosine similarity}{15}{subsection.2.3.1}
-\contentsline {section}{\numberline {2.4}Optimization}{16}{section.2.4}
-\contentsline {subsubsection}{\nonumberline Gradient descent}{17}{section*.22}
-\contentsline {subsubsection}{\nonumberline Backtracking line search}{18}{section*.23}
-\contentsline {chapter}{\numberline {3}Experiments}{19}{chapter.3}
-\contentsline {section}{\numberline {3.1}Latent Semantic Analysis}{19}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Frobenius Norm}{19}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}One and two sources instead of three}{19}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}Paragraph Vector}{19}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Low dimensions}{19}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Dbow and dm}{19}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Gradient Descent and learning rates}{19}{subsection.3.2.3}
-\contentsline {chapter}{\numberline {4}Results and Analysis}{20}{chapter.4}
-\contentsline {section}{\numberline {4.1}Using LSI}{20}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Screenshots}{20}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}gradient drop and loss drop}{20}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Using doc2vec}{20}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Screenshots}{20}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}gradient drop and loss drop}{20}{subsection.4.2.2}
-\contentsline {chapter}{\numberline {5}Conclusion}{21}{chapter.5}
-\contentsline {section}{\numberline {5.1}Data}{21}{section.5.1}
-\contentsline {chapter}{\numberline {6}Future Work}{22}{chapter.6}
-\contentsline {section}{\numberline {6.1}Correlation}{22}{section.6.1}
-\contentsline {section}{\numberline {6.2}Noise data removal}{22}{section.6.2}
-\contentsline {section}{\numberline {6.3}Get true value}{22}{section.6.3}
-\contentsline {chapter}{Bibliography}{22}{section.6.3}
+\contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}
+\contentsline {section}{\numberline {1.1}Galaxy}{2}{section.1.1}
+\contentsline {section}{\numberline {1.2}Galaxy tools}{3}{section.1.2}
+\contentsline {section}{\numberline {1.3}Motivation}{4}{section.1.3}
+\contentsline {chapter}{\numberline {2}Approach}{6}{chapter.2}
+\contentsline {section}{\numberline {2.1}Extract data}{6}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Select tools attributes}{6}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Clean data}{7}{subsection.2.1.2}
+\contentsline {subsubsection}{\nonumberline Remove duplicates and stopwords}{7}{section*.10}
+\contentsline {subsubsection}{\nonumberline Use stemming}{8}{section*.11}
+\contentsline {subsubsection}{\nonumberline Refine tokens}{9}{section*.13}
+\contentsline {section}{\numberline {2.2}Document embeddings}{11}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Latent semantic indexing}{11}{subsection.2.2.1}
+\contentsline {subsubsection}{\nonumberline Low-rank approximation}{12}{section*.17}
+\contentsline {subsection}{\numberline {2.2.2}Paragraph vectors}{14}{subsection.2.2.2}
+\contentsline {subsubsection}{\nonumberline Approach}{15}{section*.20}
+\contentsline {section}{\numberline {2.3}Similarity measures}{16}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Cosine similarity}{16}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Jaccard index}{17}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}Optimization}{17}{section.2.4}
+\contentsline {subsubsection}{\nonumberline Gradient descent}{18}{section*.23}
+\contentsline {subsubsection}{\nonumberline Backtracking line search}{19}{section*.24}
+\contentsline {chapter}{\numberline {3}Experiments}{21}{chapter.3}
+\contentsline {section}{\numberline {3.1}Latent Semantic Analysis}{21}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Frobenius Norm}{21}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}One and two sources instead of three}{21}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Paragraph Vector}{21}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Low dimensions}{21}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Dbow and dm}{21}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Gradient Descent and learning rates}{21}{subsection.3.2.3}
+\contentsline {chapter}{\numberline {4}Results and Analysis}{22}{chapter.4}
+\contentsline {section}{\numberline {4.1}Using LSI}{22}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Screenshots}{22}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}gradient drop and loss drop}{22}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Using doc2vec}{22}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Screenshots}{22}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}gradient drop and loss drop}{22}{subsection.4.2.2}
+\contentsline {chapter}{\numberline {5}Conclusion}{23}{chapter.5}
+\contentsline {section}{\numberline {5.1}Data}{23}{section.5.1}
+\contentsline {chapter}{\numberline {6}Future Work}{24}{chapter.6}
+\contentsline {section}{\numberline {6.1}Correlation}{24}{section.6.1}
+\contentsline {section}{\numberline {6.2}Noise data removal}{24}{section.6.2}
+\contentsline {section}{\numberline {6.3}Get true value}{24}{section.6.3}
+\contentsline {chapter}{Bibliography}{25}{section.6.3}
