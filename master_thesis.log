@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.2)  30 APR 2018 19:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.2)  30 APR 2018 19:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -981,7 +981,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--3
  _ Complement _ 1 & version = 1 . 0 . 1 & _ _ identifer =
  []
 
-<figures/image_Galaxy_1.pdf, id=239, 393.47pt x 81.30376pt>
+<figures/image_Galaxy_1.pdf, id=244, 393.47pt x 81.30376pt>
 File: figures/image_Galaxy_1.pdf Graphic file (type pdf)
 
 <use figures/image_Galaxy_1.pdf>
@@ -1000,7 +1000,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--17
 
 pdfTeX warning: pdflatex (file ./figures/image_Galaxy_1.pdf): PDF inclusion: in
 valid other resource which is no dict (key 'ProcSets', type <array>); ignored.
->] <figures/Venn_common_tools_info.pdf, id=267, 551.05875pt x 348.30125pt>
+>] <figures/Venn_common_tools_info.pdf, id=272, 551.05875pt x 348.30125pt>
 File: figures/Venn_common_tools_info.pdf Graphic file (type pdf)
 
 <use figures/Venn_common_tools_info.pdf>
@@ -1012,7 +1012,7 @@ Package pdftex.def Info: figures/Venn_common_tools_info.pdf used on input line
 pdfTeX warning: pdflatex (file ./figures/Venn_common_tools_info.pdf): PDF inclu
 sion: invalid other resource which is no dict (key 'ProcSets', type <array>); i
 gnored.
->] <figures/tools_sim_know_graph.pdf, id=284, 664.4825pt x 262.9825pt>
+>] <figures/tools_sim_know_graph.pdf, id=289, 664.4825pt x 262.9825pt>
 File: figures/tools_sim_know_graph.pdf Graphic file (type pdf)
 
 <use figures/tools_sim_know_graph.pdf>
@@ -1026,7 +1026,7 @@ on: invalid other resource which is no dict (key 'ProcSets', type <array>); ign
 ored.
 >] [5]
 chapter 2.
-<figures/tool_sim_flow.pdf, id=316, 275.0275pt x 298.11375pt>
+<figures/tool_sim_flow.pdf, id=321, 275.0275pt x 298.11375pt>
 File: figures/tool_sim_flow.pdf Graphic file (type pdf)
 
 <use figures/tool_sim_flow.pdf>
@@ -1052,7 +1052,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--27
 tmledition / stemming-[]and-[]lemmatization-[]1 .
  []
 
-<figures/Tokens_dist.pdf, id=352, 1340.60847pt x 738.59943pt>
+<figures/Tokens_dist.pdf, id=357, 1340.60847pt x 738.59943pt>
 File: figures/Tokens_dist.pdf Graphic file (type pdf)
 
 <use figures/Tokens_dist.pdf>
@@ -1064,7 +1064,7 @@ Overfull \hbox (44.06352pt too wide) in paragraph at lines 31--32
  []
 
 [8 <./figures/Tokens_dist.pdf>] [9] [10]
-<figures/Document_tokens_full_rank.pdf, id=423, 1340.60847pt x 738.59943pt>
+<figures/Document_tokens_full_rank.pdf, id=428, 1340.60847pt x 738.59943pt>
 File: figures/Document_tokens_full_rank.pdf Graphic file (type pdf)
 
 <use figures/Document_tokens_full_rank.pdf>
@@ -1077,7 +1077,7 @@ Overfull \hbox (44.06352pt too wide) in paragraph at lines 94--95
  []
 
 [11 <./figures/Document_tokens_full_rank.pdf>]
-<figures/usv.pdf, id=475, 534.99875pt x 135.50626pt>
+<figures/usv.pdf, id=480, 534.99875pt x 135.50626pt>
 File: figures/usv.pdf Graphic file (type pdf)
  <use figures/usv.pdf>
 Package pdftex.def Info: figures/usv.pdf used on input line 119.
@@ -1091,14 +1091,14 @@ Overfull \hbox (29.66093pt too wide) in paragraph at lines 119--120
 
 pdfTeX warning: pdflatex (file ./figures/usv.pdf): PDF inclusion: invalid other
  resource which is no dict (key 'ProcSets', type <array>); ignored.
->] <figures/Rank_eigen_values.pdf, id=524, 946.01428pt x 515.28508pt>
+>] <figures/Rank_eigen_values.pdf, id=529, 946.01428pt x 515.28508pt>
 File: figures/Rank_eigen_values.pdf Graphic file (type pdf)
 
 <use figures/Rank_eigen_values.pdf>
 Package pdftex.def Info: figures/Rank_eigen_values.pdf used on input line 136.
 (pdftex.def)             Requested size: 312.18568pt x 170.0446pt.
  [13 <./figures/Rank_eigen_values.pdf>]
-<figures/Document_tokens_low_rank.pdf, id=573, 1340.60847pt x 738.59943pt>
+<figures/Document_tokens_low_rank.pdf, id=578, 1340.60847pt x 738.59943pt>
 File: figures/Document_tokens_low_rank.pdf Graphic file (type pdf)
 
 <use figures/Document_tokens_low_rank.pdf>
@@ -1111,7 +1111,7 @@ Overfull \hbox (44.06352pt too wide) in paragraph at lines 145--146
  []
 
 [14 <./figures/Document_tokens_low_rank.pdf>]
-<figures/dm_pv.pdf, id=623, 520.94624pt x 246.9225pt>
+<figures/dm_pv.pdf, id=628, 520.94624pt x 246.9225pt>
 File: figures/dm_pv.pdf Graphic file (type pdf)
  <use figures/dm_pv.pdf>
 Package pdftex.def Info: figures/dm_pv.pdf used on input line 167.
@@ -1120,7 +1120,7 @@ Package pdftex.def Info: figures/dm_pv.pdf used on input line 167.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/dbow_pv.pdf, id=624, 448.67625pt x 199.74625pt>
+<figures/dbow_pv.pdf, id=629, 448.67625pt x 199.74625pt>
 File: figures/dbow_pv.pdf Graphic file (type pdf)
 
 <use figures/dbow_pv.pdf>
@@ -1168,22 +1168,15 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 51.
 (./master_thesis.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 51.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 51.
-
-
-Package rerunfilecheck Warning: File `master_thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `master_thesis.out':
-(rerunfilecheck)             Before: 06A315731432578B9FABC922EE54EBAC;5807
-(rerunfilecheck)             After:  25DFF49A3E71D3263A5064C023F087E0;5970.
+Package rerunfilecheck Info: File `master_thesis.out' has not changed.
+(rerunfilecheck)             Checksum: 25DFF49A3E71D3263A5064C023F087E0;5970.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 51.
  ) 
 Here is how much of TeX's memory you used:
- 25828 strings out of 493029
- 456538 string characters out of 6136235
- 595108 words of memory out of 5000000
- 28635 multiletter control sequences out of 15000+600000
+ 25829 strings out of 493029
+ 456556 string characters out of 6136235
+ 596108 words of memory out of 5000000
+ 28636 multiletter control sequences out of 15000+600000
  29829 words of font info for 130 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  67i,9n,66p,1719b,637s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1204,10 +1197,10 @@ frm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1095.pfb></usr/sh
 are/texmf/fonts/type1/public/cm-super/sfsx1200.pfb></usr/share/texmf/fonts/type
 1/public/cm-super/sfsx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
 ti1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0900.pfb>
-Output written on master_thesis.pdf (35 pages, 869588 bytes).
+Output written on master_thesis.pdf (35 pages, 869776 bytes).
 PDF statistics:
- 826 PDF objects out of 1000 (max. 8388607)
- 578 compressed objects within 6 object streams
+ 830 PDF objects out of 1000 (max. 8388607)
+ 582 compressed objects within 6 object streams
  131 named destinations out of 1000 (max. 500000)
- 22372 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 22380 words of extra memory for PDF output out of 24883 (max. 10000000)
 
