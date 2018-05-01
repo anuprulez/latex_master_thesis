@@ -28,7 +28,7 @@ After removing duplicates and stop words, our data is clean and contain tokens w
 
 \begin{figure}[h]
 \begin{centering}
-    {\includegraphics[scale=0.33]{figures/Tokens_dist.pdf}}
+    {\includegraphics[scale=0.4]{figures/Tokens_dist.pdf}}
     \caption[Tokens distribution]{\textbf{Distribution of tokens}: the plot shows the distribution of tokens for all the attributes. The help text has the most number of tokens for all tools and input and output has the least number of tokens.}
 \end{centering}
 \end{figure}
@@ -91,7 +91,7 @@ Using these approaches, we learn dense, $n$ dimensional vector for each document
 
 \begin{figure}[h]
 \begin{centering}
-    {\includegraphics[scale=0.33]{figures/Document_tokens_full_rank.pdf}}
+    {\includegraphics[scale=0.45]{figures/Document_tokens_full_rank.pdf}}
     \caption[Documents-tokens matrices]{\textbf{Documents-tokens matrices}: the heatmap shows the documents-tokens sparse matrices for two attributes.}
 \end{centering}
 \end{figure}
@@ -133,7 +133,15 @@ Using these approaches, we learn dense, $n$ dimensional vector for each document
 
 \begin{figure}[h]
 \begin{centering}
-    {\includegraphics[scale=0.33]{figures/Rank_eigen_values.pdf}}
+    {\includegraphics[scale=0.45]{figures/singular_values.pdf}}
+    \caption[Rank singular values]{\textbf{Matrix rank and singular values}: the plot shows how the sum of singular values vary with the rank of the documents-tokens matrix for all the attributes.}
+\end{centering}
+\end{figure}
+
+
+\begin{figure}[h]
+\begin{centering}
+    {\includegraphics[scale=0.45]{figures/Rank_eigen_values.pdf}}
     \caption[Rank singular values]{\textbf{Matrix rank and singular values}: the plot shows how the sum of singular values vary with the rank of the documents-tokens matrix for all the attributes.}
 \end{centering}
 \end{figure}
@@ -142,7 +150,7 @@ We reduce the rank of the original documents-tokens matrices and compute the den
   
 \begin{figure}[h]
 \begin{centering}
-    {\includegraphics[scale=0.33]{figures/Document_tokens_low_rank.pdf}}
+    {\includegraphics[scale=0.45]{figures/Document_tokens_low_rank.pdf}}
     \caption[Documents-tokens matrices]{\textbf{Documents-tokens matrices}: the heatmap shows the documents-tokens low rank representation of the matrices.}
 \end{centering}
 \end{figure}

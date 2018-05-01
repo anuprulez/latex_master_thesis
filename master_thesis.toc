@@ -12,14 +12,14 @@
 \contentsline {section}{\numberline {2.2}Document embeddings}{11}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Latent semantic indexing}{11}{subsection.2.2.1}
 \contentsline {subsubsection}{\nonumberline Low-rank approximation}{12}{section*.17}
-\contentsline {subsection}{\numberline {2.2.2}Paragraph vectors}{14}{subsection.2.2.2}
-\contentsline {subsubsection}{\nonumberline Approach}{15}{section*.20}
-\contentsline {section}{\numberline {2.3}Similarity measures}{16}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Cosine similarity}{16}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Jaccard index}{17}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}Optimization}{17}{section.2.4}
-\contentsline {subsubsection}{\nonumberline Gradient descent}{18}{section*.23}
-\contentsline {subsubsection}{\nonumberline Backtracking line search}{19}{section*.24}
+\contentsline {subsection}{\numberline {2.2.2}Paragraph vectors}{15}{subsection.2.2.2}
+\contentsline {subsubsection}{\nonumberline Approach}{16}{section*.21}
+\contentsline {section}{\numberline {2.3}Similarity measures}{17}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Cosine similarity}{17}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Jaccard index}{18}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}Optimization}{18}{section.2.4}
+\contentsline {subsubsection}{\nonumberline Gradient descent}{19}{section*.24}
+\contentsline {subsubsection}{\nonumberline Backtracking line search}{20}{section*.25}
 \contentsline {chapter}{\numberline {3}Experiments}{21}{chapter.3}
 \contentsline {section}{\numberline {3.1}Latent Semantic Analysis}{21}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Frobenius Norm}{21}{subsection.3.1.1}
