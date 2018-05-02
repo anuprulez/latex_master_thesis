@@ -22,4 +22,8 @@ J.~Yang, ``Notes on low-rank matrix factorization,'' {\em CoRR},
 Q.~V. Le and T.~Mikolov, ``Distributed representations of sentences and
   documents,'' {\em CoRR}, vol.~abs/1405.4053, 2014.
 
+\bibitem{Ivchenko1998}
+G.~I. Ivchenko and S.~A. Honov, ``On the jaccard similarity test,'' {\em
+  Journal of Mathematical Sciences}, vol.~88, pp.~789--794, Mar 1998.
+
 \end{thebibliography}

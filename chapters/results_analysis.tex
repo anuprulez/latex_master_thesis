@@ -56,24 +56,6 @@ We reduce the ranks of two documents-tokens matrices to 30\% of the original ran
 \end{centering}
 \end{figure}
 
-\subsection{10\% of full-rank}
-We reduce the ranks of two documents-tokens matrices to 10\% of the original ranks.
-
-\begin{figure}[h]
-\begin{centering}
-    {\includegraphics[scale=0.35]{figures/Similarity_matrices_010.pdf}}
-    \caption[Similarity matrices 10\% rank]{\textbf{Similarity matrices using 10\% rank}: this correlation plot shows the individual similarity matrices for multiple attributes and the weighted average of these matrices as optimal one after reducing the name and description and help text matrices to 10\% of their respective ranks.}
-\end{centering}
-\end{figure}
-
-\begin{figure}[h]
-\begin{centering}
-    {\includegraphics[scale=0.35]{figures/Weights_010.pdf}}
-    \caption[Weights distribution 10\% rank]{\textbf{Weights distribution using 10\% rank}: this plot show how the weights vary for multiple tool attributes after reducing the name and description and help text matrices to 10\% of their respective ranks.}
-\end{centering}
-\end{figure}
-
-
 \subsection{5\% of full-rank}
 We reduce the ranks of two documents-tokens matrices to 5\% of the original ranks.
 
@@ -101,9 +83,6 @@ We observe the loss in mean squared error when we decrease the ranks of the matr
 \end{centering}
 \end{figure}
 
-
-\subsection{Screenshots}
-
 \section{Paragraph vectors}
 
 \begin{figure}[h]
@@ -128,7 +107,27 @@ We observe the loss in mean squared error when we decrease the ranks of the matr
 \end{centering}
 \end{figure}
 
-\subsection{Screenshots}
-\subsection{gradient drop and loss drop}
+
+\subsection{Learning rate}
+
+\begin{figure}[h]
+\begin{centering}
+    {\includegraphics[scale=0.35]{figures/Learning_rates_LSI.pdf}}
+    \caption[Weights distribution for doc2vec]{\textbf{Weight distribution learnt using "paragraph vectors" approach}: this plot shows the distribution of weights for multiple tools attributes learnt using "paragraph vectors" approach. We can see that the magnitude of weights for input and output file types are lower compared to two other attributes.}
+\end{centering}
+\end{figure}
+
+
+\begin{figure}[h]
+\begin{centering}
+    {\includegraphics[scale=0.35]{figures/Learning_rates_PV.pdf}}
+    \caption[Weights distribution for doc2vec]{\textbf{Weight distribution learnt using "paragraph vectors" approach}: this plot shows the distribution of weights for multiple tools attributes learnt using "paragraph vectors" approach. We can see that the magnitude of weights for input and output file types are lower compared to two other attributes.}
+\end{centering}
+\end{figure}
+
+
+\subsection{Visualizer}
+\subsection{LSI}
+\subsection{Paragraph vectors}
 
 
