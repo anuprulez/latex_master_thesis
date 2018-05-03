@@ -91,7 +91,7 @@ Using these approaches, we learn dense, $n$ dimensional vector for each document
 
 \begin{figure}[h]
 \begin{centering}
-    {\includegraphics[scale=0.45]{figures/Document_tokens_full_rank.pdf}}
+    {\includegraphics[scale=0.4]{figures/Document_tokens_full_rank.pdf}}
     \caption[Documents-tokens matrices]{\textbf{Documents-tokens matrices}: the heatmap shows the documents-tokens sparse matrices for two attributes.}
 \end{centering}
 \end{figure}
@@ -127,7 +127,7 @@ Using these approaches, we learn dense, $n$ dimensional vector for each document
     \subsubsection{Low-rank approximation}
     The low-rank approximation of a matrix is important to discard the features which are non-repeating or noise. Using this, we can collect the latent relations present in the documents-tokens matrices. We saw that our documents-tokens matrices suffer from sparseness and exhibit no relation among tokens. The approximation deals with these issues as well. The resulting matrices are dense and contain most of the singular values. The singular values which are small (the last entries of the $s$ matrix along the diagonal) are discarded \cite{DBLP:journals/corr/Yang15b}. The low-rank approximated matrix $X_k$ is computed as:
     \begin{equation}
-    X_{nxm} = U_{k} \cdot S_{k} \cdot V_{k}^T
+    X_{n \times m} = U_{k} \cdot S_{k} \cdot V_{k}^T
     \end{equation}
     where $U_{k}$ is the first $k$ columns of $U$, $V_{k}$ is the first $k$ rows and $S$ is the first $k$ singular values. $k$ is an empirical parameter. $X_k$ is called as the rank-k approximation of the full rank matrix $X$. Figure 7 shows the variation of the sum of singular values with the percentage rank of matrices. The percentage rank is $k \div K$ where $1 <= k <= K$ and $K$ is the original (full) rank of a matrix. We take it as the original ranks of the three matrices are not comparable. By doing this, we can show them on one plot. Similar idea we use for the sum of the singular values of each matrix. From figure 7, we can say that if we reduce the ranks of matrices to $70\%$ of the full-rank, we can still capture $\approx 90\%$ of the singular values. The reduction to half of the full-rank achieves $\approx 80\%$ of the sum of singular values. 
 
@@ -150,7 +150,7 @@ We reduce the rank of the original documents-tokens matrices and compute the den
   
 \begin{figure}[h]
 \begin{centering}
-    {\includegraphics[scale=0.45]{figures/Document_tokens_low_rank.pdf}}
+    {\includegraphics[scale=0.33]{figures/Document_tokens_low_rank.pdf}}
     \caption[Documents-tokens matrices]{\textbf{Documents-tokens matrices}: the heatmap shows the documents-tokens low rank representation of the matrices.}
 \end{centering}
 \end{figure}
@@ -221,8 +221,6 @@ j = \frac{Length[(tabular, input, pdf) \cap (tabular, txt)]}{Length[(tabular, in
 j = \frac{1}{4} = 0.25
 \end{equation}
 
-
-
 \section{Optimization}
 Using the paragraph vectors and applying cosine similarity, we get similarity or correlation matrices one each for input and output file types, name and description and help text attributes. The matrices have same dimensions ($n \times n$, $n$ is the number of tools). To combine these matrices, one simple idea would be to take an average of the corresponding rows of scores from the matrices for a document. This would generate a matrix of the same dimension where each row would correspond to one document. This row would contain similarity scores of a document against all other documents. The diagonal entries of this matrix would be 1.0. All other entries would be a positive real number between $0.0$ and $1.0$. Another way to find the combination is to learn the weights on the rows from three matrices and them combine them to obtain optimal similarity scores for a tool. The weight would be a positive real number between $0.0$ and $1.0$. Instead of using a fixed importance factor (weights) of $1 / 3$ ($3$ is the number of matrices), we use optimization to find these real numbers and then combine the matrices by multiplying with these weights.
 
@@ -281,19 +279,43 @@ w^k = w^k - \eta \cdot {Gradient^k}
 
 To find the right learning rate is important as a high value can diverge the gradient learning and a low value can slow down the learning. For each iteration of gradient descent, we employ time-based decay of learning rate.
 
+\subsubsection{Learning rate decay}
+To find an optimal learning rate forms an important part of gradient descent optimization. If the learning rate is high, it poses a risk of optimizer divergence. On the other hand, if is small, the optimizer can take a very long time to converge. Both these situations are underisable and we can avoid them by starting out with a small value and gradually decrease the learning rate over iterations. It is called as a time-based decay of the learning rate \cite{articleRuderS}.
+
+\begin{equation}
+lr^{t+1} = \frac{lr^t}{( 1 + ( decay * iteration ) )}
+\end{equation}
+where $lr^{t+1}$ and $lr^t$ are the learning rates for $t+1$ and $t$ iterations,   $decay$ controls how steep or flat the learning rate curve is and $iteration$ is the gradient descent iteration number. A higher value of decay makes the learning rate curve steep as the learning rate drops quickly. A lower value can make the curve flat which can slow down the learning.
+
+\begin{figure}[h]
+\begin{centering}
+    {\includegraphics[scale=0.33]{figures/Learning_rates_PV.pdf}}
+    \caption[Learning rates]{\textbf{Gradient descent learning rates}: the plots shows how the learning rate decays over time. It is essential to have learning rates which neither drops too quickly or too slowly. These ways can lead to divergence or slow convergence of the optimizer. This curve finds a middle way of estimating the learning rates.}
+\end{centering}
+\end{figure}
+
 
 \subsubsection{Gradient descent with momentum}
 % http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.57.5612&rep=rep1&type=pdf
 % http://ruder.io/optimizing-gradient-descent/index.html#momentum
 % https://distill.pub/2017/momentum/
 
-
-
-\subsubsection{Learning rate decay}
-
-
-
 \subsubsection{Gradient verification}
+We compute gradient using equation 22 and use it to update our weight parameters. To verify that the computed gradient is correct, we can approximate this gradient using the error function we formulated in equation 20.
+
+\begin{equation}
+Gradient(w) = \frac{\partial Error}{\partial w} \approx \frac{Error(w + \epsilon) - Error(w - \epsilon)}{2 \cdot \epsilon} 
+\end{equation}
+where $\epsilon$ is a very small number. 
+
+\begin{figure}[h]
+\begin{centering}
+    {\includegraphics[scale=0.35]{figures/Difference_gradients.pdf}}
+    \caption[Gradient verification]{\textbf{Gradient verification}: the plot show the difference between the actual and approximated gradients for all the attributes across all tools computed over 100 iterations. When this difference is close to 0, we become sure that the computed gradient using the formulated error function is correct.}
+\end{centering}
+\end{figure}
+
+
 
 
 %https://pdfs.semanticscholar.org/f1f5/384bb21fef3d6da687b13a60c1b57881ee1b.pdf

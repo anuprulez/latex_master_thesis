@@ -26,4 +26,7 @@ Q.~V. Le and T.~Mikolov, ``Distributed representations of sentences and
 G.~I. Ivchenko and S.~A. Honov, ``On the jaccard similarity test,'' {\em
   Journal of Mathematical Sciences}, vol.~88, pp.~789--794, Mar 1998.
 
+\bibitem{articleRuderS}
+S.~Ruder, ``An overview of gradient descent optimization algorithms,'' 09 2016.
+
 \end{thebibliography}

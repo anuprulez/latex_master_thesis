@@ -21,4 +21,4 @@ We use this approach to learn vectors for each document. It does not use word-ve
 To optimize the similarity scores from coming from multiple attributes, we use gradient descent optimizer to learn weights on the scores of these attributes. Based on the similarity measures, we construct a error function to the optimizer which minimizes it.
 
 \subsection{Learning rates}
-We use backtracking line search to set learning rate for each iteration. It expedites the learning by computing a learning rate that sufficiently diminishes the error function in each iteration of gradient descent. We set a maximum iteration to $10$ within which the learning saturates.
+We use backtracking line search to set learning rate for each iteration. It expedites the learning by computing a learning rate that sufficiently diminishes the error function in each iteration of gradient descent. We set a maximum iteration to 100 within which the learning saturates when the learning rate start with a value of 0.1. When we start with 0.01 or smaller, the optimization does not converge within 100 iterations.

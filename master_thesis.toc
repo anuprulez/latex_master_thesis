@@ -17,32 +17,32 @@
 \contentsline {section}{\numberline {2.3}Similarity measures}{17}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Cosine similarity}{17}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Jaccard index}{18}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}Optimization}{19}{section.2.4}
-\contentsline {subsubsection}{\nonumberline Gradient descent}{20}{section*.24}
-\contentsline {subsubsection}{\nonumberline Gradient descent with momentum}{21}{section*.25}
-\contentsline {subsubsection}{\nonumberline Learning rate decay}{21}{section*.26}
-\contentsline {subsubsection}{\nonumberline Gradient verification}{21}{section*.27}
-\contentsline {chapter}{\numberline {3}Experiments}{22}{chapter.3}
-\contentsline {section}{\numberline {3.1}Amount of help text}{22}{section.3.1}
-\contentsline {section}{\numberline {3.2}One and two sources instead of three}{22}{section.3.2}
-\contentsline {section}{\numberline {3.3}Similarity measures}{22}{section.3.3}
-\contentsline {section}{\numberline {3.4}Latent Semantic Analysis}{22}{section.3.4}
-\contentsline {section}{\numberline {3.5}Paragraph Vector}{23}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Distributed bag-of-words}{23}{subsection.3.5.1}
-\contentsline {section}{\numberline {3.6}Gradient Descent}{23}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Learning rates}{24}{subsection.3.6.1}
-\contentsline {chapter}{\numberline {4}Results and Analysis}{25}{chapter.4}
-\contentsline {section}{\numberline {4.1}Latent Semantic Analysis}{25}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Full-rank matrices}{25}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}70\% of full-rank}{25}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}30\% of full-rank}{25}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}5\% of full-rank}{25}{subsection.4.1.4}
-\contentsline {subsection}{\numberline {4.1.5}Reduction in error}{26}{subsection.4.1.5}
-\contentsline {section}{\numberline {4.2}Paragraph vectors}{26}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Learning rate}{26}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Visualizer}{26}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}LSI}{26}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Paragraph vectors}{26}{subsection.4.2.4}
+\contentsline {section}{\numberline {2.4}Optimization}{18}{section.2.4}
+\contentsline {subsubsection}{\nonumberline Gradient descent}{19}{section*.24}
+\contentsline {subsubsection}{\nonumberline Learning rate decay}{20}{section*.25}
+\contentsline {subsubsection}{\nonumberline Gradient descent with momentum}{21}{section*.27}
+\contentsline {subsubsection}{\nonumberline Gradient verification}{21}{section*.28}
+\contentsline {chapter}{\numberline {3}Experiments}{23}{chapter.3}
+\contentsline {section}{\numberline {3.1}Amount of help text}{23}{section.3.1}
+\contentsline {section}{\numberline {3.2}One and two sources instead of three}{23}{section.3.2}
+\contentsline {section}{\numberline {3.3}Similarity measures}{23}{section.3.3}
+\contentsline {section}{\numberline {3.4}Latent Semantic Analysis}{23}{section.3.4}
+\contentsline {section}{\numberline {3.5}Paragraph Vector}{24}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Distributed bag-of-words}{24}{subsection.3.5.1}
+\contentsline {section}{\numberline {3.6}Gradient Descent}{24}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Learning rates}{25}{subsection.3.6.1}
+\contentsline {chapter}{\numberline {4}Results and Analysis}{26}{chapter.4}
+\contentsline {section}{\numberline {4.1}Latent Semantic Analysis}{26}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Full-rank matrices}{26}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}70\% of full-rank}{26}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}30\% of full-rank}{26}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}5\% of full-rank}{26}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}Reduction in error}{27}{subsection.4.1.5}
+\contentsline {section}{\numberline {4.2}Paragraph vectors}{27}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Learning rate}{27}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Visualizer}{27}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}LSI}{27}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Paragraph vectors}{27}{subsection.4.2.4}
 \contentsline {chapter}{\numberline {5}Conclusion}{40}{chapter.5}
 \contentsline {section}{\numberline {5.1}Data}{40}{section.5.1}
 \contentsline {chapter}{\numberline {6}Future Work}{41}{chapter.6}
