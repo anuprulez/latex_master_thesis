@@ -279,16 +279,22 @@ Using the gradient vector, we update the weights. For this we need to set the le
 w^k = w^k - \eta \cdot {Gradient^k}
 \end{equation}
 
-To find the right learning rate is important as a high value can diverge the gradient learning and a low value can slow down the learning. For each iteration of gradient descent, we employ backtracking line search to find the right learning rate which assists in finding the update of the weights parameters.
+To find the right learning rate is important as a high value can diverge the gradient learning and a low value can slow down the learning. For each iteration of gradient descent, we employ time-based decay of learning rate.
 
-\subsubsection{Backtracking line search}
-We use backtracking line search method to find the necessary decrease along the gradient search direction. It enables us to avoid all the small steps generally taken by gradient descent to decrease the objective error function. At each step of gradient descent, we start with $1.0$ as learning rate and gradually decrease it until the following condition is met or gradient decrease stabilizes with a tolerance factor $\epsilon$. The decrease of learning rate is controlled by a hyperparameter $\beta$. The name backtracking comes from the fact that it starts with unit learning rate and gradually decreases the learning rate.
 
-\begin{equation}
-Error(w^*) \approx Error(w) - \eta \cdot |Gradient(w)| ^ 2 < Error(w) - \alpha \cdot \eta \cdot |Gradient(w)| ^ 2
-\end{equation}
+\subsubsection{Gradient descent with momentum}
+% http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.57.5612&rep=rep1&type=pdf
+% http://ruder.io/optimizing-gradient-descent/index.html#momentum
+% https://distill.pub/2017/momentum/
 
-where $w^* = w - \eta \cdot Gradient(w)$ and $\alpha$ lies in the range $\left(0, 0.5\right)$ \footnote{\url{http://users.ece.utexas.edu/~cmcaram/EE381V_2012F/Lecture_4_Scribe_Notes.final.pdf}}.
+
+
+\subsubsection{Learning rate decay}
+
+
+
+\subsubsection{Gradient verification}
+
 
 %https://pdfs.semanticscholar.org/f1f5/384bb21fef3d6da687b13a60c1b57881ee1b.pdf
 %https://www.sciencedirect.com/science/article/pii/S0377042713000125
