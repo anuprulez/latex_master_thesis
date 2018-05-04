@@ -1,2 +1,33 @@
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1}{\ignorespaces Basic flow of dataset transformation}}{2}{figure.caption.8}
+\contentsline {figure}{\numberline {2}{\ignorespaces Venn diagram}}{3}{figure.caption.9}
+\contentsline {figure}{\numberline {3}{\ignorespaces Similarity knowledge graph}}{4}{figure.caption.10}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4}{\ignorespaces Tool similarity flowchart}}{6}{figure.caption.11}
+\contentsline {figure}{\numberline {5}{\ignorespaces Tokens distribution}}{9}{figure.caption.14}
+\contentsline {figure}{\numberline {6}{\ignorespaces Documents-tokens matrices}}{11}{figure.caption.17}
+\contentsline {figure}{\numberline {7}{\ignorespaces Pictorial representation of SVD}}{12}{figure.caption.18}
+\contentsline {figure}{\numberline {8}{\ignorespaces Rank singular values}}{14}{figure.caption.20}
+\contentsline {figure}{\numberline {9}{\ignorespaces Rank singular values}}{15}{figure.caption.21}
+\contentsline {figure}{\numberline {10}{\ignorespaces Documents-tokens matrices}}{16}{figure.caption.22}
+\contentsline {figure}{\numberline {11}{\ignorespaces Distributed model}}{17}{figure.caption.24}
+\contentsline {figure}{\numberline {12}{\ignorespaces Distributed bag of words}}{18}{figure.caption.25}
+\contentsline {figure}{\numberline {13}{\ignorespaces Learning rates}}{21}{figure.caption.28}
+\contentsline {figure}{\numberline {14}{\ignorespaces Gradient verification}}{23}{figure.caption.31}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {15}{\ignorespaces Similarity matrices full rank}}{28}{figure.caption.32}
+\contentsline {figure}{\numberline {16}{\ignorespaces Weights distribution full rank}}{29}{figure.caption.33}
+\contentsline {figure}{\numberline {17}{\ignorespaces Similarity matrices 70\% rank}}{30}{figure.caption.34}
+\contentsline {figure}{\numberline {18}{\ignorespaces Weights distribution 70\% rank}}{31}{figure.caption.35}
+\contentsline {figure}{\numberline {19}{\ignorespaces Similarity matrices 30\% rank}}{32}{figure.caption.36}
+\contentsline {figure}{\numberline {20}{\ignorespaces Weights distribution 30\% rank}}{33}{figure.caption.37}
+\contentsline {figure}{\numberline {21}{\ignorespaces Similarity matrices 5\% rank}}{34}{figure.caption.38}
+\contentsline {figure}{\numberline {22}{\ignorespaces Weights distribution 5\% rank}}{35}{figure.caption.39}
+\contentsline {figure}{\numberline {23}{\ignorespaces Similarity matrices 5\% rank}}{36}{figure.caption.40}
+\contentsline {figure}{\numberline {24}{\ignorespaces Documents-tokens matrices for doc2vec}}{37}{figure.caption.41}
+\contentsline {figure}{\numberline {25}{\ignorespaces Similarity matrices using doc2vec}}{38}{figure.caption.42}
+\contentsline {figure}{\numberline {26}{\ignorespaces Weights distribution for doc2vec}}{39}{figure.caption.43}
+\contentsline {figure}{\numberline {27}{\ignorespaces Weights distribution for doc2vec}}{40}{figure.caption.44}
+\addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -3,11 +3,11 @@
 \begin{figure}[h]
 \begin{centering}
     {\includegraphics[scale=0.7]{figures/tool_sim_flow.pdf}}
-    \caption[Tool similarity flowchart]{\textbf{Flowchart to find similar tools}: the flowchart highlights the important steps in finding similarity in tools.}
+    \caption[Tool similarity flowchart]{\textbf{Sequence of steps to find similar tools}: The image shows a series of steps used to establish similarity among tools using approaches from natural language processing to compute text similarity scores and optimization to combine these similarity scores.}
 \end{centering}
 \end{figure}
 
-\section{Extract data}    
+\section{Extract tools data}    
 There are multiple repositories of Galaxy tools stored at GitHub \footnote{One example:\url{https://github.com/galaxyproject/tools-iuc/tree/master/tools}}. In each of the tool repository, there are $xml$ files starting with a $<tool>$ tag. We read all of these $xml$ files, extract information from a few of the attributes and collect them in a $tabular$ file.
     
 \subsection{Select tools attributes}
@@ -19,22 +19,33 @@ A tool has multiple attributes like input and output file types, help text, name
 \end{itemize}
 Moreover, we combine the input and output file types and name and description respectively as they are of similar nature. These two combined attributes give complete information about a tool file types and its functionality. We also consider help text attribute which is larger in size compared to the previous two. At the same time, they are empty for few tools. Apart from being large in size, this attribute is noisy as well. It provides more information about the usage of a tool. Generally, in the first few lines, it gives a detailed explanation of the tool functions. Further, it explains how the input data should be supplied to a tool or how an input data looks like. Hence, much of the information present in this attribute is not important. Because of noise present in this attribute, we decide to use only upto first $4$ lines which illustrates the core functionality of the tool. The decision to select only first $4$ lines is empirical. The rest of the information in help text is discarded. 
 
-\subsection{Clean data}
+
+\subsection{Clean tools data}
 \subsubsection{Remove duplicates and stopwords}
     The collected data for tools is raw containing lots of commonplace and duplicate items which do not add value. These items should be removed to get $tokens$ which are unique and useful. For example, a tool $bamleftalign$ has input files as $bam, fasta$ and output file as $bam$. While combining the file types, we discard the repeated file types and in this case, we consider file types as $bam, fasta$. The other attributes we deal with are different from the file types. The files types are discrete items but in attributes like name and description and help text, the account is in a human language. The explanation contains complete or partially complete sentences in $English$. Hence, to process this information, we need startegies that are prevalent in natural language processing \footnote{\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3168328/}}. The sentences we write in $English$ contain many words and has different parts. These parts include subject, object, preposition, interjection, verbs, adjectives, adverbs, articles and many others. For our processing, we need only those tokens (words) which categorize a tool uniquely and do away with multiple parts of speech present in the statements. For example, a tool named $tophat$ has name and description as "TopHat for Illumina Find splice junctions using RNA-seq data". The words like $for$, $using$ and $data$ do not give much value as they must be present for many tools. These words are called as "stop words" \footnote{\url{https://www.ranks.nl/stopwords}} and we selectively discard them. In addition, we remove numbers and convert all the tokens to lower case.
-   
+  
+ 
 \subsubsection{Use stemming}
 After removing duplicates and stop words, our data is clean and contain tokens which uniquely identify corresponding tools. When we frame sentences, we follow grammar which constrains us to use different forms of the same word in varying contexts. For example, a word $regress$ can be used in multiple forms as $regresses$ or $regression$ or $regressed$. They share the same root and point towards the same concept. If many tools use this word in varying forms, it is beneficial to converge all the different forms of a word to one basic form. This is called stemming \footnote{\url{https://nlp.stanford.edu/IR-book/html/htmledition/stemming-and-lemmatization-1.html}}. We use nltk \footnote{\url{http://www.nltk.org/}} package for stemming.
 
 \begin{figure}[h]
 \begin{centering}
     {\includegraphics[scale=0.4]{figures/Tokens_dist.pdf}}
-    \caption[Tokens distribution]{\textbf{Distribution of tokens}: the plot shows the distribution of tokens for all the attributes. The help text has the most number of tokens for all tools and input and output has the least number of tokens.}
+    \caption[Tokens distribution]{\textbf{Distribution of tokens (words)}: The plot shows a distribution of tokens for input and output file types, name and description and help text attributes of tools. The help text attribute contains more number of tokens compared to the other two. The input and output file types attribute contains lower number of tokens compared to the other two attributes. }
 \end{centering}
 \end{figure}
 
-\subsubsection{Refine tokens}
-    At this stage of tools preprocessing, we have a set of good tokens for each attribute whic are input and output file types, name and description and help text. Let's call these sets as $documents$. The tokens present in these documents do not carry equal importance. Some tokens are more relevant to the document and some not so relevant . We need to find out importance factor for all tokens in a document. Using these factors, we can arrange them in big, sparse documents-tokens matrix. In this matrix, each row represents a document and each column belongs to one token. To compute these relevance scores, we use bestmatch25. Let's associate some variables to be used in explaining this algorithm.
+
+\subsubsection{Learn relevance for words}
+    We use a term "token" for each word. For example, a tool's name contains "regress, perform" as a set of tokens (words). After discarding duplicate tokens and stopwords and using root words, we have a set of good tokens for all the three attributes - input and output file types, name and description and help text. Let's call these sets as $documents$. The tokens present in these documents do not carry equal importance. Some tokens are more relevant to the document and some not so relevant . We need to find out importance factor for all tokens in a document. Using these factors, we can arrange them in big, sparse documents-tokens matrix. In this matrix, each row represents a document and each column belongs to one token. To compute these relevance scores, we use bestmatch25. Let's associate some variables to be used in explaining this algorithm.
+    
+\begin{figure}[h]
+\begin{centering}
+    {\includegraphics[scale=0.7]{figures/tool-document-tokens.pdf}}
+    \caption[Tool, document and tokens]{\textbf{Relationship between a tool, its documents and their tokens}: The image shows that a tool has three documents corresponding to each attribute and each document contains tokens. For all the tools, we have documents equal to the number of tools for each attribute. The number of tokens in each document varies. Minimum number of tokens for any document can be 0.}
+\end{centering}
+\end{figure}
+    
     \begin{itemize}
 	\item Token frequency \footnote{\url{https://nlp.stanford.edu/IR-book/pdf/06vect.pdf}} $tf$
 	\item Inverted document frequency $idf$
@@ -77,7 +88,7 @@ where $k$ and $b$ are hyperparameters. Using the equation $4$, we compute the re
         Hisat              & 0.0  & 0.0 & 0.0 & 0.0  & 0.0 \\ \hline
     \end{tabular}
     \end{center}
-    \caption[Documents-tokens matrix]{\textbf{Document-tokens matrix}: it stores relevance scores for each token for all the documents\\}
+    \caption[Documents-tokens matrix]{\textbf{Documents-tokens matrix}: This table shows a matrix of tools (documents) arranged along the rows and tokens along the columns. Each value in the matrix is a weight (relevance-factor) assigned to a token for a document. This matrix is sparse containing mostly zeros as the number of tokens is significantly large compared to the number of tokens present in a doucment. This table shows a sample of how actual documents-tokens matrix would look like. }
     \label{tab:accuracy}
 \end{table}
 
@@ -89,15 +100,16 @@ Figure 4 shows the heatmaps for documents-tokens matrices that belong to input a
 
 Using these approaches, we learn dense, $n$ dimensional vector for each document instead of using sparse vectors as shown in figure 5. 
 
+
 \begin{figure}[h]
 \begin{centering}
     {\includegraphics[scale=0.4]{figures/Document_tokens_full_rank.pdf}}
-    \caption[Documents-tokens matrices]{\textbf{Documents-tokens matrices}: the heatmap shows the documents-tokens sparse matrices for two attributes.}
+    \caption[Heatmap for documents-tokens matrices]{\textbf{Heatmap for documents-tokens matrices}: The plot shows a heatmap of documents-tokens matrices for name and description and help text attributes. We see that the matrices are sparse containing only few darker spots. The help text matrix is more sparse than name and description matrix as the former contains more number of tokens. We exclude the documents-tokens matrix of input and output file types because we use it as such. For the other two matrices, we would estimate their dense, lower-rank approximations.}
 \end{centering}
 \end{figure}
 
     
-\section{Document embeddings}
+\section{Learn dense vector for a document}
 \subsection{Latent semantic indexing}
     It is statistical way to learn the hidden concepts in documents by computing a low-rank representation of a documents-tokens matrix. This low-rank matrix is dense (figure 6). We use singular value decomposition ($SVD$) to decompose the full-rank matrix into a significantly lower rank matrix. The optimal rank to which a matrix to be decomposed is empirical in nature. The rank chosen still contains most of the singular values. This decomposition follows the equation:
     
@@ -116,16 +128,16 @@ Using these approaches, we learn dense, $n$ dimensional vector for each document
     
 \begin{figure}[h]
 \begin{centering}
-    {\includegraphics[scale=0.8]{figures/usv.pdf}}
-    \caption[Pictorial representation of SVD]{\textbf{Pictorial representation of SVD}: the figure shows how singular value decomposition is done.}
+    {\includegraphics[scale=0.7]{figures/usv.pdf}}
+    \caption[Pictorial representation of SVD]{\textbf{Singular value decomposition}: The image shows that how a matrix is decomposed using singular value decomposition. A matrix $X$ is decomposed into three factor matrices, $U$, $S$ and $V$. The $k$ most important dimensions are kept and the rest are discarded. The value of $k$ is empirical and can be estimated using optimization taking frobenius norm as an error function.}
 \end{centering}
 \end{figure}
-    
-    Figure 6 explains \footnote{\url{http://theory.stanford.edu/~tim/s15/l/l9.pdf}} 
-    how $SVD$ of a matrix is carried out. The matrix $U$ contains information about how the tokens, arraged along the columns, are mapped to concepts and matrix $V$ stores information about how the concepts are mapped to documents arranged along the rows. 
-    
-    \subsubsection{Low-rank approximation}
-    The low-rank approximation of a matrix is important to discard the features which are non-repeating or noise. Using this, we can collect the latent relations present in the documents-tokens matrices. We saw that our documents-tokens matrices suffer from sparseness and exhibit no relation among tokens. The approximation deals with these issues as well. The resulting matrices are dense and contain most of the singular values. The singular values which are small (the last entries of the $s$ matrix along the diagonal) are discarded \cite{DBLP:journals/corr/Yang15b}. The low-rank approximated matrix $X_k$ is computed as:
+
+Figure 6 explains \footnote{\url{http://theory.stanford.edu/~tim/s15/l/l9.pdf}} how $SVD$ of a matrix is carried out. The matrix $U$ contains information about how the tokens, arraged along the columns, are mapped to concepts and matrix $V$ stores information about how the concepts are mapped to documents arranged along the rows. 
+
+
+\subsubsection{Low-rank approximation}
+The low-rank approximation of a matrix is important to discard the features which are non-repeating or noise. Using this, we can collect the latent relations present in the documents-tokens matrices. We saw that our documents-tokens matrices suffer from sparseness and exhibit no relation among tokens. The approximation deals with these issues as well. The resulting matrices are dense and contain most of the singular values. The singular values which are small (the last entries of the $s$ matrix along the diagonal) are discarded \cite{DBLP:journals/corr/Yang15b}. The low-rank approximated matrix $X_k$ is computed as:
     \begin{equation}
     X_{n \times m} = U_{k} \cdot S_{k} \cdot V_{k}^T
     \end{equation}
@@ -133,15 +145,15 @@ Using these approaches, we learn dense, $n$ dimensional vector for each document
 
 \begin{figure}[h]
 \begin{centering}
-    {\includegraphics[scale=0.45]{figures/singular_values.pdf}}
-    \caption[Rank singular values]{\textbf{Matrix rank and singular values}: the plot shows how the sum of singular values vary with the rank of the documents-tokens matrix for all the attributes.}
+    {\includegraphics[scale=0.35]{figures/Singular_values.pdf}}
+    \caption[Singular values]{\textbf{Singular values of the documents-tokens matrices}: The plot shows singular values computed using singular value decomposition (equation 5). The diagonal matrix $S$ contains these singular values sorted in descending order. We can see that in (a), (b) and (c) that very few singular values have higher mangnitude and most of the singular values are smaller. }
 \end{centering}
 \end{figure}
 
 
 \begin{figure}[h]
 \begin{centering}
-    {\includegraphics[scale=0.45]{figures/Rank_eigen_values.pdf}}
+    {\includegraphics[scale=0.4]{figures/Rank_eigen_values.pdf}}
     \caption[Rank singular values]{\textbf{Matrix rank and singular values}: the plot shows how the sum of singular values vary with the rank of the documents-tokens matrix for all the attributes.}
 \end{centering}
 \end{figure}
@@ -155,8 +167,10 @@ We reduce the rank of the original documents-tokens matrices and compute the den
 \end{centering}
 \end{figure}
 
+
 \subsection{Paragraph vectors}
 Using latent semantic indexing (LSI), we learnt dense vectors to represent each document. It learns better vector representations for documents compared to using full-rank documents-tokens matrices. One main limitation is to assess the quantity by which we need to lower the rank of a matrix in order to find the optimal results. There are ways to find the optimal reduced rank optimizing the frobenius norm but it is not simple. We would see in the analysis section that similar tools are more dominated by the scores shared by the input and output file types due to which the tools which similar in their functions do not come up. In order to avoid these limitations, we use an approach known as $doc2vec$ (document to vector). It learns a dense, fixed-size vectors for each document using neural networks. These vectors are unique in a way that captures the semantics present in the documents. The documents which share similar context are represented by similar vectors. When we compute cosine distance between these vectors sharing similar context, we get a higher number (close to 1.0). It allows the documents to have variable lengths.
+
 
 \subsubsection{Approach}
 Paragraph vectors approach learns vector representations for all the words present in a set of documents. The words which are used in a similar context have similar vectors. For example, words like "data" and "dataset" which are used, in general, in similar context have are represented by close vectors. The vector representations of words in a corpus is learnt by finding the maximum of the following equation:
@@ -190,8 +204,10 @@ where $T$ is the total number of words in a corpus, $k$ is the window size. We t
 The figures 9 and 10 are inspired from the original work - Distributed Representations of Sentences and Documents \footnote{\label{pv}\url{https://arxiv.org/abs/1405.4053}}.
 The second form of learning paragraph vectors is simple and we use it to learn documents (paragraphs) vectors for name and description and help text attributes. We learn only the paragraph vectors which makes it less computationally expensive \cite{DBLP:journals/corr/LeM14}.
 
+
 \section{Similarity measures}
 We have vectors representing the documents for all the three attributes we consider to compute similar tools. To find the similarity in a pair of vectors, we need to apply a similarity measure to get a similarity score. This score quantifies how much similar a pair of documents are which means how close or distant these documents are.
+
 
 \subsection{Cosine similarity}
 It gives the cosine angle value between a pair of documents vectors. Let's say we have two vectors, $x$ and $y$. We can write:
@@ -204,6 +220,7 @@ x \cdot y = |x| \cdot |y| \cdot \cos{\theta}
 \end{equation}
 
 where $|.|$ is the norm of the vector $x$. If the norm is $0$, we use $0$ for the value of $\cos{\theta}$. The values emitted by this similarity follows a natural progression that if the documents are dissimilar, then it is $0$ and if completely similar, it is $1.0$. Otherwise it lies between $0.0$ and $1.0$. This score can also be understood as a kind of probability of similarity between a pair of documents \footnote{\url{https://nlp.stanford.edu/IR-book/html/htmledition/dot-products-1.html}}. 
+
 
 \subsection{Jaccard index}
 Jaccard index is a measure of similarity between two sets of entities given by the equation:
@@ -220,6 +237,7 @@ j = \frac{Length[(tabular, input, pdf) \cap (tabular, txt)]}{Length[(tabular, in
 \begin{equation}
 j = \frac{1}{4} = 0.25
 \end{equation}
+
 
 \section{Optimization}
 Using the paragraph vectors and applying cosine similarity, we get similarity or correlation matrices one each for input and output file types, name and description and help text attributes. The matrices have same dimensions ($n \times n$, $n$ is the number of tools). To combine these matrices, one simple idea would be to take an average of the corresponding rows of scores from the matrices for a document. This would generate a matrix of the same dimension where each row would correspond to one document. This row would contain similarity scores of a document against all other documents. The diagonal entries of this matrix would be 1.0. All other entries would be a positive real number between $0.0$ and $1.0$. Another way to find the combination is to learn the weights on the rows from three matrices and them combine them to obtain optimal similarity scores for a tool. The weight would be a positive real number between $0.0$ and $1.0$. Instead of using a fixed importance factor (weights) of $1 / 3$ ($3$ is the number of matrices), we use optimization to find these real numbers and then combine the matrices by multiplying with these weights.
@@ -274,10 +292,11 @@ Gradient^k(w) = \frac{\partial Error^k}{\partial w} = 2 \cdot \sum_{t=1}^{N-1} (
 Using the gradient vector, we update the weights. For this we need to set the learning rate.
 
 \begin{equation}
-w^k = w^k - \eta \cdot {Gradient^k}
+w^k = w^k - \eta \cdot {Gradient(w^k)}
 \end{equation}
 
 To find the right learning rate is important as a high value can diverge the gradient learning and a low value can slow down the learning. For each iteration of gradient descent, we employ time-based decay of learning rate.
+
 
 \subsubsection{Learning rate decay}
 To find an optimal learning rate forms an important part of gradient descent optimization. If the learning rate is high, it poses a risk of optimizer divergence. On the other hand, if is small, the optimizer can take a very long time to converge. Both these situations are underisable and we can avoid them by starting out with a small value and gradually decrease the learning rate over iterations. It is called as a time-based decay of the learning rate \cite{articleRuderS}.
@@ -295,10 +314,19 @@ where $lr^{t+1}$ and $lr^t$ are the learning rates for $t+1$ and $t$ iterations,
 \end{figure}
 
 
-\subsubsection{Gradient descent with momentum}
-% http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.57.5612&rep=rep1&type=pdf
-% http://ruder.io/optimizing-gradient-descent/index.html#momentum
-% https://distill.pub/2017/momentum/
+\subsubsection{Momentum}
+To reach the minimum point of our convex error function (equation 20), we need to go down continously without being blocked at the saddle points. These saddle points are where the derivative of a function is zero. Adding a momentum term to the weight parameter, we expect to avoid the local minima and should be able to converge to the lowest point quickly. It gives the necessary push to keep going down the convex error function \cite{articleRuderS, Sutskever}. We compute the weight parameter update for each iterations using:
+
+\begin{equation}
+update_{t+1} = \gamma \cdot update_{t} - \eta \cdot Gradient(w^t)
+\end{equation}
+
+\begin{equation}
+w_{t+1} = w_t + update_{t+1}
+\end{equation}
+
+where $update_{t+1}$ is the update for changing the weight parameter for the current iteration $t+1$. $update_{t-1}$ is previous iteration update. $\eta$ is the learning rate and $Gradient$ is with respect to the weight parameter $w_t$. 
+
 
 \subsubsection{Gradient verification}
 We compute gradient using equation 22 and use it to update our weight parameters. To verify that the computed gradient is correct, we can approximate this gradient using the error function we formulated in equation 20.
@@ -314,9 +342,3 @@ where $\epsilon$ is a very small number.
     \caption[Gradient verification]{\textbf{Gradient verification}: the plot show the difference between the actual and approximated gradients for all the attributes across all tools computed over 100 iterations. When this difference is close to 0, we become sure that the computed gradient using the formulated error function is correct.}
 \end{centering}
 \end{figure}
-
-
-
-
-%https://pdfs.semanticscholar.org/f1f5/384bb21fef3d6da687b13a60c1b57881ee1b.pdf
-%https://www.sciencedirect.com/science/article/pii/S0377042713000125

@@ -29,4 +29,9 @@ G.~I. Ivchenko and S.~A. Honov, ``On the jaccard similarity test,'' {\em
 \bibitem{articleRuderS}
 S.~Ruder, ``An overview of gradient descent optimization algorithms,'' 09 2016.
 
+\bibitem{Sutskever}
+I.~Sutskever, J.~Martens, G.~Dahl, and G.~Hinton, ``On the importance of
+  initialization and momentum in deep learning,'' pp.~III--1139--III--1147,
+  2013.
+
 \end{thebibliography}
