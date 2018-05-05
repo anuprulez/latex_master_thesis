@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.10.5)  5 MAY 2018 13:32
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.10.5)  5 MAY 2018 21:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -943,7 +943,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--3
  _ Complement _ 1 & version = 1 . 0 . 1 & _ _ identifer =
  []
 
-<figures/image_Galaxy_1.pdf, id=262, 393.47pt x 81.30376pt>
+<figures/image_Galaxy_1.pdf, id=272, 393.47pt x 81.30376pt>
 File: figures/image_Galaxy_1.pdf Graphic file (type pdf)
 
 <use figures/image_Galaxy_1.pdf>
@@ -962,7 +962,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--17
 
 pdfTeX warning: pdflatex (file ./figures/image_Galaxy_1.pdf): PDF inclusion: in
 valid other resource which is no dict (key 'ProcSets', type <array>); ignored.
->] <figures/Venn_common_tools_info.pdf, id=290, 551.05875pt x 348.30125pt>
+>] <figures/Venn_common_tools_info.pdf, id=300, 551.05875pt x 348.30125pt>
 File: figures/Venn_common_tools_info.pdf Graphic file (type pdf)
 
 <use figures/Venn_common_tools_info.pdf>
@@ -974,7 +974,7 @@ Package pdftex.def Info: figures/Venn_common_tools_info.pdf used on input line
 pdfTeX warning: pdflatex (file ./figures/Venn_common_tools_info.pdf): PDF inclu
 sion: invalid other resource which is no dict (key 'ProcSets', type <array>); i
 gnored.
->] <figures/tools_sim_know_graph.pdf, id=307, 664.4825pt x 262.9825pt>
+>] <figures/tools_sim_know_graph.pdf, id=317, 664.4825pt x 262.9825pt>
 File: figures/tools_sim_know_graph.pdf Graphic file (type pdf)
 
 <use figures/tools_sim_know_graph.pdf>
@@ -988,7 +988,7 @@ on: invalid other resource which is no dict (key 'ProcSets', type <array>); ign
 ored.
 >]) (./chapters/approach.tex [5]
 Chapter 2.
-<figures/tool_sim_flow.pdf, id=340, 218.8175pt x 335.2525pt>
+<figures/tool_sim_flow.pdf, id=350, 218.8175pt x 335.2525pt>
 File: figures/tool_sim_flow.pdf Graphic file (type pdf)
 
 <use figures/tool_sim_flow.pdf>
@@ -1014,7 +1014,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--29
 tmledition / stemming-[]and-[]lemmatization-[]1 .
  []
 
-<figures/Tokens_dist.pdf, id=381, 946.01428pt x 515.28508pt>
+<figures/Tokens_dist.pdf, id=391, 946.01428pt x 515.28508pt>
 File: figures/Tokens_dist.pdf Graphic file (type pdf)
 
 <use figures/Tokens_dist.pdf>
@@ -1024,7 +1024,7 @@ Package pdftex.def Info: figures/Tokens_dist.pdf used on input line 33.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/tool-document-tokens.pdf, id=382, 492.84125pt x 198.7425pt>
+<figures/tool-document-tokens.pdf, id=392, 492.84125pt x 198.7425pt>
 File: figures/tool-document-tokens.pdf Graphic file (type pdf)
 
 <use figures/tool-document-tokens.pdf>
@@ -1040,7 +1040,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 pdfTeX warning: pdflatex (file ./figures/tool-document-tokens.pdf): PDF inclusi
 on: invalid other resource which is no dict (key 'ProcSets', type <array>); ign
 ored.
->] <figures/Document_tokens_full_rank.pdf, id=442, 1167.16055pt x 716.9184pt>
+>] <figures/Document_tokens_full_rank.pdf, id=452, 1167.16055pt x 716.9184pt>
 File: figures/Document_tokens_full_rank.pdf Graphic file (type pdf)
 
 <use figures/Document_tokens_full_rank.pdf>
@@ -1053,7 +1053,7 @@ Overfull \hbox (68.51732pt too wide) in paragraph at lines 106--107
  []
 
 [11] [12 <./figures/Document_tokens_full_rank.pdf>]
-<figures/usv.pdf, id=465, 534.99875pt x 135.50626pt>
+<figures/usv.pdf, id=482, 534.99875pt x 135.50626pt>
 File: figures/usv.pdf Graphic file (type pdf)
  <use figures/usv.pdf>
 Package pdftex.def Info: figures/usv.pdf used on input line 131.
@@ -1063,7 +1063,7 @@ Package pdftex.def Info: figures/usv.pdf used on input line 131.
 
 pdfTeX warning: pdflatex (file ./figures/usv.pdf): PDF inclusion: invalid other
  resource which is no dict (key 'ProcSets', type <array>); ignored.
->] <figures/Singular_values.pdf, id=514, 1167.16055pt x 716.9184pt>
+>] <figures/Singular_values.pdf, id=530, 1167.16055pt x 716.9184pt>
 File: figures/Singular_values.pdf Graphic file (type pdf)
 
 <use figures/Singular_values.pdf>
@@ -1077,7 +1077,7 @@ Overfull \hbox (10.17368pt too wide) in paragraph at lines 148--149
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/Sum_singular_ranks.pdf, id=515, 946.01428pt x 515.28508pt>
+<figures/Sum_singular_ranks.pdf, id=531, 946.01428pt x 515.28508pt>
 File: figures/Sum_singular_ranks.pdf Graphic file (type pdf)
 
 <use figures/Sum_singular_ranks.pdf>
@@ -1089,7 +1089,7 @@ Package pdftex.def Info: figures/Sum_singular_ranks.pdf used on input line 155.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<figures/Fraction_ranks_singular_values.pdf, id=516, 946.01428pt x 515.28508pt>
+<figures/Fraction_ranks_singular_values.pdf, id=532, 946.01428pt x 515.28508pt>
 File: figures/Fraction_ranks_singular_values.pdf Graphic file (type pdf)
 <use figures/Fraction_ranks_singular_values.pdf>
 Package pdftex.def Info: figures/Fraction_ranks_singular_values.pdf used on inp
@@ -1099,7 +1099,7 @@ ut line 162.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/Document_tokens_low_rank.pdf, id=517, 1340.60847pt x 738.59943pt>
+<figures/Document_tokens_low_rank.pdf, id=533, 1340.60847pt x 738.59943pt>
 File: figures/Document_tokens_low_rank.pdf Graphic file (type pdf)
 
 <use figures/Document_tokens_low_rank.pdf>
@@ -1115,7 +1115,7 @@ Overfull \hbox (44.06352pt too wide) in paragraph at lines 171--172
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [14] [15 <./figures/Singular_values.pdf>] [16 <./figures/Sum_singular_ranks.pdf
->] <figures/dm_pv.pdf, id=554, 505.89pt x 185.69376pt>
+>] <figures/dm_pv.pdf, id=570, 505.89pt x 185.69376pt>
 File: figures/dm_pv.pdf Graphic file (type pdf)
  <use figures/dm_pv.pdf>
 Package pdftex.def Info: figures/dm_pv.pdf used on input line 194.
@@ -1124,7 +1124,7 @@ Package pdftex.def Info: figures/dm_pv.pdf used on input line 194.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/dbow_pv.pdf, id=555, 440.64626pt x 133.49875pt>
+<figures/dbow_pv.pdf, id=571, 440.64626pt x 133.49875pt>
 File: figures/dbow_pv.pdf Graphic file (type pdf)
 
 <use figures/dbow_pv.pdf>
@@ -1143,7 +1143,7 @@ er resource which is no dict (key 'ProcSets', type <array>); ignored.
 
 pdfTeX warning: pdflatex (file ./figures/dbow_pv.pdf): PDF inclusion: invalid o
 ther resource which is no dict (key 'ProcSets', type <array>); ignored.
->] [21] <figures/Learning_rates.pdf, id=660, 1167.16055pt x 716.9184pt>
+>] [21] <figures/Learning_rates.pdf, id=676, 1167.16055pt x 716.9184pt>
 File: figures/Learning_rates.pdf Graphic file (type pdf)
 
 <use figures/Learning_rates.pdf>
@@ -1154,7 +1154,7 @@ Package pdftex.def Info: figures/Learning_rates.pdf used on input line 316.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [22] [23 <./figures/Learning_rates.pdf>]
-<figures/Difference_gradients.pdf, id=690, 1167.16055pt x 716.9184pt>
+<figures/Difference_gradients.pdf, id=706, 1167.16055pt x 716.9184pt>
 File: figures/Difference_gradients.pdf Graphic file (type pdf)
 
 <use figures/Difference_gradients.pdf>
@@ -1182,7 +1182,7 @@ LaTeX Warning: Command \' invalid in math mode on input line 15.
 Missing character: There is no ± in font cmr10!
 ) (./chapters/results_analysis.tex [26] [27]
 Chapter 4.
-<figures/Similarity_matrices_100.pdf, id=723, 1167.16055pt x 716.9184pt>
+<figures/Similarity_matrices_100.pdf, id=739, 1167.16055pt x 716.9184pt>
 File: figures/Similarity_matrices_100.pdf Graphic file (type pdf)
 
 <use figures/Similarity_matrices_100.pdf>
@@ -1197,7 +1197,7 @@ Overfull \hbox (10.17368pt too wide) in paragraph at lines 11--12
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/Weights_100.pdf, id=724, 1167.16055pt x 716.9184pt>
+<figures/Weights_100.pdf, id=740, 1167.16055pt x 716.9184pt>
 File: figures/Weights_100.pdf Graphic file (type pdf)
 
 <use figures/Weights_100.pdf>
@@ -1211,7 +1211,7 @@ Overfull \hbox (10.17368pt too wide) in paragraph at lines 18--19
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/Similarity_matrices_070.pdf, id=725, 1167.16055pt x 716.9184pt>
+<figures/Similarity_matrices_070.pdf, id=741, 1167.16055pt x 716.9184pt>
 File: figures/Similarity_matrices_070.pdf Graphic file (type pdf)
 
 <use figures/Similarity_matrices_070.pdf>
@@ -1226,7 +1226,7 @@ Overfull \hbox (10.17368pt too wide) in paragraph at lines 28--29
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/Weights_070.pdf, id=726, 1167.16055pt x 716.9184pt>
+<figures/Weights_070.pdf, id=742, 1167.16055pt x 716.9184pt>
 File: figures/Weights_070.pdf Graphic file (type pdf)
 
 <use figures/Weights_070.pdf>
@@ -1243,7 +1243,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [28
 
 
-] <figures/Similarity_matrices_030.pdf, id=732, 1167.16055pt x 716.9184pt>
+] <figures/Similarity_matrices_030.pdf, id=749, 1167.16055pt x 716.9184pt>
 File: figures/Similarity_matrices_030.pdf Graphic file (type pdf)
 
 <use figures/Similarity_matrices_030.pdf>
@@ -1258,7 +1258,7 @@ Overfull \hbox (10.17368pt too wide) in paragraph at lines 45--46
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/Weights_030.pdf, id=733, 1167.16055pt x 716.9184pt>
+<figures/Weights_030.pdf, id=750, 1167.16055pt x 716.9184pt>
 File: figures/Weights_030.pdf Graphic file (type pdf)
 
 <use figures/Weights_030.pdf>
@@ -1273,7 +1273,7 @@ Overfull \hbox (10.17368pt too wide) in paragraph at lines 52--53
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [29 <./figures/Similarity_matrices_100.pdf>]
-<figures/Similarity_matrices_005.pdf, id=758, 1167.16055pt x 716.9184pt>
+<figures/Similarity_matrices_005.pdf, id=774, 1167.16055pt x 716.9184pt>
 File: figures/Similarity_matrices_005.pdf Graphic file (type pdf)
 
 <use figures/Similarity_matrices_005.pdf>
@@ -1288,7 +1288,7 @@ Overfull \hbox (10.17368pt too wide) in paragraph at lines 62--63
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/Weights_005.pdf, id=759, 1167.16055pt x 716.9184pt>
+<figures/Weights_005.pdf, id=775, 1167.16055pt x 716.9184pt>
 File: figures/Weights_005.pdf Graphic file (type pdf)
 
 <use figures/Weights_005.pdf>
@@ -1303,7 +1303,7 @@ Overfull \hbox (10.17368pt too wide) in paragraph at lines 69--70
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [30 <./figures/Weights_100.pdf>]
-<figures/MSE_iterations_low_rank.pdf, id=773, 1167.16055pt x 716.9184pt>
+<figures/MSE_iterations_low_rank.pdf, id=789, 1167.16055pt x 716.9184pt>
 File: figures/MSE_iterations_low_rank.pdf Graphic file (type pdf)
 
 <use figures/MSE_iterations_low_rank.pdf>
@@ -1319,7 +1319,7 @@ Overfull \hbox (10.17368pt too wide) in paragraph at lines 86--87
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/Documents-tokens_doc2vec.pdf, id=798, 1167.16055pt x 716.9184pt>
+<figures/Documents-tokens_doc2vec.pdf, id=814, 1167.16055pt x 716.9184pt>
 File: figures/Documents-tokens_doc2vec.pdf Graphic file (type pdf)
 
 <use figures/Documents-tokens_doc2vec.pdf>
@@ -1334,7 +1334,7 @@ Overfull \hbox (10.17368pt too wide) in paragraph at lines 95--96
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/Similarity_matrices_doc2vec.pdf, id=799, 1167.16055pt x 716.9184pt>
+<figures/Similarity_matrices_doc2vec.pdf, id=815, 1167.16055pt x 716.9184pt>
 File: figures/Similarity_matrices_doc2vec.pdf Graphic file (type pdf)
 
 <use figures/Similarity_matrices_doc2vec.pdf>
@@ -1349,7 +1349,7 @@ Overfull \hbox (10.17368pt too wide) in paragraph at lines 102--103
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/Weights_doc2vec.pdf, id=800, 1167.16055pt x 716.9184pt>
+<figures/Weights_doc2vec.pdf, id=816, 1167.16055pt x 716.9184pt>
 File: figures/Weights_doc2vec.pdf Graphic file (type pdf)
 
 <use figures/Weights_doc2vec.pdf>
@@ -1363,42 +1363,58 @@ Overfull \hbox (10.17368pt too wide) in paragraph at lines 109--110
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+
+<figures/weighted_optimal_uniform_scores.pdf, id=817, 946.01428pt x 515.28508pt
+>
+File: figures/weighted_optimal_uniform_scores.pdf Graphic file (type pdf)
+ <use figures/weighted_optimal_uniform_scores.pdf>
+Package pdftex.def Info: figures/weighted_optimal_uniform_scores.pdf used on in
+put line 117.
+(pdftex.def)             Requested size: 425.7025pt x 231.87614pt.
+
+Overfull \hbox (27.36386pt too wide) in paragraph at lines 117--118
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 ) (./chapters/conclusion.tex [32 <./figures/Weights_070.pdf>] [33 <./figures/Si
 milarity_matrices_030.pdf>] [34 <./figures/Weights_030.pdf>] [35 <./figures/Sim
 ilarity_matrices_005.pdf>] [36 <./figures/Weights_005.pdf>] [37 <./figures/MSE_
 iterations_low_rank.pdf>] [38 <./figures/Documents-tokens_doc2vec.pdf>]
 [39 <./figures/Similarity_matrices_doc2vec.pdf>] [40 <./figures/Weights_doc2vec
-.pdf>]
+.pdf>] [41 <./figures/weighted_optimal_uniform_scores.pdf>]
 Chapter 5.
-) (./chapters/futurework.tex [41
+[42
 
 
-]
+]) (./chapters/futurework.tex [43]
 Chapter 6.
-) [42
+) [44
 
 
-] (./chapters/part2.tex) (./master_thesis.bbl [43]) [44
+] (./chapters/part2.tex) (./master_thesis.bbl [45]) [46
 
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 51.
- [45]
+ [47]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 51.
 
 (./master_thesis.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 51.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 51.
 Package rerunfilecheck Info: File `master_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 90CA83A1D7AFB36AB6C4814272C51846;6811.
+(rerunfilecheck)             Checksum: A4298E5F2C21F42D53C43F38925399F1;7091.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 51.
  ) 
 Here is how much of TeX's memory you used:
- 24053 strings out of 493304
- 407095 string characters out of 6139871
- 533827 words of memory out of 5000000
- 26724 multiletter control sequences out of 15000+600000
- 30045 words of font info for 134 fonts, out of 8000000 for 9000
+ 24082 strings out of 493304
+ 407593 string characters out of 6139871
+ 533927 words of memory out of 5000000
+ 26733 multiletter control sequences out of 15000+600000
+ 30440 words of font info for 139 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  68i,9n,71p,1719b,637s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
@@ -1413,21 +1429,22 @@ cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
 7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts
-/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/type1/public/cm-sup
-er/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></us
-r/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/
-type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-supe
-r/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr
-/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/t
-ype1/public/cm-super/sfsx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super
-/sfsx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1440.pfb></usr/
-share/texmf/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf/fonts/ty
-pe1/public/cm-super/sftt0900.pfb>
-Output written on master_thesis.pdf (54 pages, 4919073 bytes).
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf/fonts/type1/
+public/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx
+1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share
+/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/p
+ublic/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0
+900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/
+texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/pu
+blic/cm-super/sfsx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx12
+00.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/t
+exmf/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf/fonts/type1/pub
+lic/cm-super/sftt0900.pfb>
+Output written on master_thesis.pdf (56 pages, 4965280 bytes).
 PDF statistics:
- 1108 PDF objects out of 1200 (max. 8388607)
- 884 compressed objects within 9 object streams
- 181 named destinations out of 1000 (max. 500000)
- 22489 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 1151 PDF objects out of 1200 (max. 8388607)
+ 922 compressed objects within 10 object streams
+ 190 named destinations out of 1000 (max. 500000)
+ 22510 words of extra memory for PDF output out of 24883 (max. 10000000)
 

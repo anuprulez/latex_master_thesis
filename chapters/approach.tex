@@ -111,7 +111,7 @@ Using these approaches, we learn dense, $n$ dimensional vector for each document
     
 \section{Learn dense vector for a document}
 \subsection{Latent semantic indexing}
-    It is statistical way to learn the hidden concepts in documents by computing a low-rank representation of a documents-tokens matrix. This low-rank matrix is dense (figure 6). We use singular value decomposition ($SVD$) to decompose the full-rank matrix into a significantly lower rank matrix. The optimal rank to which a matrix to be decomposed is empirical in nature. The rank chosen still contains most of the singular values. This decomposition follows the equation:
+    It is a mathematical way to learn the hidden (latent) concepts in documents by computing a low-rank representation of a documents-tokens matrix \cite{Foltz1996, Shapiro2000, Landauer1998}. This low-rank matrix is dense (figure 6). We use singular value decomposition ($SVD$) to decompose the full-rank matrix into a significantly lower rank matrix. The optimal rank to which a matrix to be decomposed is empirical in nature. We would choose ranks from higher to lower value and consequently the sum of singular values would also decrease with the rank. This decomposition follows the equation:
     
     \begin{equation}
     X_{n \times m} = U_{n \times n} \cdot S_{n \times m} \cdot V_{m \times m}^T

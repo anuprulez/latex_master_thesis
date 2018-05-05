@@ -1,7 +1,12 @@
 \chapter{Conclusion}
+\section{Tools data}
+The text for help text attribute was noisy containing lots of words which were generic and provided little information to categorize tools. However it was necessary as it supplied more information and due to this, it needed more filtering. The data for other attributes, input and output file types and name and description was helpful. The extraction of tools data from GitHub's multiple repositories was slow \footnote{The extraction of $\approx$ 1050 tools  took $\approx$ 30 minutes} and due to which we read information from the xml tools files into our local tabular file and executed analysis using that tabular file.
 
-\section{Data}
-Noisy, no true value, some good, some bad results.
+\section{Approaches}
+We investigated two approaches to find similarity in Galaxy tools. The latent semantic analysis approach which relied on matrix rank reduction in order to remove unimportant concepts or dimensions worked better than using full-rank documents-token matrices. However, we were not sure about the quantity of reduction of noise dimensions and because of this we ran the risk of losing important dimensions while reducing the noise. During optimization, it gave more importance to input and output file types which were many times undesirable because we saw that 
+But, in genral, this approach is simple and take less time to execute. We can easily compute the low-rank estimations of sparse matrices using singular value decomposition. 
 
+The paragraph vectors approach worked better than the previous one in terms of finding relevant and similar tools. The documents-tokens matrices it learned for name and description and help text were dense and encoded the semantic similarities among the documents. The documents which were similar in context leaned similar vectors as proved by the dense similarity matrices for name and description and help text. However, this approach is slow. We trained to learn vectors for each document for $10$ epochs and each epoch had $800$ iterations. Running for $200$ iterations over $10$ epochs did not fetch relevant results. Moreover, to specify the number of dimensions of paragraph vectors was an important concern. From figure 5, we saw that the average of tokens for name and description was 2-3 times higher than that of help text. So, the number of dimensions for name and description should be set to a smaller number as higher dimensions for smaller dataset would overfit.
 
-
+\section{Optimization}
+Learning the weights on the similarity scores from multiple attributes worked in a good way and we reached the saturation already $\approx 50^{th}$ iteration. We used standard gradient descent optimizer with mean squared error as loss function as we expected to be as close to the true distribution (based on similarity measures) as possible. We decreased the risk of getting stuck at saddle points or local minima by using momentum with accelerated gradient to update the weight parameters.

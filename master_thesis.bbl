@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{LiptonKEW15}
 Z.~C. Lipton, D.~C. Kale, C.~Elkan, and R.~C. Wetzel, ``Learning to diagnose
@@ -13,6 +13,21 @@ H.~Sak, A.~W. Senior, and F.~Beaufays, ``Long short-term memory based recurrent
 \bibitem{Robertson:2009:PRF:1704809.1704810}
 S.~Robertson and H.~Zaragoza, ``The probabilistic relevance framework: Bm25 and
   beyond,'' {\em Found. Trends Inf. Retr.}, vol.~3, pp.~333--389, Apr. 2009.
+
+\bibitem{Foltz1996}
+P.~W. Foltz, ``Latent semantic analysis for text-based research,'' {\em
+  Behavior Research Methods, Instruments, {\&} Computers}, vol.~28,
+  pp.~197--202, Jun 1996.
+
+\bibitem{Shapiro2000}
+A.~M. Shapiro and D.~S. McNamara, ``The use of latent semantic analysis as a
+  tool for the quantitative assessment of understanding and knowledge,'' {\em
+  Journal of Educational Computing Research}, vol.~22, no.~1, pp.~1--36, 2000.
+
+\bibitem{Landauer1998}
+T.~K. Landauer, ``Learning and representing verbal meaning: The latent semantic
+  analysis theory,'' {\em Current Directions in Psychological Science}, vol.~7,
+  no.~5, pp.~161--164, 1998.
 
 \bibitem{DBLP:journals/corr/Yang15b}
 J.~Yang, ``Notes on low-rank matrix factorization,'' {\em CoRR},
