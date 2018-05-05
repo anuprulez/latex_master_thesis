@@ -13,36 +13,36 @@
 \contentsline {subsection}{\numberline {2.2.1}Latent semantic indexing}{12}{subsection.2.2.1}
 \contentsline {subsubsection}{\nonumberline Low-rank approximation}{13}{section*.18}
 \contentsline {subsection}{\numberline {2.2.2}Paragraph vectors}{15}{subsection.2.2.2}
-\contentsline {subsubsection}{\nonumberline Approach}{16}{section*.22}
+\contentsline {subsubsection}{\nonumberline Approach}{16}{section*.23}
 \contentsline {section}{\numberline {2.3}Similarity measures}{18}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Cosine similarity}{18}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Jaccard index}{19}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}Optimization}{19}{section.2.4}
-\contentsline {subsubsection}{\nonumberline Gradient descent}{20}{section*.25}
-\contentsline {subsubsection}{\nonumberline Learning rate decay}{21}{section*.26}
-\contentsline {subsubsection}{\nonumberline Momentum}{22}{section*.28}
-\contentsline {subsubsection}{\nonumberline Gradient verification}{23}{section*.29}
-\contentsline {chapter}{\numberline {3}Experiments}{24}{chapter.3}
-\contentsline {section}{\numberline {3.1}Amount of help text}{24}{section.3.1}
-\contentsline {section}{\numberline {3.2}One and two sources instead of three}{24}{section.3.2}
-\contentsline {section}{\numberline {3.3}Similarity measures}{24}{section.3.3}
-\contentsline {section}{\numberline {3.4}Latent Semantic Analysis}{24}{section.3.4}
-\contentsline {section}{\numberline {3.5}Paragraph Vector}{25}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Distributed bag-of-words}{25}{subsection.3.5.1}
-\contentsline {section}{\numberline {3.6}Gradient Descent}{25}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Learning rates}{26}{subsection.3.6.1}
-\contentsline {chapter}{\numberline {4}Results and Analysis}{27}{chapter.4}
-\contentsline {section}{\numberline {4.1}Latent Semantic Analysis}{27}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Full-rank matrices}{27}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}70\% of full-rank}{27}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}30\% of full-rank}{27}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}5\% of full-rank}{27}{subsection.4.1.4}
-\contentsline {subsection}{\numberline {4.1.5}Reduction in error}{28}{subsection.4.1.5}
-\contentsline {section}{\numberline {4.2}Paragraph vectors}{28}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Learning rate}{28}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Visualizer}{28}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}LSI}{28}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Paragraph vectors}{28}{subsection.4.2.4}
+\contentsline {section}{\numberline {2.4}Optimization}{20}{section.2.4}
+\contentsline {subsubsection}{\nonumberline Gradient descent}{21}{section*.26}
+\contentsline {subsubsection}{\nonumberline Learning rate decay}{22}{section*.27}
+\contentsline {subsubsection}{\nonumberline Momentum}{22}{section*.29}
+\contentsline {subsubsection}{\nonumberline Gradient verification}{24}{section*.30}
+\contentsline {chapter}{\numberline {3}Experiments}{25}{chapter.3}
+\contentsline {section}{\numberline {3.1}Amount of help text}{25}{section.3.1}
+\contentsline {section}{\numberline {3.2}One and two sources instead of three}{25}{section.3.2}
+\contentsline {section}{\numberline {3.3}Similarity measures}{25}{section.3.3}
+\contentsline {section}{\numberline {3.4}Latent Semantic Analysis}{25}{section.3.4}
+\contentsline {section}{\numberline {3.5}Paragraph Vector}{26}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Distributed bag-of-words}{26}{subsection.3.5.1}
+\contentsline {section}{\numberline {3.6}Gradient Descent}{26}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Learning rates}{27}{subsection.3.6.1}
+\contentsline {chapter}{\numberline {4}Results and Analysis}{28}{chapter.4}
+\contentsline {section}{\numberline {4.1}Latent Semantic Analysis}{28}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Full-rank matrices}{28}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}70\% of full-rank}{28}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}30\% of full-rank}{28}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}5\% of full-rank}{28}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}Reduction in error}{29}{subsection.4.1.5}
+\contentsline {section}{\numberline {4.2}Paragraph vectors}{30}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Learning rate}{30}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Visualizer}{30}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}LSI}{30}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Paragraph vectors}{30}{subsection.4.2.4}
 \contentsline {chapter}{\numberline {5}Conclusion}{41}{chapter.5}
 \contentsline {section}{\numberline {5.1}Data}{41}{section.5.1}
 \contentsline {chapter}{\numberline {6}Future Work}{42}{chapter.6}

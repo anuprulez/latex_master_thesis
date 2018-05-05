@@ -150,11 +150,17 @@ The low-rank approximation of a matrix is important to discard the features whic
 \end{centering}
 \end{figure}
 
+\begin{figure}[h]
+\begin{centering}
+    {\includegraphics[scale=0.4]{figures/Sum_singular_ranks.pdf}}
+    \caption[Singular values with ranks]{\textbf{Sum of singular values with matrix rank}: The plot shows an easier way to see how the sum of singular values varies with a documents-tokens matrix rank for the three attributes. Here the (a), (b) and (c) show separately this variation as the ranks of these matrices and sum of singular values differ.}
+\end{centering}
+\end{figure}
 
 \begin{figure}[h]
 \begin{centering}
-    {\includegraphics[scale=0.4]{figures/Rank_eigen_values.pdf}}
-    \caption[Rank singular values]{\textbf{Matrix rank and singular values}: the plot shows how the sum of singular values vary with the rank of the documents-tokens matrix for all the attributes.}
+    {\includegraphics[scale=0.4]{figures/Fraction_ranks_singular_values.pdf}}
+    \caption[Rank singular values]{\textbf{Matrix rank and singular values}: This plot merges the results of the figure 10 into one plot. As the ranks of document-term matrices and sum of singular values vary, we convert them to respective percentages. $rank_{fraction} = \frac{k}{N}$ where $k$ is the reduced rank and $N$ is the full-rank of a matrix For example $0.2$ on the rank axis (x-axis) means $20\%$ of the original rank of a matrix. Similarly, y-axis shows the fraction of the sum of all singular values $ sum_{fraction} = \frac{\sum_{i=1}^k}{\sum_{i=1}^K}$ where $K$ is the number of all singular values.}
 \end{centering}
 \end{figure}
 
@@ -163,10 +169,9 @@ We reduce the rank of the original documents-tokens matrices and compute the den
 \begin{figure}[h]
 \begin{centering}
     {\includegraphics[scale=0.33]{figures/Document_tokens_low_rank.pdf}}
-    \caption[Documents-tokens matrices]{\textbf{Documents-tokens matrices}: the heatmap shows the documents-tokens low rank representation of the matrices.}
+    \caption[Documents-tokens matrices]{\textbf{Documents-tokens matrices}: The heatmap shows the low-rank ($5\%$ of full-rank) representations of documents-tokens matrices for name and description and help text. These matrices are more dense compared to figure 7 which shows these matrices corresponding to the full-rank representations.}
 \end{centering}
 \end{figure}
-
 
 \subsection{Paragraph vectors}
 Using latent semantic indexing (LSI), we learnt dense vectors to represent each document. It learns better vector representations for documents compared to using full-rank documents-tokens matrices. One main limitation is to assess the quantity by which we need to lower the rank of a matrix in order to find the optimal results. There are ways to find the optimal reduced rank optimizing the frobenius norm but it is not simple. We would see in the analysis section that similar tools are more dominated by the scores shared by the input and output file types due to which the tools which similar in their functions do not come up. In order to avoid these limitations, we use an approach known as $doc2vec$ (document to vector). It learns a dense, fixed-size vectors for each document using neural networks. These vectors are unique in a way that captures the semantics present in the documents. The documents which share similar context are represented by similar vectors. When we compute cosine distance between these vectors sharing similar context, we get a higher number (close to 1.0). It allows the documents to have variable lengths.
@@ -187,7 +192,7 @@ where $T$ is the total number of words in a corpus, $k$ is the window size. We t
 \begin{figure}[h]
 \begin{centering}
     {\includegraphics[scale=0.7]{figures/dm_pv.pdf}}
-    \caption[Distributed model]{\textbf{Paragraph vectors distributed models}: it shows the mechanism how the paragraph and words vectors contributed to predict next words in a context.}
+    \caption[Distributed model]{\textbf{Distributed memory model for paragraph vectors}: This image shows the mechanism for learning a vector for a paragraph. $W$ is a word matrix where each word is represented by a vector. $D$ is a paragraph matrix where each paragraph (document) is represented by a vector. The word vectors are shared across all paragraphs (documents) but not the paragraph vectors. The three words "Art", "Illumina" and "Simulate" represent a context. The average or concatenated words and paragraph vectors are used to predict the "Sequence" word.}
 \end{centering}
 \end{figure}
 
@@ -197,7 +202,7 @@ where $T$ is the total number of words in a corpus, $k$ is the window size. We t
 \begin{figure}[h]
 \begin{centering}
     {\includegraphics[scale=0.7]{figures/dbow_pv.pdf}}
-    \caption[Distributed bag of words]{\textbf{Distributed bag of words}: it shows how a paragraph vector is used to predict a randomly chosen word.}
+    \caption[Distributed bag of words]{\textbf{Distributed bag of words model for paragraph vectors}: This image shows how only paragraph vectors are learned by predicting a random word choosen from a randomly selected set of words. In this approach, the order of the words does not matter.}
 \end{centering}
 \end{figure}
 
@@ -308,8 +313,8 @@ where $lr^{t+1}$ and $lr^t$ are the learning rates for $t+1$ and $t$ iterations,
 
 \begin{figure}[h]
 \begin{centering}
-    {\includegraphics[scale=0.33]{figures/Learning_rates_PV.pdf}}
-    \caption[Learning rates]{\textbf{Gradient descent learning rates}: the plots shows how the learning rate decays over time. It is essential to have learning rates which neither drops too quickly or too slowly. These ways can lead to divergence or slow convergence of the optimizer. This curve finds a middle way of estimating the learning rates.}
+    {\includegraphics[scale=0.33]{figures/Learning_rates.pdf}}
+    \caption[Learning rates]{\textbf{Learning rate for gradient descent optimizer}: The plot shows how the learning rate for gradient descent evolves with iterations. It start with a small value and decreases gradually over time. It is essential to have learning rates which neither drops too quickly or too slowly.Both of these ways can lead to divergence or slow convergence of the optimizer.}
 \end{centering}
 \end{figure}
 
@@ -339,6 +344,6 @@ where $\epsilon$ is a very small number.
 \begin{figure}[h]
 \begin{centering}
     {\includegraphics[scale=0.35]{figures/Difference_gradients.pdf}}
-    \caption[Gradient verification]{\textbf{Gradient verification}: the plot show the difference between the actual and approximated gradients for all the attributes across all tools computed over 100 iterations. When this difference is close to 0, we become sure that the computed gradient using the formulated error function is correct.}
+    \caption[Gradient verification]{\textbf{Gradient verification}: The plot checks that the difference between the actual and approximated gradients for all the attributes across all tools computed over 100 iterations is close to 0. Gradient plays an important role in learning and it should be estimated correctly. }
 \end{centering}
 \end{figure}
