@@ -35,14 +35,13 @@
 \contentsline {section}{\numberline {4.1}Latent Semantic Analysis}{28}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Full-rank matrices}{28}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}70\% of full-rank}{28}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}30\% of full-rank}{28}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}5\% of full-rank}{28}{subsection.4.1.4}
-\contentsline {subsection}{\numberline {4.1.5}Reduction in error}{29}{subsection.4.1.5}
-\contentsline {section}{\numberline {4.2}Paragraph vectors}{30}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Learning rate}{30}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Visualizer}{30}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}LSI}{30}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Paragraph vectors}{30}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.1.3}30\% of full-rank}{29}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}5\% of full-rank}{30}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}Improvement verification}{30}{subsection.4.1.5}
+\contentsline {subsubsection}{\nonumberline Reduction in error}{31}{section*.40}
+\contentsline {subsubsection}{\nonumberline Visualizer for latent semantic analysis approach}{32}{section*.41}
+\contentsline {section}{\numberline {4.2}Paragraph vectors}{32}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Visualizer for paragraph vectors approach}{32}{subsection.4.2.1}
 \contentsline {chapter}{\numberline {5}Conclusion}{41}{chapter.5}
 \contentsline {section}{\numberline {5.1}Data}{41}{section.5.1}
 \contentsline {chapter}{\numberline {6}Future Work}{42}{chapter.6}

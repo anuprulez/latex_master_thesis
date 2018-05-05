@@ -4,8 +4,7 @@
 We experiment with multiple values of matrix rank reduction and we find that as we reduce the rank of documents-tokens matrices, they become more dense. As we reduce the ranks, the distribution of  the learnt weights also change. 
 
 \subsection{Full-rank matrices}
-
-Figure 13 shows the the similarity matrices computed using full-rank documents-tokens matrices for name and description and help text. We do not apply rank reduction on documents-tokens matrix of input and output file types. Using these similarity matrices, we find an optimal combination by optimizing them. The "optimal" correlation plot shows this weighted average. Figure 14 shows the distribution of weights for multiple tool attributes. We see the magnitude of weights learnt for input and output file types is higher than the other two. It is associated with the higher values captured for the similarity matrix of input and output file types.
+Figure 17 shows the similarity matrices computed using full-rank documents-tokens matrices for input and output (17a), name and description (17b) and help text (17c) attributes. We do not apply rank reduction on documents-tokens matrix of input and output file types. Using these similarity matrices, we learn each row's respective importance factor using gradient descent and then combine to get a weighted average similarity matrix (17d). Figure 18 shows the distribution of these importance factors (weights) for multiple tool attributes and we see that the magnitude of weights estimated for input and output file types is higher than the other two attributes. The high magnitude is associated with the higher values captured for the similarity matrix of input and output file types (17a). 
 
 \begin{figure}[h]
 \begin{centering}
@@ -22,7 +21,7 @@ Figure 13 shows the the similarity matrices computed using full-rank documents-t
 \end{figure}
 
 \subsection{70\% of full-rank}
-We reduce the ranks of two documents-tokens matrices to 70\% of full-rank. For example, if the rank of a matrix is 100, we reduce the rank to 70 using singular value decomposition. From figure 15, we see that the name and description and help text similarity matrices start becoming more dense compared to figure 13. The distribution of the weights also change (figure 16).
+In figure 17, we can see that the similarity matrices for name and description and help text are sparse. To reduce the sparsity,  we attempt to reduce the ranks of the respective documents-tokens matrices of these two attributes to 70\% of full-rank. For example, if the rank of a matrix is 100, we reduce the rank to 70 using singular value decomposition. Along with reducing the ranks, we reduce the singular values of these matrices as well. Comparing figures 17 and 19, we see that the name and description and help text similarity matrices start becoming more dense. The distribution of the weights also change (figures 18 and 20). At this stage, it is hard to see the effect of rank reduction. Further we reduce the ranks drastically to see the effect.
 
 \begin{figure}[h]
 \begin{centering}
@@ -38,9 +37,8 @@ We reduce the ranks of two documents-tokens matrices to 70\% of full-rank. For e
 \end{centering}
 \end{figure}
 
-
 \subsection{30\% of full-rank}
-We reduce the ranks of two documents-tokens matrices to 30\% of the original ranks.
+To see the effect of rank reduction, we reduce the ranks of two documents-tokens matrices to 30\% of full-rank. This is a large reduction and would amount to keeping $\approx 60\%$ (removing $\approx 40\%$) (figure 11) of sum of singular values for all the documents-tokens matrices. In figures 21 and 22, the effect of rank reduction is more visible compared to $70\%$. We see that the magnitudes of weights learned for input and output files start to decrease and the magnitudes of weights for name and description and help text start to increase because the corresponding similarity matrices score become more dense (figure 21). 
 
 \begin{figure}[h]
 \begin{centering}
@@ -57,7 +55,7 @@ We reduce the ranks of two documents-tokens matrices to 30\% of the original ran
 \end{figure}
 
 \subsection{5\% of full-rank}
-We reduce the ranks of two documents-tokens matrices to 5\% of the original ranks.
+To verify the reduction in sparsity, we reduce the ranks of two documents-tokens matrices to 5\% of the full-rank. By choosing this low value, we consider only top $\approx 20\%$ of the sum of singular values for all the attributes (figure 11). From figure 23, we can see that all the similarity matrices corresponding to the attributes become more dense compared to figure 17, 91 and 21. Due to this, the weights distribution also change (figure 24). We learn higher weights for name and description (24b) and help text (24c). Along side, the weights on the input and output file types decrease (24a).  
 
 \begin{figure}[h]
 \begin{centering}
@@ -73,8 +71,15 @@ We reduce the ranks of two documents-tokens matrices to 5\% of the original rank
 \end{centering}
 \end{figure}
 
-\subsection{Reduction in error}
-We observe the loss in mean squared error when we decrease the ranks of the matrices. When we reduced the ranks, the similarity scores for the name and description and help text increase. This increase accounts for their higher importance weights learnt by the optimizer. The importance weights on an average become more balanced and can account for the decrease in the mean squared error. We would also see that in the next section that the ranking of similar tools also become better after rank reduction.
+\subsection{Improvement verification}
+To verify that the matrix rank reduction actually works and learns better similarity scores for tools (documents) which are similar in actual case, we showcase two ways.
+
+\subsubsection{Reduction in error}
+We observe drop in mean squared error when we decrease the ranks of the matrices. When we reduce the ranks, the similarity scores for the name and description and help text increase. This increase accounts for their larger weights learned by the optimizer. The weights on an average become more balanced and together with higher similarity scores account for the decrease in the mean squared error. In the absence of true similarity values, this viewpoint might not be completely correct way to establish that we actually improve the performance. To be more certain, we created a visualizer using javascript and html to look through the similar tools and their respective scores and weights for all tools. The next section explains it.
+
+\subsubsection{Visualizer for latent semantic analysis approach}
+% screenshots
+We see the similar tools for a few selected tools for the different stage of rank reduction and verify if we actually fetch the similar tools.
 
 \begin{figure}[h]
 \begin{centering}
@@ -107,11 +112,7 @@ We observe the loss in mean squared error when we decrease the ranks of the matr
 \end{figure}
 
 
-\subsection{Learning rate}
-
-
-\subsection{Visualizer}
-\subsection{LSI}
-\subsection{Paragraph vectors}
+\subsection{Visualizer for paragraph vectors approach}
+% screenshots
 
 
