@@ -35,10 +35,9 @@ After removing duplicates and stop words, our data is clean and contain tokens w
 \end{centering}
 \end{figure}
 
-
 \subsubsection{Learn relevance for words}
     We use a term "token" for each word. For example, a tool's name contains "regress, perform" as a set of tokens (words). After discarding duplicate tokens and stopwords and using root words, we have a set of good tokens for all the three attributes - input and output file types, name and description and help text. Let's call these sets as $documents$. The tokens present in these documents do not carry equal importance. Some tokens are more relevant to the document and some not so relevant . We need to find out importance factor for all tokens in a document. Using these factors, we can arrange them in big, sparse documents-tokens matrix. In this matrix, each row represents a document and each column belongs to one token. To compute these relevance scores, we use bestmatch25. Let's associate some variables to be used in explaining this algorithm.
-    
+
 \begin{figure}[h]
 \begin{centering}
     {\includegraphics[scale=0.7]{figures/tool-document-tokens.pdf}}
@@ -331,6 +330,10 @@ w_{t+1} = w_t + update_{t+1}
 \end{equation}
 
 where $update_{t+1}$ is the update for changing the weight parameter for the current iteration $t+1$. $update_{t-1}$ is previous iteration update. $\eta$ is the learning rate and $Gradient$ is with respect to the weight parameter $w_t$. 
+
+\subsubsection{Nesterov’s accelerated gradient}
+% https://arxiv.org/pdf/1607.01981.pdf
+% https://arxiv.org/pdf/1706.05671.pdf
 
 
 \subsubsection{Gradient verification}

@@ -77,16 +77,30 @@ To verify that the matrix rank reduction actually works and learns better simila
 \subsubsection{Reduction in error}
 We observe drop in mean squared error when we decrease the ranks of the matrices. When we reduce the ranks, the similarity scores for the name and description and help text increase. This increase accounts for their larger weights learned by the optimizer. The weights on an average become more balanced and together with higher similarity scores account for the decrease in the mean squared error. In the absence of true similarity values, this viewpoint might not be completely correct way to establish that we actually improve the performance. To be more certain, we created a visualizer using javascript and html to look through the similar tools and their respective scores and weights for all tools. The next section explains it.
 
-\subsubsection{Visualizer for latent semantic analysis approach}
-% screenshots
-We see the similar tools for a few selected tools for the different stage of rank reduction and verify if we actually fetch the similar tools.
-
 \begin{figure}[h]
 \begin{centering}
     {\includegraphics[scale=0.35]{figures/MSE_iterations_low_rank.pdf}}
     \caption[Mean squared error using LSI]{\textbf{Mean squared error using full-rank and multiple estimations of low-rank documents-tokens matrices}: This shows an mean squared error comparison computed using full-rank and various estimations of low-rank documents-tokens matrices. Each line plot shows an average error over all the tools and attributes which drops as we move along the iterations of gradient descent.}
 \end{centering}
 \end{figure}
+
+\subsubsection{Optimization}
+
+\begin{figure}[h]
+\begin{centering}
+    {\includegraphics[scale=0.35]{figures/Optimization_100_lsi.pdf}}
+    \caption[Weighted similarity scores for full-rank]{\textbf{Average similarity scores using uniform and optimal weights learned by optimization across all tools for full-rank documents-tokens matrices}:.}
+\end{centering}
+\end{figure}
+
+
+\begin{figure}[h]
+\begin{centering}
+    {\includegraphics[scale=0.35]{figures/Optimization_005_lsi.pdf}}
+    \caption[Weighted similarity scores for 5 \% of full-rank]{\textbf{Average similarity scores using uniform and optimal weights learned by optimization across all tools for 5 \% of full-rank documents-tokens matrices}: This shows an mean squared error comparison computed using full-rank and various estimations of low-rank documents-tokens matrices. Each line plot shows an average error over all the tools and attributes which drops as we move along the iterations of gradient descent.}
+\end{centering}
+\end{figure}
+
 
 \section{Paragraph vectors}
 
@@ -119,8 +133,44 @@ We see the similar tools for a few selected tools for the different stage of ran
 \end{centering}
 \end{figure}
 
+\section{Comparison of latent semantic analysis and paragraph vectors approach}
+We see the similar tools for a few selected tools for the different stage of rank reduction and verify if we actually fetch the similar tools. Let's take an example of similar tools for $hisat$, a popular mapping tool. We find similar tools once with full-rank documents-tokens matrix approach and then with $5\%$ of full-rank documents-tokens matrix.
 
-\subsection{Visualizer for paragraph vectors approach}
-% screenshots
+\begin{table}[ht]
+\begin{center}
+    \begin{tabular}{|l|l|l|l|l|}
+        \hline
+        Similar tools & input \& output & name \& desc. & help text & weighted similarity \\ \hline
+        hisat2   & 0.38 & 0.07 & 1 & 0.42  \\ \hline
+        srma\_wrapper & 0.5 & 0.12 & 0.01 & 0.4 \\ \hline
+    \end{tabular}
+    \end{center}
+    \caption[Similar tools for hisat 100\%]{\textbf{Top-2 similar tools for "hisat" computed using full-rank documents-tokens matrices}: The table shows top-2 similar tools selected for "hisat". This set of similar tools uses full-rank documents-tokens matrices. The weights learned by optimization are 0.77 (input and output file types), 0.1 (name and description) and 0.3 (help text). }
+    \label{tab:accuracy}
+\end{table}
 
+\begin{table}[ht]
+\begin{center}
+    \begin{tabular}{|l|l|l|l|l|}
+        \hline
+        Similar tools   & input \& output & name \& desc. & help text & weighted similarity \\ \hline
+        hisat2   & 0.38 & 1 & 1 & 0.83 \\ \hline
+        srma\_wrapper & 0.5 & 1 & 0.64 & 0.69 \\ \hline
+    \end{tabular}
+    \end{center}
+    \caption[Similar tools for hisat 5\%]{\textbf{Top-2 similar tools for "hisat" computed by taking 5\% of full-rank documents-tokens matrices}: The table shows top-2 similar tools selected for "hisat". This set of similar tools uses 5\% of full-rank documents-tokens matrices. The weights learned by optimization are 0.27 (input and output file types), 0.23 (name and description) and 0.5 (help text).}
+    \label{tab:accuracy}
+\end{table}
 
+\begin{table}[ht]
+\begin{center}
+    \begin{tabular}{|l|l|l|l|l|}
+        \hline
+        Similar tools   & input \& output & name \& desc. & help text & weighted similarity \\ \hline
+        hisat2   & 0.38 & 1 & 1 & 0.83 \\ \hline
+        srma\_wrapper & 0.5 & 1 & 0.64 & 0.69 \\ \hline
+    \end{tabular}
+    \end{center}
+    \caption[Similar tools for hisat paragraph vectors]{\textbf{Top-2 similar tools for "hisat" computed using paragraph vectors approach}: The table shows top-2 similar tools selected for "hisat". The weights learned by optimization are 0.14 (input and output file types), 0.44 (name and description) and 0.42 (help text).}
+    \label{tab:accuracy}
+\end{table}
