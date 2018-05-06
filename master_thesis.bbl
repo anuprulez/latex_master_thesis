@@ -49,4 +49,9 @@ I.~Sutskever, J.~Martens, G.~Dahl, and G.~Hinton, ``On the importance of
   initialization and momentum in deep learning,'' pp.~III--1139--III--1147,
   2013.
 
+\bibitem{Botev}
+A.~Botev, G.~Lever, and D.~Barber, ``Nesterov's accelerated gradient and
+  momentum as approximations to regularised update descent,'' pp.~pp.
+  1899--1903., 2017.
+
 \end{thebibliography}

@@ -151,7 +151,7 @@ The low-rank approximation of a matrix is important to discard the features whic
 
 \begin{figure}[h]
 \begin{centering}
-    {\includegraphics[scale=0.4]{figures/Sum_singular_ranks.pdf}}
+    {\includegraphics[scale=0.45]{figures/Sum_singular_ranks.pdf}}
     \caption[Singular values with ranks]{\textbf{Sum of singular values with matrix rank}: The plot shows an easier way to see how the sum of singular values varies with a documents-tokens matrix rank for the three attributes. Here the (a), (b) and (c) show separately this variation as the ranks of these matrices and sum of singular values differ.}
 \end{centering}
 \end{figure}
@@ -167,7 +167,7 @@ We reduce the rank of the original documents-tokens matrices and compute the den
   
 \begin{figure}[h]
 \begin{centering}
-    {\includegraphics[scale=0.33]{figures/Document_tokens_low_rank.pdf}}
+    {\includegraphics[scale=0.35]{figures/Document_tokens_low_rank.pdf}}
     \caption[Documents-tokens matrices]{\textbf{Documents-tokens matrices}: The heatmap shows the low-rank ($5\%$ of full-rank) representations of documents-tokens matrices for name and description and help text. These matrices are more dense compared to figure 7 which shows these matrices corresponding to the full-rank representations.}
 \end{centering}
 \end{figure}
@@ -261,7 +261,7 @@ S_{ideal} = [ 1.0, 1.0, ...., 1.0 ]
 where $S_{ideal}$ is the ideal similarity scores for one document against all other document. Using this ideal scores, we can compute the error we accrue for all the similarity scores from three attributes. After computing the error, we can verify which attribute is closer to the ideal score and which are not. The attributes which exhibit lower error get higher weights and those which score higher error get lower weights. The next section elaborates the online way to do the optimization.
 
 
-\subsubsection{Gradient descent}
+\subsection{Gradient descent}
 Gradient descent is a popular algorithm for optimizing an objective function with respect to its parameters. The parameters are the entities which we want to learn. In our case, these are the weights. The algorithm minimizes an error function. Let's frame the error function:
 
 \begin{equation}
@@ -302,7 +302,7 @@ w^k = w^k - \eta \cdot {Gradient(w^k)}
 To find the right learning rate is important as a high value can diverge the gradient learning and a low value can slow down the learning. For each iteration of gradient descent, we employ time-based decay of learning rate.
 
 
-\subsubsection{Learning rate decay}
+\subsection{Learning rate decay}
 To find an optimal learning rate forms an important part of gradient descent optimization. If the learning rate is high, it poses a risk of optimizer divergence. On the other hand, if is small, the optimizer can take a very long time to converge. Both these situations are underisable and we can avoid them by starting out with a small value and gradually decrease the learning rate over iterations. It is called as a time-based decay of the learning rate \cite{articleRuderS}.
 
 \begin{equation}
@@ -312,14 +312,14 @@ where $lr^{t+1}$ and $lr^t$ are the learning rates for $t+1$ and $t$ iterations,
 
 \begin{figure}[h]
 \begin{centering}
-    {\includegraphics[scale=0.33]{figures/Learning_rates.pdf}}
+    {\includegraphics[scale=0.35]{figures/Learning_rates.pdf}}
     \caption[Learning rates]{\textbf{Learning rate for gradient descent optimizer}: The plot shows how the learning rate for gradient descent evolves with iterations. It start with a small value and decreases gradually over time. It is essential to have learning rates which neither drops too quickly or too slowly.Both of these ways can lead to divergence or slow convergence of the optimizer.}
 \end{centering}
 \end{figure}
 
-
+\subsection{Weight update}
 \subsubsection{Momentum}
-To reach the minimum point of our convex error function (equation 20), we need to go down continously without being blocked at the saddle points. These saddle points are where the derivative of a function is zero. Adding a momentum term to the weight parameter, we expect to avoid the local minima and should be able to converge to the lowest point quickly. It gives the necessary push to keep going down the convex error function \cite{articleRuderS, Sutskever}. We compute the weight parameter update for each iterations using:
+To reach the minimum point of our convex error function (equation 20), we need to go down continously without being blocked at the saddle points. These saddle points are where the derivative of a function is zero. Adding a momentum term to the weight parameter, we expect to avoid the local minima and should be able to converge to the lowest point quickly. It gives the necessary push to keep going down the convex error function by adding the a fraction of the previous step update to the current update \cite{articleRuderS, Sutskever}. We compute the weight parameter update for each iterations using:
 
 \begin{equation}
 update_{t+1} = \gamma \cdot update_{t} - \eta \cdot Gradient(w^t)
@@ -332,9 +332,15 @@ w_{t+1} = w_t + update_{t+1}
 where $update_{t+1}$ is the update for changing the weight parameter for the current iteration $t+1$. $update_{t-1}$ is previous iteration update. $\eta$ is the learning rate and $Gradient$ is with respect to the weight parameter $w_t$. 
 
 \subsubsection{Nesterov’s accelerated gradient}
-% https://arxiv.org/pdf/1607.01981.pdf
-% https://arxiv.org/pdf/1706.05671.pdf
+The inclusion of momentum is useful to get necessary advance towards finding the minimum of the error function. However, the speed of going down the slope of the error function should become less if there is a possibility of change in gradient direction. In this situation, the speeding up can be avoided by estimating the forthcoming gradient (gradient for the next step) and then correcting it \cite{Botev}. We update the weight parameter using the following equations:
 
+\begin{equation}
+update_{t+1} = \gamma \cdot update_t - \eta \cdot Gradient(w_t + \gamma \cdot update_t)
+\end{equation}
+
+\begin{equation}
+w_{t+1} = w_t + update_{t+1}
+\end{equation}
 
 \subsubsection{Gradient verification}
 We compute gradient using equation 22 and use it to update our weight parameters. To verify that the computed gradient is correct, we can approximate this gradient using the error function we formulated in equation 20.

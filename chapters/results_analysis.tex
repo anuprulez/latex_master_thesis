@@ -8,7 +8,7 @@ Figure 17 shows the similarity matrices computed using full-rank documents-token
 
 \begin{figure}[h]
 \begin{centering}
-    {\includegraphics[scale=0.35]{figures/Similarity_matrices_100.pdf}}
+    {\includegraphics[scale=0.4]{figures/Similarity_matrices_100.pdf}}
     \caption[Similarity matrices full rank]{\textbf{Similarity matrices using full-rank}: The heatmap shows documents-documents (tools-tools) correlation matrices for input and output (a), name and description (b) and help text (c) attributes. The (d) shows a documents-documents (tools-tools) correlation matrix which is the weighted average computed using (a), (b) and (c) and weights (figure 18) given by the gradient descent optimizer (equation 15). The corresponding documents-tokens matrices contain their full-ranks. }
 \end{centering}
 \end{figure}
@@ -16,7 +16,7 @@ Figure 17 shows the similarity matrices computed using full-rank documents-token
 \begin{figure}[h]
 \begin{centering}
     {\includegraphics[scale=0.35]{figures/Weights_100.pdf}}
-    \caption[Weights distribution full-rank]{\textbf{Weights distribution full- rank}: The plot shows the distribution of weights learned by gradient descent optimizer on the similarity matrices for the input and output, name and description and help text attributes. The corresponding documents-tokens matrices contain their full-ranks.}
+    \caption[Weights distribution full-rank]{\textbf{Weights distribution full-rank}: The plot shows the distribution of weights learned by gradient descent optimizer on the similarity matrices for the input and output, name and description and help text attributes. The corresponding documents-tokens matrices contain their full-ranks.}
 \end{centering}
 \end{figure}
 
@@ -25,7 +25,7 @@ In figure 17, we can see that the similarity matrices for name and description a
 
 \begin{figure}[h]
 \begin{centering}
-    {\includegraphics[scale=0.35]{figures/Similarity_matrices_070.pdf}}
+    {\includegraphics[scale=0.4]{figures/Similarity_matrices_070.pdf}}
     \caption[Similarity matrices 70\% rank]{\textbf{Similarity matrices using 70\% of full-rank}: The heatmap shows documents-documents (tools-tools) correlation matrices for input and output (a), name and description (b) and help text (c) attributes. The (d) shows a documents-documents (tools-tools) correlation matrix which is the weighted average computed using (a), (b) and (c) and weights (figure 20) given by the gradient descent optimizer (equation 15). The corresponding documents-tokens matrices are reduced to 70\% of their respective full-ranks.}
 \end{centering}
 \end{figure}
@@ -42,7 +42,7 @@ To see the effect of rank reduction, we reduce the ranks of two documents-tokens
 
 \begin{figure}[h]
 \begin{centering}
-    {\includegraphics[scale=0.35]{figures/Similarity_matrices_030.pdf}}
+    {\includegraphics[scale=0.4]{figures/Similarity_matrices_030.pdf}}
     \caption[Similarity matrices 30\% rank]{\textbf{Similarity matrices using 30\% of full-rank}: The heatmap shows documents-documents (tools-tools) correlation matrices for input and output (a), name and description (b) and help text (c) attributes. The (d) shows a documents-documents (tools-tools) correlation matrix which is the weighted average computed using (a), (b) and (c) and weights (figure 22) given by the gradient descent optimizer (equation 15). The corresponding documents-tokens matrices are reduced to 30\% of their respective full-ranks.}
 \end{centering}
 \end{figure}
@@ -59,7 +59,7 @@ To verify the reduction in sparsity, we reduce the ranks of two documents-tokens
 
 \begin{figure}[h]
 \begin{centering}
-    {\includegraphics[scale=0.35]{figures/Similarity_matrices_005.pdf}}
+    {\includegraphics[scale=0.4]{figures/Similarity_matrices_005.pdf}}
     \caption[Similarity matrices 5\% rank]{\textbf{Similarity matrices using 5\% of full-rank}: The heatmap shows documents-documents (tools-tools) correlation matrices for input and output (a), name and description (b) and help text (c) attributes. The (d) shows a documents-documents (tools-tools) correlation matrix which is the weighted average computed using (a), (b) and (c) and weights (figure 24) given by the gradient descent optimizer (equation 15). The corresponding documents-tokens matrices are reduced to 5\% of their respective full-ranks.}
 \end{centering}
 \end{figure}
@@ -88,7 +88,7 @@ We observe drop in mean squared error when we decrease the ranks of the matrices
 
 \begin{figure}[h]
 \begin{centering}
-    {\includegraphics[scale=0.35]{figures/Optimization_100_lsi.pdf}}
+    {\includegraphics[scale=0.4]{figures/Optimization_100_lsi.pdf}}
     \caption[Weighted similarity scores for full-rank]{\textbf{Average similarity scores using uniform and optimal weights learned by optimization across all tools for full-rank documents-tokens matrices}:.}
 \end{centering}
 \end{figure}
@@ -96,7 +96,7 @@ We observe drop in mean squared error when we decrease the ranks of the matrices
 
 \begin{figure}[h]
 \begin{centering}
-    {\includegraphics[scale=0.35]{figures/Optimization_005_lsi.pdf}}
+    {\includegraphics[scale=0.4]{figures/Optimization_005_lsi.pdf}}
     \caption[Weighted similarity scores for 5 \% of full-rank]{\textbf{Average similarity scores using uniform and optimal weights learned by optimization across all tools for 5 \% of full-rank documents-tokens matrices}: This shows an mean squared error comparison computed using full-rank and various estimations of low-rank documents-tokens matrices. Each line plot shows an average error over all the tools and attributes which drops as we move along the iterations of gradient descent.}
 \end{centering}
 \end{figure}
@@ -106,14 +106,14 @@ We observe drop in mean squared error when we decrease the ranks of the matrices
 
 \begin{figure}[h]
 \begin{centering}
-    {\includegraphics[scale=0.35]{figures/Documents-tokens_doc2vec.pdf}}
+    {\includegraphics[scale=0.4]{figures/Documents-tokens_doc2vec.pdf}}
     \caption[Documents-tokens matrices for paragraph vectors]{\textbf{Documents-tokens matrices for paragraph vectors approach}: The heatmap shows documents-tokens matrices for input and output file types (a), name and description (b) and help text (c) attributes. The matrix in (a) is a document-token matrix where each entry shows a relative frequency of the token's occurrence. The matrices in (b) and (c) are 100 and 200 dimensional (each row is a document vector) respectively which means that each row of a matrix belongs to a document (paragraph) and is fixed-length and dense in nature. }
 \end{centering}
 \end{figure}
 
 \begin{figure}[h]
 \begin{centering}    
-    {\includegraphics[scale=0.35]{figures/Similarity_matrices_doc2vec.pdf}}
+    {\includegraphics[scale=0.4]{figures/Similarity_matrices_doc2vec.pdf}}
     \caption[Similarity matrices using paragraph vectors approach]{\textbf{Similarity matrices using paragraph vectors approach}: The heatmap shows documents-documents (tools-tools) correlation matrices for input and output (a), name and description (b) and help text (c) attributes. The (d) shows a documents-documents (tools-tools) correlation matrix which is the weighted average computed using (a), (b) and (c) and weights (figure 22) given by the gradient descent optimizer (equation 15). The corresponding documents-tokens matrices are computed as shown in figure 26.}
 \end{centering}
 \end{figure}
