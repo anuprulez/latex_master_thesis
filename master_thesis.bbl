@@ -1,5 +1,19 @@
 \begin{thebibliography}{10}
 
+\bibitem{Foltz1996}
+P.~W. Foltz, ``Latent semantic analysis for text-based research,'' {\em
+  Behavior Research Methods, Instruments, {\&} Computers}, vol.~28,
+  pp.~197--202, Jun 1996.
+
+\bibitem{DBLP:journals/corr/LeM14}
+Q.~V. Le and T.~Mikolov, ``Distributed representations of sentences and
+  documents,'' {\em CoRR}, vol.~abs/1405.4053, 2014.
+
+\bibitem{KaoudiQTCA17}
+Z.~Kaoudi, J.~Quian{\'{e}}{-}Ruiz, S.~Thirumuruganathan, S.~Chawla, and
+  D.~Agrawal, ``A cost-based optimizer for gradient descent optimization,''
+  {\em CoRR}, vol.~abs/1703.09193, 2017.
+
 \bibitem{LiptonKEW15}
 Z.~C. Lipton, D.~C. Kale, C.~Elkan, and R.~C. Wetzel, ``Learning to diagnose
   with {LSTM} recurrent neural networks,'' {\em CoRR}, vol.~abs/1511.03677,
@@ -13,11 +27,6 @@ H.~Sak, A.~W. Senior, and F.~Beaufays, ``Long short-term memory based recurrent
 \bibitem{Robertson:2009:PRF:1704809.1704810}
 S.~Robertson and H.~Zaragoza, ``The probabilistic relevance framework: Bm25 and
   beyond,'' {\em Found. Trends Inf. Retr.}, vol.~3, pp.~333--389, Apr. 2009.
-
-\bibitem{Foltz1996}
-P.~W. Foltz, ``Latent semantic analysis for text-based research,'' {\em
-  Behavior Research Methods, Instruments, {\&} Computers}, vol.~28,
-  pp.~197--202, Jun 1996.
 
 \bibitem{Shapiro2000}
 A.~M. Shapiro and D.~S. McNamara, ``The use of latent semantic analysis as a
@@ -33,16 +42,13 @@ T.~K. Landauer, ``Learning and representing verbal meaning: The latent semantic
 J.~Yang, ``Notes on low-rank matrix factorization,'' {\em CoRR},
   vol.~abs/1507.00333, 2015.
 
-\bibitem{DBLP:journals/corr/LeM14}
-Q.~V. Le and T.~Mikolov, ``Distributed representations of sentences and
-  documents,'' {\em CoRR}, vol.~abs/1405.4053, 2014.
-
 \bibitem{Ivchenko1998}
 G.~I. Ivchenko and S.~A. Honov, ``On the jaccard similarity test,'' {\em
   Journal of Mathematical Sciences}, vol.~88, pp.~789--794, Mar 1998.
 
 \bibitem{articleRuderS}
-S.~Ruder, ``An overview of gradient descent optimization algorithms,'' 09 2016.
+S.~Ruder, ``An overview of gradient descent optimization algorithms,'' {\em
+  CoRR}, vol.~abs/1609.04747, 2016.
 
 \bibitem{Sutskever}
 I.~Sutskever, J.~Martens, G.~Dahl, and G.~Hinton, ``On the importance of
