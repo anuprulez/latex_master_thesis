@@ -5,29 +5,33 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4}{\ignorespaces Tool similarity flowchart}}{6}{figure.caption.11}
 \contentsline {figure}{\numberline {5}{\ignorespaces Tokens distribution}}{9}{figure.caption.14}
-\contentsline {figure}{\numberline {6}{\ignorespaces Documents-tokens matrices}}{11}{figure.caption.17}
-\contentsline {figure}{\numberline {7}{\ignorespaces Pictorial representation of SVD}}{12}{figure.caption.18}
-\contentsline {figure}{\numberline {8}{\ignorespaces Rank singular values}}{14}{figure.caption.20}
-\contentsline {figure}{\numberline {9}{\ignorespaces Rank singular values}}{15}{figure.caption.21}
-\contentsline {figure}{\numberline {10}{\ignorespaces Documents-tokens matrices}}{16}{figure.caption.22}
-\contentsline {figure}{\numberline {11}{\ignorespaces Distributed model}}{17}{figure.caption.24}
-\contentsline {figure}{\numberline {12}{\ignorespaces Distributed bag of words}}{18}{figure.caption.25}
-\contentsline {figure}{\numberline {13}{\ignorespaces Learning rates}}{21}{figure.caption.28}
-\contentsline {figure}{\numberline {14}{\ignorespaces Gradient verification}}{23}{figure.caption.31}
+\contentsline {figure}{\numberline {6}{\ignorespaces Tool, document and tokens}}{10}{figure.caption.16}
+\contentsline {figure}{\numberline {7}{\ignorespaces Heatmap for documents-tokens matrices}}{12}{figure.caption.18}
+\contentsline {figure}{\numberline {8}{\ignorespaces Pictorial representation of singular value decomposition}}{13}{figure.caption.19}
+\contentsline {figure}{\numberline {9}{\ignorespaces Singular values of documents-tokens matrices}}{15}{figure.caption.21}
+\contentsline {figure}{\numberline {10}{\ignorespaces Singular values of documents-tokens matrices with their respective ranks}}{16}{figure.caption.22}
+\contentsline {figure}{\numberline {11}{\ignorespaces Fraction of ranks of documents-tokens matrices with the fraction of sum of singular values}}{17}{figure.caption.23}
+\contentsline {figure}{\numberline {12}{\ignorespaces Low-rank representations of documents-tokens matrices}}{18}{figure.caption.24}
+\contentsline {figure}{\numberline {13}{\ignorespaces Distributed memory approach for paragraph vectors}}{19}{figure.caption.26}
+\contentsline {figure}{\numberline {14}{\ignorespaces Distributed bag-of-words approach for paragraph vectors}}{20}{figure.caption.27}
+\contentsline {figure}{\numberline {15}{\ignorespaces Decay of learning rate for gradient descent optimizer}}{23}{figure.caption.28}
+\contentsline {figure}{\numberline {16}{\ignorespaces Verification of gradient for the error function}}{25}{figure.caption.32}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {15}{\ignorespaces Similarity matrices full rank}}{28}{figure.caption.32}
-\contentsline {figure}{\numberline {16}{\ignorespaces Weights distribution full rank}}{29}{figure.caption.33}
-\contentsline {figure}{\numberline {17}{\ignorespaces Similarity matrices 70\% rank}}{30}{figure.caption.34}
-\contentsline {figure}{\numberline {18}{\ignorespaces Weights distribution 70\% rank}}{31}{figure.caption.35}
-\contentsline {figure}{\numberline {19}{\ignorespaces Similarity matrices 30\% rank}}{32}{figure.caption.36}
-\contentsline {figure}{\numberline {20}{\ignorespaces Weights distribution 30\% rank}}{33}{figure.caption.37}
-\contentsline {figure}{\numberline {21}{\ignorespaces Similarity matrices 5\% rank}}{34}{figure.caption.38}
-\contentsline {figure}{\numberline {22}{\ignorespaces Weights distribution 5\% rank}}{35}{figure.caption.39}
-\contentsline {figure}{\numberline {23}{\ignorespaces Similarity matrices 5\% rank}}{36}{figure.caption.40}
-\contentsline {figure}{\numberline {24}{\ignorespaces Documents-tokens matrices for doc2vec}}{37}{figure.caption.41}
-\contentsline {figure}{\numberline {25}{\ignorespaces Similarity matrices using doc2vec}}{38}{figure.caption.42}
-\contentsline {figure}{\numberline {26}{\ignorespaces Weights distribution for doc2vec}}{39}{figure.caption.43}
-\contentsline {figure}{\numberline {27}{\ignorespaces Weights distribution for doc2vec}}{40}{figure.caption.44}
+\contentsline {figure}{\numberline {17}{\ignorespaces Similarity matrices computed using full-rank document-tokens matrices}}{30}{figure.caption.33}
+\contentsline {figure}{\numberline {18}{\ignorespaces Distribution of weights learned for similarity matrices computed using full-rank documents-tokens matrices}}{31}{figure.caption.34}
+\contentsline {figure}{\numberline {19}{\ignorespaces Similarity matrices computed using document-tokens matrices reduced to 70\% of their full-rank}}{32}{figure.caption.35}
+\contentsline {figure}{\numberline {20}{\ignorespaces Distribution of weights learned for similarity matrices computed using documents-tokens matrices reduced to 70\% of their full-rank}}{33}{figure.caption.36}
+\contentsline {figure}{\numberline {21}{\ignorespaces Similarity matrices computed using document-tokens matrices reduced to 30\% of their full-rank}}{35}{figure.caption.37}
+\contentsline {figure}{\numberline {22}{\ignorespaces Distribution of weights learned for similarity matrices computed using documents-tokens matrices reduced to 30\% of their full-rank}}{36}{figure.caption.38}
+\contentsline {figure}{\numberline {23}{\ignorespaces Similarity matrices computed using document-tokens matrices reduced to 5\% of their full-rank}}{37}{figure.caption.39}
+\contentsline {figure}{\numberline {24}{\ignorespaces Distribution of weights learned for similarity matrices computed using documents-tokens matrices reduced to 5\% of their full-rank}}{38}{figure.caption.40}
+\contentsline {figure}{\numberline {25}{\ignorespaces Mean squared error using full-rank and multiple estimations of low-rank (latent semantic analysis approach}}{39}{figure.caption.42}
+\contentsline {figure}{\numberline {26}{\ignorespaces Average of the weighted similarity scores for computed using full-rank documents-tokens matrices across all tools}}{40}{figure.caption.43}
+\contentsline {figure}{\numberline {27}{\ignorespaces Average of the weighted similarity scores for computed using documents-tokens matrices reduced to 5 \% of full-rank across all tools}}{40}{figure.caption.44}
+\contentsline {figure}{\numberline {28}{\ignorespaces Documents-tokens matrices for paragraph vectors approach}}{41}{figure.caption.45}
+\contentsline {figure}{\numberline {29}{\ignorespaces Similarity matrices using paragraph vectors approach}}{42}{figure.caption.46}
+\contentsline {figure}{\numberline {30}{\ignorespaces Distribution of weights for similarity matrices computed using documents-tokens matrices for paragraph vectors approach}}{43}{figure.caption.47}
+\contentsline {figure}{\numberline {31}{\ignorespaces Average of uniformly and optimally weighted similarity scores across all tools for paragraph vectors approach}}{44}{figure.caption.48}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
