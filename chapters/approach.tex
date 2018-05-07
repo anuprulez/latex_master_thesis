@@ -153,11 +153,11 @@ The low-rank approximation of a matrix is important to discard the features whic
 \begin{figure}[h]
 \begin{centering}
     {\includegraphics[scale=0.4]{figures/Fraction_ranks_singular_values.pdf}}
-    \caption[Fraction of ranks of documents-tokens matrices with the fraction of sum of singular values]{\textbf{Fraction of ranks of documents-tokens matrices with the fraction of sum of singular values}: This plot merges the results of the figure 10 into one plot. As the ranks of document-term matrices and sum of singular values vary, we convert them to respective percentages. $rank_{fraction} = \frac{k}{N}$ where $k$ is the reduced rank and $N$ is the full-rank of a matrix For example $0.2$ on the rank axis (x-axis) means $20\%$ of the original rank of a matrix. Similarly, y-axis shows the fraction of the sum of all singular values $ sum_{fraction} = \frac{\sum_{i=1}^k}{\sum_{i=1}^K}$ where $K$ is the number of all singular values.}
+    \caption[The variation of fraction of ranks of documents-tokens matrices with the fraction of sum of singular values]{\textbf{The variation of fraction of ranks of documents-tokens matrices with the fraction of sum of singular values}: This plot merges the results of the figure 10 into one plot. As the ranks of document-term matrices and sum of singular values vary, we convert them to respective percentages. $rank_{fraction} = \frac{k}{N}$ where $k$ is the reduced rank and $N$ is the full-rank of a matrix For example $0.2$ on the rank axis (x-axis) means $20\%$ of the original rank of a matrix. Similarly, y-axis shows the fraction of the sum of all singular values $ sum_{fraction} = \frac{\sum_{i=1}^k}{\sum_{i=1}^K}$ where $K$ is the number of all singular values.}
 \end{centering}
 \end{figure}
 
-We reduce the rank of the original documents-tokens matrices and compute the dense and low-rank approximations. Figure 12 shows the low-rank matrices for name and description and help text attributes. To compute this, we use only $5\%$ of the full-rank. We can compare it with figure 7 and verify that it is more dense than figure 7. In these low-rank matrices, we get dense vector representations for documents along the rows. In each matrix, each row contains a vector for one document. Using these documents vectors, we can compute the correlation or similarity using a similarity measure. There are multiple similarity measures which can be used like euclidean distance, cosine similarity, manhattan distance, jaccard index and many more. In our case, we use cosine angle similarity for name and description and help text and jaccard index for input and output file types to compute the correlation between vectors. We get a positive real number between $0.0$ and $1.0$ as similarity score between a pair of vectors specifying how similar they are. The higher the score, higher is the similarity. Computing this similarity for all the documents gives us a similarity matrix $S_{n \times n}$ where $n$ is the number of documents. This square, symmetric matrix is called as similarity or correlation matrix. We compute three such matrices, each corresponding to one attribute (input and output file types, name and description and help text).
+We reduce the rank of the original documents-tokens matrices and compute the dense and low-rank approximations. Figure 12 shows the low-rank matrices for name and description and help text attributes. To compute this, we use only $5\%$ of the full-rank. We can compare it with figure 7 and verify that it is more dense than figure 7. In these low-rank matrices, we get dense vector representations for documents along the rows. In each matrix, each row contains a vector for one document. Using these documents vectors, we can compute the correlation or similarity using a similarity measure. There are multiple similarity measures which can be used like euclidean distance, cosine similarity, manhattan distance, jaccard index and many more. In our case, we use cosine angle similarity for name and description and help text and jaccard index for input and output file types to compute the correlation between vectors. We get a positive real number between $0.0$ and $1.0$ as similarity score between a pair of vectors specifying how similar they are. The higher the score, higher is the similarity. Computing this similarity for all the documents gives us a similarity matrix $S_{n \times n}$ where $n$ is the number of documents (tools). This square, symmetric matrix is called as similarity or correlation matrix. We compute three such matrices, each corresponding to one attribute (input and output file types, name and description and help text).
   
 \begin{figure}[h]
 \begin{centering}
@@ -167,48 +167,46 @@ We reduce the rank of the original documents-tokens matrices and compute the den
 \end{figure}
 
 \subsection{Paragraph vectors}
-Using latent semantic indexing (LSI), we learnt dense vectors to represent each document. It learns better vector representations for documents compared to using full-rank documents-tokens matrices. One main limitation is to assess the quantity by which we need to lower the rank of a matrix in order to find the optimal results. There are ways to find the optimal reduced rank optimizing the frobenius norm but it is not simple. We would see in the analysis section that similar tools are more dominated by the scores shared by the input and output file types due to which the tools which similar in their functions do not come up. In order to avoid these limitations, we use an approach known as $doc2vec$ (document to vector). It learns a dense, fixed-size vectors for each document using neural networks. These vectors are unique in a way that captures the semantics present in the documents. The documents which share similar context are represented by similar vectors. When we compute cosine distance between these vectors sharing similar context, we get a higher number (close to 1.0). It allows the documents to have variable lengths.
+Using latent semantic indexing (LSI), we learned dense vectors to represent each document. It learns better vector representations for documents compared to using full-rank documents-tokens matrices. One main limitation is to assess the quantity by which we need to lower the rank of a matrix in order to find the optimal results. There are ways to find the optimal reduced rank by optimizing the Frobenius norm but it is not simple. We would see in the analysis section that the similar tools for a tool are more dominated by the scores shared by the input and output file types. Due to this issue, the tools which are similar in their functions do not get pushed up in the ranking ladder. To avoid these limitations, we use an approach known as $doc2vec$ (document to vector) \cite{DBLP:journals/corr/LeM14}. It learns a dense, fixed-size vectors for each document using neural networks. These vectors are unique in a way that captures the semantics present in the documents. The documents which share similar context are represented by similar vectors. When we compute cosine distance between these vectors sharing similar context, we get a higher number (closer to 1.0). It allows the documents to have variable lengths.
 
 
 \subsubsection{Approach}
-Paragraph vectors approach learns vector representations for all the words present in a set of documents. The words which are used in a similar context have similar vectors. For example, words like "data" and "dataset" which are used, in general, in similar context have are represented by close vectors. The vector representations of words in a corpus is learnt by finding the maximum of the following equation:
+Paragraph vectors approach learns vector representations for all the words present in a set of documents. The words which are used in a similar context have similar vectors. For example, words like "data" and "dataset" which are used, in general, in similar contexts have are represented by vectors that are close. The vector representations of words in a document are learnt by maximizing the following equation:
 
 \begin{equation}
 \frac{1}{T} \cdot \sum_{t=k}^{T-k} \log p(w_t|w_{t-k,...,t+k})
 \end{equation}
 
-where $T$ is the total number of words in a corpus, $k$ is the window size. We take a few words which make a context and using this context we try to predict each word. The probability $p$ is computed using a softmax classifier and backpropagation is used to compute the gradient and the vectors are optimized using stochastic gradient descent. To learn paragraph vectors, in addition to using words vectors, paragraph vectors are also used to learn probability of the next words in a context. The paragraph and word vectors are averaged to make the classifier which predict next words in a context. There are two way how to choose the context. 
+where $T$ is the total number of words in a document, $k$ is the window size. We take a few words which make a context and using this context we try to predict each word. The probability $p$ is computed using a softmax classifier and backpropagation is used to compute the gradient and the vectors are optimized using stochastic gradient descent. To learn paragraph vectors, in addition to using words vectors, paragraph vectors are also used to learn the probability of the next words in a context. The paragraph and word vectors are averaged or concatenated to make a classifier which predicts next words in a context. There are two ways how to choose a context.
 
 \begin{itemize}
-\item Distributed memory: In this approach of learning paragraph vectors, fixed length window of words are choosen and paragraph vectors and word vectors are used to predict the words in this context. The words vectors are shared across all paragraphs and paragraph vector is unique to each paragraph.
+\item Distributed memory: In this approach of learning paragraph vectors, fixed length window of words are chosen and paragraph and word vectors are used to predict the words in this context. The words vectors are shared across all the paragraphs (documents) and paragraph vector is unique to each paragraph.
 
 \begin{figure}[h]
 \begin{centering}
     {\includegraphics[scale=0.7]{figures/dm_pv.pdf}}
-    \caption[Distributed memory approach for paragraph vectors]{\textbf{Distributed memory approach for paragraph vectors}: This image shows the mechanism for learning a vector for a paragraph. $W$ is a word matrix where each word is represented by a vector. $D$ is a paragraph matrix where each paragraph (document) is represented by a vector. The word vectors are shared across all paragraphs (documents) but not the paragraph vectors. The three words "Art", "Illumina" and "Simulate" represent a context. The average or concatenated words and paragraph vectors are used to predict the "Sequence" word.}
+    \caption[Distributed memory approach for paragraph vectors]{\textbf{Distributed memory approach for paragraph vectors}: This image shows a mechanism for learning paragraph (document) vectors. $W$ is a word matrix where each word is represented by a vector. $D$ is a paragraph matrix where each paragraph (document) is represented by a vector. The word vectors are shared across all paragraphs (documents) but not the paragraph vectors. The three words "Art", "Illumina" and "Simulate" represent a context. The average or concatenated words and paragraph vectors are used to predict the "Sequence" word.}
 \end{centering}
 \end{figure}
 
-\item Distributed bag of words: The words are randomly extracted from paragraphs and in this set of words, a word is chosen randomly and predicted using the paragraph vectors. The order of the randomly chosen words is ignored.  
+\item Distributed bag of words: In this approach, words are randomly extracted from the paragraphs and from this set of words, a word is chosen randomly and predicted using the paragraph vectors. No order is followed in choosing words.
 \end{itemize}
 
 \begin{figure}[h]
 \begin{centering}
     {\includegraphics[scale=0.7]{figures/dbow_pv.pdf}}
-    \caption[Distributed bag-of-words approach for paragraph vectors]{\textbf{Distributed bag-of-words approach for paragraph vectors}: This image shows how only paragraph vectors are learned by predicting a random word choosen from a randomly selected set of words. In this approach, the order of the words does not matter.}
+    \caption[Distributed bag-of-words approach for paragraph vectors]{\textbf{Distributed bag-of-words approach for paragraph vectors}: This image shows how only paragraph vectors are learned by predicting a random word chosen from a randomly selected set of words. In this approach, the order of the words does not matter.}
 \end{centering}
 \end{figure}
 
-The figures 9 and 10 are inspired from the original work - Distributed Representations of Sentences and Documents \footnote{\label{pv}\url{https://arxiv.org/abs/1405.4053}}.
-The second form of learning paragraph vectors is simple and we use it to learn documents (paragraphs) vectors for name and description and help text attributes. We learn only the paragraph vectors which makes it less computationally expensive \cite{DBLP:journals/corr/LeM14}.
-
+The figures 13 and 14 are inspired from the original work - 
+Distributed Representations of Sentences and Document\footnote{\label{pv}\url{https://arxiv.org/abs/1405.4053}}. The second form of learning paragraph vectors is simple and we use it to learn documents (paragraphs) vectors for name and description and help text attributes. We learn only the paragraph vectors which makes it less computationally expensive \cite{DBLP:journals/corr/LeM14} as the number of parameters is less compared to the distributed memory model which learns word vectors as well. The number of parameters in distributed bag-of-words is $\approx N \times z$ where $N$ is the number of paragraphs (documents) and $z$ is the dimensionality of each vector.
 
 \section{Similarity measures}
-We have vectors representing the documents for all the three attributes we consider to compute similar tools. To find the similarity in a pair of vectors, we need to apply a similarity measure to get a similarity score. This score quantifies how much similar a pair of documents are which means how close or distant these documents are.
-
+From latent semantic analysis and paragraph vectors approaches, we generate vectors for the documents that belong to the three attributes. To find similarity between a pair of vectors, we can apply some similarity measures to get a similarity score. This score quantifies how much similar a pair of documents are. In this work, we use two similarity measures - cosine similarity and jaccard index. Both of these measures return a positive real number between $0$ and $1$ as a similarity score.
 
 \subsection{Cosine similarity}
-It gives the cosine angle value between a pair of documents vectors. Let's say we have two vectors, $x$ and $y$. We can write:
+It calculates the cosine angle value between a pair of document vectors. Let's say we have two vectors, $x$ and $y$. We can write:
 \begin{equation}
 x \cdot y = |x| \cdot |y| \cdot \cos{\theta}
 \end{equation}
@@ -217,87 +215,76 @@ x \cdot y = |x| \cdot |y| \cdot \cos{\theta}
 \cos{\theta} = \frac {x \cdot y}{|x| \cdot |y|} 
 \end{equation}
 
-where $|.|$ is the norm of the vector $x$. If the norm is $0$, we use $0$ for the value of $\cos{\theta}$. The values emitted by this similarity follows a natural progression that if the documents are dissimilar, then it is $0$ and if completely similar, it is $1.0$. Otherwise it lies between $0.0$ and $1.0$. This score can also be understood as a kind of probability of similarity between a pair of documents \footnote{\url{https://nlp.stanford.edu/IR-book/html/htmledition/dot-products-1.html}}. 
+where $|x|$ is the norm of the vector $x$. If the norm is $0$, we use $0$ for the value of $\cos{\theta}$. $x \cdot y$ is the dot product of vectors $x$ and $y$. The values emitted by this similarity follows a natural progression that if the documents are dissimilar, then it is $0$ and if completely similar, it is $1.0$. Otherwise it lies between $0.0$ and $1.0$. This score can also be understood as a kind of probability of similarity between a pair of documents\footnote{\url{https://nlp.stanford.edu/IR-book/html/htmledition/dot-products-1.html}}.
 
 
 \subsection{Jaccard index}
-Jaccard index is a measure of similarity between two sets of entities given by the equation:
+Jaccard index is a measure of similarity between two sets of entities and is given by the equation:
 
 \begin{equation}
 j = \frac{A \cap B}{A \cup B}
 \end{equation}
-where $A$ and $B$ are two sets. $\cap$ is the number of entities present in both the sets and $\cup$ is the sum of unique entities present in sets $A$ and $B$ \cite{Ivchenko1998}. We use this measure to compute the similarity between two tools based on their file types. For example, $LinearRegression$ has 3 file types: $tabular$, $input$ and $pdf$. Another tool $LDAAnalysis$ has $tabular$ and $txt$ as file types. The jaccard index for this pair of tools would be:
+where $A$ and $B$ are two sets. $\cap$ is the number of entities present in both the sets and $\cup$ is the sum of unique entities present in sets $A$ and $B$ \cite{Ivchenko1998}. We use this measure to compute the similarity between two tools based on their file types. For example, "LinearRegression" has 3 file types: $tabular$, $input$ and $pdf$. Another tool "LDAAnalysis" has $tabular$ and $txt$ as file types. The jaccard index for this pair of tools would be:
 
 \begin{equation}
-j = \frac{Length[(tabular, input, pdf) \cap (tabular, txt)]}{Length[(tabular, input, pdf) \cup (tabular, txt)]}
+j = \frac{Length[(tabular, input, pdf) \cap (tabular, txt)]}{Length[(tabular, input, pdf) \cup (tabular, txt)]} = \frac{1}{4} = 0.25
 \end{equation}
-
-\begin{equation}
-j = \frac{1}{4} = 0.25
-\end{equation}
-
 
 \section{Optimization}
-Using the paragraph vectors and applying cosine similarity, we get similarity or correlation matrices one each for input and output file types, name and description and help text attributes. The matrices have same dimensions ($n \times n$, $n$ is the number of tools). To combine these matrices, one simple idea would be to take an average of the corresponding rows of scores from the matrices for a document. This would generate a matrix of the same dimension where each row would correspond to one document. This row would contain similarity scores of a document against all other documents. The diagonal entries of this matrix would be 1.0. All other entries would be a positive real number between $0.0$ and $1.0$. Another way to find the combination is to learn the weights on the rows from three matrices and them combine them to obtain optimal similarity scores for a tool. The weight would be a positive real number between $0.0$ and $1.0$. Instead of using a fixed importance factor (weights) of $1 / 3$ ($3$ is the number of matrices), we use optimization to find these real numbers and then combine the matrices by multiplying with these weights.
+We get similarity matrices after applying similarity measures on the document vectors, one each for input and output file types, name and description and help text attributes. These matrices have the same dimensions ($n \times n$, $n$ is the number of tools).  To combine these matrices, one simple idea would be to take an average of the corresponding rows of similarity scores from the matrices. Doing this, we get a combined similarity scores of one document (tool) with all other documents (tools). Iterating this process for all the documents would give us a similarity matrix which contains similarity scores of documents with all the other documents. The diagonal entries of this matrix would be $1.0$ and all the other entries would be a positive real number between $0.0$ and $1.0$. Another way to find the combination is to learn the weights on the rows from three matrices and then combine them to obtain optimal similarity scores for a document (tool). The weights are positive real numbers between $0.0$ and $1.0$ and for each row, they sum up to $1.0$. Instead of using fixed importance factors (weights) of $1/3$ ($3$ is the number of matrices), we use an optimization technique to find these real numbers and then combine the matrices by multiplying with these weights to obtain a weighted average optimal similarity matrix.
 
 \begin{equation}
 S_k^{optimal} = w^k_{io} \cdot S^k_{io} +  w^k_{nd} \cdot S^k_{nd} + w^k_{ht} \cdot S^k_{ht}
 \end{equation}
 
 where $w$ is a positive, real number and satisfy $w^k_{io} + w^k_{nd} + w^k_{ht} = 1$. 
-$S^k_{io}$, $S^k_{nd}$ and $S^k_{ht}$ are the similarity scores (corresponding matrix rows) for $k^{th}$ tool corresponding to input and output file types, name and description and help text attributes respectively.
-
-We have these similarity scores. But we need to learn these importance weights. We use gradient descent optimizer to learn these weights against a loss function. If we look closely the similarity measure, we see that the maximum similarity between a pair of documents can be $1.0$. Hence, the ideal similarity scores for one document against all other documents:
+$S^k_{io}$, $S^k_{nd}$ and $S^k_{ht}$ are the similarity scores (corresponding matrix rows) for $k^{th}$ tool corresponding to input and output file types, name and description and help text attributes respectively. Similarity scores $S$ has a dimensionality of $1 \times n$ where $n$ is the number of tools (documents). Each similarity score among a set of documents (tools) is independent of one another. We already have these similarity scores and need to learn the importance weights to compute the optimal similarity scores. We use gradient descent optimizer to learn the weights by minimizing an error function. To define an error function, we need to set true values where we intend to reach and then we compute mean squared error. If we look at the similarity measure, we see that the maximum similarity between a pair of documents can be $1.0$. Hence, the ideal similarity scores for a document with any other document can be atmost $1.0$.
 
 \begin{equation}
 S_{ideal} = [ 1.0, 1.0, ...., 1.0 ]
 \end{equation}
-where $S_{ideal}$ is the ideal similarity scores for one document against all other document. Using this ideal scores, we can compute the error we accrue for all the similarity scores from three attributes. After computing the error, we can verify which attribute is closer to the ideal score and which are not. The attributes which exhibit lower error get higher weights and those which score higher error get lower weights. The next section elaborates the online way to do the optimization.
-
+where $S_{ideal}$ is the ideal similarity scores for one document against all the other documents. $S_{ideal}$ has a dimensionality of $1 \times n$ where $n$ is the number of documents. Using the ideal score, we can compute the mean squared error we accrue for all the similarity scores from the three attributes separately. After computing the error, we can verify which attribute is closer to the ideal score and which are not. The attributes which measure lower error get higher weights and those which score higher error get lower weights. The next section elaborates how we use gradient descent to do the optimization.
 
 \subsection{Gradient descent}
-Gradient descent is a popular algorithm for optimizing an objective function with respect to its parameters. The parameters are the entities which we want to learn. In our case, these are the weights. The algorithm minimizes an error function. Let's frame the error function:
+Gradient descent is a popular algorithm for optimizing an objective function with respect to its parameters. The parameters are the entities which we want to learn. In our case, these are the weights. The algorithm minimizes an error function. The error function which we define is the mean squared error:
 
 \begin{equation}
-Error^k_{io}(w_{io}) = \sum_{t=1}^{N-1} \cdot (w_{io} \cdot S^t_{io} - S_{ideal}) ^ 2
+Error^k_{io}(w_{io}) = \frac{1}{N - 1} \cdot \sum_{t=1}^{N-1} (w_{io} \cdot S^t_{io} - S_{ideal}) ^ 2
 \end{equation}
 
 \begin{equation}
-Error^k_{nd}(w_{nd}) = \sum_{t=1}^{N-1} \cdot (w_{nd} \cdot S^t_{nd} - S_{ideal}) ^ 2
+Error^k_{nd}(w_{nd}) = \frac{1}{N - 1} \cdot \sum_{t=1}^{N-1} (w_{nd} \cdot S^t_{nd} - S_{ideal}) ^ 2
 \end{equation}
 
 \begin{equation}
-Error^k_{ht}(w_{ht}) = \sum_{t=1}^{N-1} \cdot (w_{ht} \cdot S^t_{ht} - S_{ideal}) ^ 2
+Error^k_{ht}(w_{ht}) =  \frac{1}{N - 1} \cdot \sum_{t=1}^{N-1} (w_{ht} \cdot S^t_{ht} - S_{ideal}) ^ 2
 \end{equation}
 
 \begin{equation}
-Error^k(w) = \sum_{t=1}^{N-1} \cdot (w \cdot S^t - S_{ideal}) ^ 2
+Error^k(w) =  \frac{1}{N - 1} \cdot \sum_{t=1}^{N-1} (w \cdot S^t - S_{ideal}) ^ 2
 \end{equation}
 
 \begin{equation}
 \argmin_w Error^k(w) 
 \end{equation} 
 
-where $Error$ is a vector of $<Error_{io}, Error_{nd}, Error_{ht}$,
-$w$ is $<w_{io}, w_{nd}, w_{ht}>$ and $S$ is $<S_{io}, S_{nd}, S_{ht}>$.
-
-To minimize the equation $17$, we need to compute the gradient. The gradient specifies the rate of change of error with respect to the weights.
+where $Error$ is an error vector - $<Error_{io}, Error_{nd}, Error_{ht}$, $w$ is weight vector - $<w_{io}, w_{nd}, w_{ht}>$ and $S$ similarity scores vector - $<S_{io}, S_{nd}, S_{ht}>$. $io$, $nd$ and $ht$ refer to input and output file types, name and description and help text for $Error$, $w$ and $S$. All these vectors are averaged over $N-1$ where $N$ is the number of documents (tools). We take $N-1$ in order to remove the concerned tool's similarity score with itself. To minimize the equation $20$, we need to compute the gradient. The gradient specifies the rate of change of error with respect to the weights.
 
 \begin{equation}
-Gradient^k(w) = \frac{\partial Error^k}{\partial w} = 2 \cdot \sum_{t=1}^{N-1} (w \cdot S^t - S_{ideal}) \cdot S^t
+Gradient^k(w) = \frac{\partial Error^k}{\partial w} =  \frac{2}{N - 1} \cdot \sum_{t=1}^{N-1} (w \cdot S^t - S_{ideal}) \cdot S^t
 \end{equation}
 
-Using the gradient vector, we update the weights. For this we need to set the learning rate.
+Using the gradient vector, we update the weights. For this, we need to set the learning rate.
 
 \begin{equation}
 w^k = w^k - \eta \cdot {Gradient(w^k)}
 \end{equation}
 
-To find the right learning rate is important as a high value can diverge the gradient learning and a low value can slow down the learning. For each iteration of gradient descent, we employ time-based decay of learning rate.
+Finding the right learning rate is important because a higher value can diverge the gradient descent and a lower value can slow down the learning and it could take a lot of time to converge to the minimum of the error function. For each iteration of gradient descent, we employ time-based decay of learning rate.
 
 
 \subsection{Learning rate decay}
-To find an optimal learning rate forms an important part of gradient descent optimization. If the learning rate is high, it poses a risk of optimizer divergence. On the other hand, if is small, the optimizer can take a very long time to converge. Both these situations are underisable and we can avoid them by starting out with a small value and gradually decrease the learning rate over iterations. It is called as a time-based decay of the learning rate \cite{articleRuderS}.
+To find an optimal learning rate forms an important part of gradient descent optimization. If the learning rate is high, it poses a risk of optimizer divergence. On the other hand, if it is small, the optimizer can take a long time to converge. Both these situations are underisable. We can avoid these drawbacks by starting out with a small learning rate and gradually decrease it over the iterations. It is called as a time-based decay of the learning rate \cite{articleRuderS}.
 
 \begin{equation}
 lr^{t+1} = \frac{lr^t}{( 1 + ( decay * iteration ) )}
@@ -342,7 +329,7 @@ We compute gradient using equation 22 and use it to update our weight parameters
 \begin{equation}
 Gradient(w) = \frac{\partial Error}{\partial w} \approx \frac{Error(w + \epsilon) - Error(w - \epsilon)}{2 \cdot \epsilon} 
 \end{equation}
-where $\epsilon$ is a very small number. 
+where $\epsilon$ is a very small number ($\approx10^{-4}$). Figure 16 shows the difference of the gradients for all the three attributes.
 
 \begin{figure}[h]
 \begin{centering}
