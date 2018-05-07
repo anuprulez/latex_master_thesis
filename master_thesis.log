@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.2)  7 MAY 2018 15:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.2)  7 MAY 2018 18:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1064,54 +1064,57 @@ File: figures/tools_sim_know_graph.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/tools_sim_know_graph.pdf used on input line 32
 .
 (pdftex.def)             Requested size: 398.69257pt x 157.7907pt.
- [4 <./figures/tools_sim_know_graph.pdf
+) (./chapters/approach.tex [4 <./figures/tools_sim_know_graph.pdf
 
 pdfTeX warning: pdflatex (file ./figures/tools_sim_know_graph.pdf): PDF inclusi
 on: invalid other resource which is no dict (key 'ProcSets', type <array>); ign
 ored.
->]) (./chapters/approach.tex [5]
+>] [5]
 chapter 2.
-<figures/tool_sim_flow.pdf, id=465, 218.8175pt x 335.2525pt>
+<figures/tool_sim_flow.pdf, id=466, 218.8175pt x 335.2525pt>
 File: figures/tool_sim_flow.pdf Graphic file (type pdf)
 
 <use figures/tool_sim_flow.pdf>
-Package pdftex.def Info: figures/tool_sim_flow.pdf used on input line 5.
+Package pdftex.def Info: figures/tool_sim_flow.pdf used on input line 8.
 (pdftex.def)             Requested size: 153.17119pt x 234.67514pt.
- [6
 
 
- <./figures/tool_sim_flow.pdf
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-pdfTeX warning: pdflatex (file ./figures/tool_sim_flow.pdf): PDF inclusion: inv
-alid other resource which is no dict (key 'ProcSets', type <array>); ignored.
->]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 16.
- (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 16.
- [7]
-Underfull \hbox (badness 10000) in paragraph at lines 29--29
+ [6
+
+
+] [7 <./figures/tool_sim_flow.pdf
+
+pdfTeX warning: pdflatex (file ./figures/tool_sim_flow.pdf): PDF inclusion: inv
+alid other resource which is no dict (key 'ProcSets', type <array>); ignored.
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 27--27
 [][][][]$\T1/cmtt/m/n/9 https : / / nlp . stanford . edu / IR-[]book / html / h
 tmledition / stemming-[]and-[]lemmatization-[]1 .
  []
 
-<figures/Tokens_dist.pdf, id=507, 946.01428pt x 515.28508pt>
+<figures/Tokens_dist.pdf, id=506, 946.01428pt x 515.28508pt>
 File: figures/Tokens_dist.pdf Graphic file (type pdf)
 
 <use figures/Tokens_dist.pdf>
-Package pdftex.def Info: figures/Tokens_dist.pdf used on input line 33.
+Package pdftex.def Info: figures/Tokens_dist.pdf used on input line 31.
 (pdftex.def)             Requested size: 378.399pt x 206.11038pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/tool-document-tokens.pdf, id=508, 492.84125pt x 198.7425pt>
+<figures/tool-document-tokens.pdf, id=507, 492.84125pt x 198.7425pt>
 File: figures/tool-document-tokens.pdf Graphic file (type pdf)
 
 <use figures/tool-document-tokens.pdf>
-Package pdftex.def Info: figures/tool-document-tokens.pdf used on input line 43
+Package pdftex.def Info: figures/tool-document-tokens.pdf used on input line 38
 .
 (pdftex.def)             Requested size: 344.98651pt x 139.11879pt.
 
@@ -1124,52 +1127,52 @@ pdfTeX warning: pdflatex (file ./figures/tool-document-tokens.pdf): PDF inclusi
 on: invalid other resource which is no dict (key 'ProcSets', type <array>); ign
 ored.
 >] [11]
-<figures/Document_tokens_full_rank.pdf, id=571, 1167.16055pt x 716.9184pt>
+<figures/Document_tokens_full_rank.pdf, id=570, 1167.16055pt x 716.9184pt>
 File: figures/Document_tokens_full_rank.pdf Graphic file (type pdf)
 
 <use figures/Document_tokens_full_rank.pdf>
 Package pdftex.def Info: figures/Document_tokens_full_rank.pdf used on input li
-ne 104.
+ne 101.
 (pdftex.def)             Requested size: 466.85596pt x 286.76227pt.
 
-Overfull \hbox (68.51732pt too wide) in paragraph at lines 104--105
+Overfull \hbox (68.51732pt too wide) in paragraph at lines 101--102
  [][] 
  []
 
 [12 <./figures/Document_tokens_full_rank.pdf>]
-<figures/usv.pdf, id=592, 534.99875pt x 135.50626pt>
+<figures/usv.pdf, id=590, 534.99875pt x 135.50626pt>
 File: figures/usv.pdf Graphic file (type pdf)
  <use figures/usv.pdf>
-Package pdftex.def Info: figures/usv.pdf used on input line 129.
+Package pdftex.def Info: figures/usv.pdf used on input line 125.
 (pdftex.def)             Requested size: 374.49657pt x 94.85371pt.
 
 [13 <./figures/usv.pdf
 
 pdfTeX warning: pdflatex (file ./figures/usv.pdf): PDF inclusion: invalid other
  resource which is no dict (key 'ProcSets', type <array>); ignored.
->] <figures/Singular_values.pdf, id=640, 1167.16055pt x 716.9184pt>
+>] <figures/Singular_values.pdf, id=639, 1167.16055pt x 716.9184pt>
 File: figures/Singular_values.pdf Graphic file (type pdf)
 
 <use figures/Singular_values.pdf>
-Package pdftex.def Info: figures/Singular_values.pdf used on input line 146.
+Package pdftex.def Info: figures/Singular_values.pdf used on input line 141.
 (pdftex.def)             Requested size: 408.51231pt x 250.92519pt.
 
-Overfull \hbox (10.17368pt too wide) in paragraph at lines 146--147
+Overfull \hbox (10.17368pt too wide) in paragraph at lines 141--142
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/Sum_singular_ranks.pdf, id=641, 946.01428pt x 515.28508pt>
+<figures/Sum_singular_ranks.pdf, id=640, 946.01428pt x 515.28508pt>
 File: figures/Sum_singular_ranks.pdf Graphic file (type pdf)
 
 <use figures/Sum_singular_ranks.pdf>
-Package pdftex.def Info: figures/Sum_singular_ranks.pdf used on input line 153.
+Package pdftex.def Info: figures/Sum_singular_ranks.pdf used on input line 148.
 
 (pdftex.def)             Requested size: 425.7025pt x 231.87614pt.
 
-Overfull \hbox (27.36386pt too wide) in paragraph at lines 153--154
+Overfull \hbox (27.36386pt too wide) in paragraph at lines 148--149
  [][] 
  []
 
@@ -1177,53 +1180,54 @@ Overfull \hbox (27.36386pt too wide) in paragraph at lines 153--154
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<figures/Fraction_ranks_singular_values.pdf, id=642, 946.01428pt x 515.28508pt>
+<figures/Fraction_ranks_singular_values.pdf, id=641, 946.01428pt x 515.28508pt>
 File: figures/Fraction_ranks_singular_values.pdf Graphic file (type pdf)
 <use figures/Fraction_ranks_singular_values.pdf>
 Package pdftex.def Info: figures/Fraction_ranks_singular_values.pdf used on inp
-ut line 160.
+ut line 155.
 (pdftex.def)             Requested size: 378.399pt x 206.11038pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/Document_tokens_low_rank.pdf, id=643, 1340.60847pt x 738.59943pt>
+[14]
+<figures/Document_tokens_low_rank.pdf, id=650, 1340.60847pt x 738.59943pt>
 File: figures/Document_tokens_low_rank.pdf Graphic file (type pdf)
 
 <use figures/Document_tokens_low_rank.pdf>
 Package pdftex.def Info: figures/Document_tokens_low_rank.pdf used on input lin
-e 169.
+e 164.
 (pdftex.def)             Requested size: 469.22pt x 258.51367pt.
 
-Overfull \hbox (70.88136pt too wide) in paragraph at lines 169--170
+Overfull \hbox (70.88136pt too wide) in paragraph at lines 164--165
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[14] [15 <./figures/Singular_values.pdf>] [16 <./figures/Sum_singular_ranks.pdf
->] <figures/dm_pv.pdf, id=678, 505.89pt x 185.69376pt>
+[15 <./figures/Singular_values.pdf>] [16 <./figures/Sum_singular_ranks.pdf>]
+[17 <./figures/Fraction_ranks_singular_values.pdf>]
+<figures/dm_pv.pdf, id=695, 505.89pt x 185.69376pt>
 File: figures/dm_pv.pdf Graphic file (type pdf)
  <use figures/dm_pv.pdf>
-Package pdftex.def Info: figures/dm_pv.pdf used on input line 192.
+Package pdftex.def Info: figures/dm_pv.pdf used on input line 187.
 (pdftex.def)             Requested size: 354.12057pt x 129.98474pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/dbow_pv.pdf, id=679, 440.64626pt x 133.49875pt>
+<figures/dbow_pv.pdf, id=696, 440.64626pt x 133.49875pt>
 File: figures/dbow_pv.pdf Graphic file (type pdf)
 
 <use figures/dbow_pv.pdf>
-Package pdftex.def Info: figures/dbow_pv.pdf used on input line 202.
+Package pdftex.def Info: figures/dbow_pv.pdf used on input line 197.
 (pdftex.def)             Requested size: 308.45027pt x 93.44847pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[17 <./figures/Fraction_ranks_singular_values.pdf>] [18 <./figures/Document_tok
-ens_low_rank.pdf>] [19 <./figures/dm_pv.pdf
+[18 <./figures/Document_tokens_low_rank.pdf>] [19 <./figures/dm_pv.pdf
 
 pdfTeX warning: pdflatex (file ./figures/dm_pv.pdf): PDF inclusion: invalid oth
 er resource which is no dict (key 'ProcSets', type <array>); ignored.
@@ -1231,14 +1235,14 @@ er resource which is no dict (key 'ProcSets', type <array>); ignored.
 
 pdfTeX warning: pdflatex (file ./figures/dbow_pv.pdf): PDF inclusion: invalid o
 ther resource which is no dict (key 'ProcSets', type <array>); ignored.
->] [21] [22] <figures/Learning_rates.pdf, id=787, 1167.16055pt x 716.9184pt>
+>] [21] [22] <figures/Learning_rates.pdf, id=785, 1167.16055pt x 716.9184pt>
 File: figures/Learning_rates.pdf Graphic file (type pdf)
 
 <use figures/Learning_rates.pdf>
-Package pdftex.def Info: figures/Learning_rates.pdf used on input line 314.
+Package pdftex.def Info: figures/Learning_rates.pdf used on input line 309.
 (pdftex.def)             Requested size: 408.51231pt x 250.92519pt.
 
-Overfull \hbox (10.17368pt too wide) in paragraph at lines 314--315
+Overfull \hbox (10.17368pt too wide) in paragraph at lines 309--310
  [][] 
  []
 
@@ -1246,15 +1250,15 @@ Overfull \hbox (10.17368pt too wide) in paragraph at lines 314--315
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
-<figures/Difference_gradients.pdf, id=805, 1167.16055pt x 716.9184pt>
+<figures/Difference_gradients.pdf, id=804, 1167.16055pt x 716.9184pt>
 File: figures/Difference_gradients.pdf Graphic file (type pdf)
 
 <use figures/Difference_gradients.pdf>
-Package pdftex.def Info: figures/Difference_gradients.pdf used on input line 35
-4.
+Package pdftex.def Info: figures/Difference_gradients.pdf used on input line 34
+9.
 (pdftex.def)             Requested size: 408.51231pt x 250.92519pt.
 
-Overfull \hbox (10.17368pt too wide) in paragraph at lines 354--355
+Overfull \hbox (10.17368pt too wide) in paragraph at lines 349--350
  [][] 
  []
 
@@ -1567,11 +1571,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 51.
  ) 
 Here is how much of TeX's memory you used:
- 26315 strings out of 493029
- 464748 string characters out of 6136235
+ 26313 strings out of 493029
+ 464730 string characters out of 6136235
  613722 words of memory out of 5000000
  28998 multiletter control sequences out of 15000+600000
- 30510 words of font info for 139 fonts, out of 8000000 for 9000
+ 30459 words of font info for 138 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  67i,9n,66p,2472b,637s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
@@ -1598,7 +1602,7 @@ blic/cm-super/sfsx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx12
 00.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/t
 exmf/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf/fonts/type1/pub
 lic/cm-super/sftt0900.pfb>
-Output written on master_thesis.pdf (62 pages, 5022662 bytes).
+Output written on master_thesis.pdf (62 pages, 5023529 bytes).
 PDF statistics:
  1278 PDF objects out of 1440 (max. 8388607)
  1040 compressed objects within 11 object streams

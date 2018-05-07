@@ -1,42 +1,37 @@
 \chapter{Approach}\label{chap:approach}
+In this section, we provide a layout of our approach to find similar tools. It includes procedures to extract and clean tools data, learn vectors for each tool, find similarity (correlation) matrices and optimize the combination of these matrices to estimate a final similarity matrix (figure 4). 
+\section{Extract tools data}    
+As Galaxy is an open-source project, the repositories of tools are stored at GitHub\footnote{One example:\url{https://github.com/galaxyproject/tools-iuc/tree/master/tools}}. In these tool repositories, the xml files which start a "tool" tag belong to a tool. We read all of these xml files, extract information from a few of the tool attributes and collect them in a tabular file. This tabular file contains the information about all the tools.
 
 \begin{figure}[h]
 \begin{centering}
     {\includegraphics[scale=0.7]{figures/tool_sim_flow.pdf}}
-    \caption[Tool similarity flowchart]{\textbf{Sequence of steps to find similar tools}: The image shows a series of steps used to establish similarity among tools using approaches from natural language processing to compute text similarity scores and optimization to combine these similarity scores.}
+    \caption[Sequence of steps to find similar tools]{\textbf{Sequence of steps to find similar tools}: The flowchart shows a series of steps used to establish similarity among tools using approaches from natural language processing to compute text similarity scores and optimization to combine optimally.}
 \end{centering}
 \end{figure}
-
-\section{Extract tools data}    
-There are multiple repositories of Galaxy tools stored at GitHub \footnote{One example:\url{https://github.com/galaxyproject/tools-iuc/tree/master/tools}}. In each of the tool repository, there are $xml$ files starting with a $<tool>$ tag. We read all of these $xml$ files, extract information from a few of the attributes and collect them in a $tabular$ file.
     
 \subsection{Select tools attributes}
-A tool has multiple attributes like input and output file types, help text, name, description, citations and some more. But all of these attributes are not important and do not generally identify a tool exclusively. We consider some of these attributes:
+A tool has multiple attributes like input and output file types, help text, name, description, citations and more. But all of these attributes are not important and do not generally identify a tool exclusively. To collect distinguishing information about a tool, we consider only these attributes:
 \begin{itemize}
 	\item Input and output file types
 	\item Name and description
 	\item Help text
 \end{itemize}
-Moreover, we combine the input and output file types and name and description respectively as they are of similar nature. These two combined attributes give complete information about a tool file types and its functionality. We also consider help text attribute which is larger in size compared to the previous two. At the same time, they are empty for few tools. Apart from being large in size, this attribute is noisy as well. It provides more information about the usage of a tool. Generally, in the first few lines, it gives a detailed explanation of the tool functions. Further, it explains how the input data should be supplied to a tool or how an input data looks like. Hence, much of the information present in this attribute is not important. Because of noise present in this attribute, we decide to use only upto first $4$ lines which illustrates the core functionality of the tool. The decision to select only first $4$ lines is empirical. The rest of the information in help text is discarded. 
-
+Moreover, we combine the input and output file types and name and description respectively as they are of similar nature. These combined attributes give complete information about a tool's file types (input and output types) and its functionality (name and description). Further, we take help text attribute as well which is larger in size compared to the previous two. It can also be empty for some tools. Apart from being large in size, it is noisy. It provides more information about the usage of a tool. Generally in the first few lines, it gives a detailed explanation of a tool's functions. Further, it explains how the input data should be supplied to a tool or how an input data looks like. Much of the information contained by this attribute is not important to clearly distinguish a tool. Hence, we decide to use only the first few lines ($4$ lines) of text present in help text attribute of a tool which illustrates its core functionality. The rest of the information in help text is discarded. The decision to select only the first $4$ lines is empirical.
 
 \subsection{Clean tools data}
 \subsubsection{Remove duplicates and stopwords}
-    The collected data for tools is raw containing lots of commonplace and duplicate items which do not add value. These items should be removed to get $tokens$ which are unique and useful. For example, a tool $bamleftalign$ has input files as $bam, fasta$ and output file as $bam$. While combining the file types, we discard the repeated file types and in this case, we consider file types as $bam, fasta$. The other attributes we deal with are different from the file types. The files types are discrete items but in attributes like name and description and help text, the account is in a human language. The explanation contains complete or partially complete sentences in $English$. Hence, to process this information, we need startegies that are prevalent in natural language processing \footnote{\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3168328/}}. The sentences we write in $English$ contain many words and has different parts. These parts include subject, object, preposition, interjection, verbs, adjectives, adverbs, articles and many others. For our processing, we need only those tokens (words) which categorize a tool uniquely and do away with multiple parts of speech present in the statements. For example, a tool named $tophat$ has name and description as "TopHat for Illumina Find splice junctions using RNA-seq data". The words like $for$, $using$ and $data$ do not give much value as they must be present for many tools. These words are called as "stop words" \footnote{\url{https://www.ranks.nl/stopwords}} and we selectively discard them. In addition, we remove numbers and convert all the tokens to lower case.
-  
+    The collected data for tools is raw as it contains lots of commonplace and duplicate items which do not add value. These items should be removed to get $tokens$ which are unique and useful. For example, a tool "bamleftalign" has input files as "bam" and "fasta" and output file as "bam". While combining these file types, we discard the repeated ones. In this case, we consider the file types as "bam" and "fasta". The other attributes we deal with are different from the file types. The files types are already in the form of $tokens$. But, in the attributes like name and description and help text, the words come from English and the explanation contains complete or partially complete sentences. Hence, to process this information, we need strategies that are prevalent in natural language processing\footnote{\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3168328/}}. The sentences we write in English contain many words and has different parts. These parts include subject, object, preposition, interjection, verbs, adjectives, adverbs, articles and many others. For our processing, we need only those tokens (words) which categorize a tool uniquely and do away with multiple parts of speech present in the sentences. For example, a tool named $tophat$ has a name and description as "TopHat for Illumina Find splice junctions using RNA-seq data". The words like "for", "using" and "data" do not give much value as they can be present for many other tools. These words are called as "stopwords"\footnote{\url{https://www.ranks.nl/stopwords}} and we selectively discard them. In addition, we remove numbers and convert all the tokens to lower case.
  
 \subsubsection{Use stemming}
-After removing duplicates and stop words, our data is clean and contain tokens which uniquely identify corresponding tools. When we frame sentences, we follow grammar which constrains us to use different forms of the same word in varying contexts. For example, a word $regress$ can be used in multiple forms as $regresses$ or $regression$ or $regressed$. They share the same root and point towards the same concept. If many tools use this word in varying forms, it is beneficial to converge all the different forms of a word to one basic form. This is called stemming \footnote{\url{https://nlp.stanford.edu/IR-book/html/htmledition/stemming-and-lemmatization-1.html}}. We use nltk \footnote{\url{http://www.nltk.org/}} package for stemming.
+After removing duplicates and stopwords, our data is clean and contain tokens which uniquely identify corresponding tools. When we frame sentences, we follow grammar which constrains us to use different forms of the same word in varying contexts. For example, a word "regress" can be used in multiple forms as "regresses" or "regression" or "regressed". They share the same root and point towards the same concept. If many tools use this word in varying forms, it is beneficial to converge all the different forms of a word to one basic form. This process is called stemming\footnote{\url{https://nlp.stanford.edu/IR-book/html/htmledition/stemming-and-lemmatization-1.html}}. We use NLTK\footnote{\url{http://www.nltk.org/}} package for stemming. It enables us to reduce the size to tokens while keeping the meaning of these tokens same across all the tools.
 
 \begin{figure}[h]
 \begin{centering}
     {\includegraphics[scale=0.4]{figures/Tokens_dist.pdf}}
-    \caption[Tokens distribution]{\textbf{Distribution of tokens (words)}: The plot shows a distribution of tokens for input and output file types, name and description and help text attributes of tools. The help text attribute contains more number of tokens compared to the other two. The input and output file types attribute contains lower number of tokens compared to the other two attributes. }
+    \caption[Distribution of tokens for all the attributes of tools]{\textbf{Distribution of tokens (words) for all the attributes of tools}: The plot shows a distribution of tokens for input and output file types, name and description and help text attributes of tools. The help text attribute contains more number of tokens compared to the other two. The input and output file types attribute contains a lower number of tokens compared to the other two attributes. }
 \end{centering}
 \end{figure}
-
-\subsubsection{Learn relevance for words}
-    We use a term "token" for each word. For example, a tool's name contains "regress, perform" as a set of tokens (words). After discarding duplicate tokens and stopwords and using root words, we have a set of good tokens for all the three attributes - input and output file types, name and description and help text. Let's call these sets as $documents$. The tokens present in these documents do not carry equal importance. Some tokens are more relevant to the document and some not so relevant . We need to find out importance factor for all tokens in a document. Using these factors, we can arrange them in big, sparse documents-tokens matrix. In this matrix, each row represents a document and each column belongs to one token. To compute these relevance scores, we use bestmatch25. Let's associate some variables to be used in explaining this algorithm.
 
 \begin{figure}[h]
 \begin{centering}
@@ -44,22 +39,25 @@ After removing duplicates and stop words, our data is clean and contain tokens w
     \caption[Tool, document and tokens]{\textbf{Relationship between a tool, its documents and their tokens}: The image shows that a tool has three documents corresponding to each attribute and each document contains tokens. For all the tools, we have documents equal to the number of tools for each attribute. The number of tokens in each document varies. Minimum number of tokens for any document can be 0.}
 \end{centering}
 \end{figure}
-    \begin{itemize}
-	\item Token frequency \footnote{\url{https://nlp.stanford.edu/IR-book/pdf/06vect.pdf}} $tf$
-	\item Inverted document frequency $idf$
-	\item Average document length $|D|_{avg}$
-	\item Number of documents $N$
-	\item Size of a document $|D|$
+
+\subsubsection{Learn relevance for words}
+From now on, we use a term "token" for each word. For example, a tool's name contains "regress, perform" as a set of tokens (words). After discarding duplicate tokens, stopwords and using stemmed words, we have a set of meaningful tokens for all the three attributes - input and output file types, name and description and help text. We call these sets as "documents" (figure 6). The tokens present in these documents do not carry equal importance. Some tokens are more relevant to a document and some not so relevant. We need to find out importance factors for all tokens in a document. Using these factors, we can arrange them in big, sparse documents-tokens matrix. In these matrices, each row represents a document and each column belongs to one token. To compute these importance factors, we use BM25 (bestmatch25) \cite{Robertson:2009:PRF:1704809.1704810}. Let's associate some variables to be used in explaining this algorithm.
+
+\begin{itemize}
+	\item Token frequency\footnote{\url{https://nlp.stanford.edu/IR-book/pdf/06vect.pdf}} ($tf$)
+	\item Inverted document frequency ($idf$)
+	\item Average document length ($|D|_{avg}$)
+	\item Number of documents ($N$)
+	\item Size of a document ($|D|$)
 \end{itemize}
     
-First of all, token frequency ($tf$) specifies the count of a token's occurrence in a document. If a token $regress$ appears twice in a document, its $tf$ is $2$. This can also be understood as a weight given to this term. Inverted document frequency for a token is defined as:
+Token frequency ($tf$) specifies the count of a token's occurrence in a document. If a token "regress" appears twice in a document, its $tf$ is $2$. This can also be understood as a weight given to this term. Inverted document frequency for a token is defined as:
 
 \begin{equation}
 idf = \log \frac{N}{df}
 \end{equation}
  
-where $df$ is the count of the documents in which this token is present and $N$ is the total number of documents. If we randomly sample a document, then the probability of this token to be present in this document is $ p_i = \frac{df}{N} $. From information theory, we can say that the information contained by this event is $ - \log p_i $. The entity $idf$ is higher when a token appears less number of documents which means that this token is a good candidate for representing the document and possesses higher power to distinguish between documents. The tokens which appear in many documents are not good representatives. Average document length is the average number tokens for all the documents. Size of a document is the count of all the tokens for that document \cite{Robertson:2009:PRF:1704809.1704810}. 
-
+where $df$ is the count of the documents in which this token is present and $N$ is the total number of documents. If we randomly sample a document, then the probability of this token to be present in this document is $ p_i = \frac{df}{N} $. From information theory, we can say that the information contained by this event is $ - \log p_i $. The entity $idf$ is higher when a token appears in a lesser number of documents. It means that this token is a good candidate for representing that document and thereby, possesses a higher power to distinguish between documents. The tokens which appear in many documents are not good representatives as they tend to be commonplace. Average document length ($|D|_{avg}$) is the average number tokens for all the documents. Size of a document ($|D|$) is the count of all the tokens for that document. 
 
 \begin{equation}
 \alpha = (1-b) + \frac{b \cdot |D|}{|D|_{avg}}
@@ -73,7 +71,7 @@ tf^* = tf \cdot \frac{k+1}{k \cdot \alpha + tf}
 BM25_{score} =tf^* \cdot idf
 \end{equation}
 
-where $k$ and $b$ are hyperparameters. Using the equation $4$, we compute the relevance score for each token in all the documents. Table 1 shows some sample scores for a few documents where the tokens are present with their respective relevance scores. In this way, we arrange document-tokens matrix for all the attributes of tools. For input and output file types, these matrix entries will have only two value, $1$ if a token is present for a document and $0$ if not. For other attributes, relevance scores are positive real numbers. This strategy of representing documents with their tokens is called vector space model as each document represents a vector of tokens.
+where $k$ and $b$ are hyperparameters. Using the equation $4$, we compute the relevance score for each token in all the documents. Table 1 shows scores for a few documents where the tokens are present with their respective BM25 scores. In this way, we arrange document-tokens matrix for all the attributes of tools. For input and output file types, these matrix entries will have only two value, $1$ if a token is present for a document and $0$ if not. For other attributes, relevance scores are positive real numbers. This method of representing documents with their tokens is called vector space model as each document represents a vector of tokens.
 
 \begin{table}[ht]
 \begin{center}
@@ -86,36 +84,34 @@ where $k$ and $b$ are hyperparameters. Using the equation $4$, we compute the re
         Hisat              & 0.0  & 0.0 & 0.0 & 0.0  & 0.0 \\ \hline
     \end{tabular}
     \end{center}
-    \caption[A sparse documents-tokens matrix]{\textbf{A sparse documents-tokens matrix}: This table shows a matrix of tools (documents) arranged along the rows and tokens along the columns. Each value in the matrix is a weight (relevance-factor) assigned to a token for a document. This matrix is sparse containing mostly zeros as the number of tokens is significantly large compared to the number of tokens present in a doucment. This table shows a sample of how actual documents-tokens matrix would look like.}
+    \caption[A sparse documents-tokens matrix]{\textbf{A sparse documents-tokens matrix}: This table shows a matrix of tools (documents) arranged along the rows and tokens along the columns. Each value in the matrix is a weight (relevance-factor) assigned to a token for a document. This matrix is sparse containing mostly zeros as the number of tokens is significantly large compared to the number of tokens present in a document. This table shows a sample of how actual documents-tokens matrix would look like.}
     \label{tab:accuracy}
 \end{table}
 
-Figure 4 shows the heatmaps for documents-tokens matrices that belong to input and output file types and name and description. We can see that these plots are sparse. Each entry in these matrices contain BM25 score for each token in every document. The representation shows how to find tokens which are good representatives of documents with a weighted by their relevance factors. But, they do not tell un anything about the co-occurence of a few tokens in a document. It tells us that a token is important for a document if the BM25 score is higher but it does not tell us anything about its relation to other tokens. Due to this shortcoming, it does not acknowledge the presence of "concepts" or "context" hidden in a document. A concept in document can be realised when we see the relation among a few words. To illustrate this idea, let's take an example of three words - "New York City". These three words mean little or point to different things if looked at separately. But, if we see them together, it points towards a concept. This vector space model lacks the ability to find the correlation among tokens. To enable the vector space model to learn this hidden concepts and find correlation among multiple tokens, we explore two ideas
+Figure 7 shows a heatmap for documents-tokens matrices that belong to name and description and help text attributes. We can see that these plots are sparse. Each entry in these matrices contains BM25 score for each token in a document. This representation tells us which tokens are better representatives and which are not. But, they do not tell us anything about the co-occurrence of tokens in a document. It tells us that a token is important for a document if the BM25 score is higher but it does not tell us anything about its relation to other tokens. Due to this limitation, it does not acknowledge the presence of "concepts" or "context" hidden in a document. A concept in a document can be realised when we see the relation among a few words. To illustrate this idea, let's take an example of three words - "New York City". These three words mean little or point to different things if we look at them separately. But, if we see them together, it points towards a concept. The BM25 model lacks the ability to find the correlation among tokens. To learn the hidden concepts within documents and find correlation among multiple tokens, we explore two ideas:
 \begin{itemize}
-\item Latent Semantic Indexing/Analysis \footnote{\url{http://lsa.colorado.edu/papers/dp1.LSAintro.pdf}}
+\item Latent Semantic Indexing/Analysis\footnote{\url{http://lsa.colorado.edu/papers/dp1.LSAintro.pdf}}
 \item Paragraph Vectors
 \end{itemize}
 
-Using these approaches, we learn dense, $n$ dimensional vector for each document instead of using sparse vectors as shown in figure 5. 
-
+Using these approaches, we learn dense, multi-dimensional vector for each document instead of sparse vectors. 
 
 \begin{figure}[h]
 \begin{centering}
     {\includegraphics[scale=0.4]{figures/Document_tokens_full_rank.pdf}}
-    \caption[Heatmap for documents-tokens matrices]{\textbf{Heatmap for documents-tokens matrices}: The plot shows a heatmap of documents-tokens matrices for name and description and help text attributes. We see that the matrices are sparse containing only few darker spots. The help text matrix is more sparse than name and description matrix as the former contains more number of tokens. We exclude the documents-tokens matrix of input and output file types because we use it as such. For the other two matrices, we would estimate their dense, lower-rank approximations.}
+    \caption[Heatmap for documents-tokens matrices]{\textbf{Heatmap for documents-tokens matrices}: The plot shows a heatmap of documents-tokens matrices for name and description and help text attributes. We see that the matrices are sparse containing only few darker spots. The help text matrix is more sparse than name and description matrix as the former contains more number of tokens. We exclude the documents-tokens matrix of input and output file types because we do not intend to find concepts among file types. For the other two matrices, we estimate their dense, lower-rank approximations.}
 \end{centering}
 \end{figure}
 
-    
 \section{Learn dense vector for a document}
 \subsection{Latent semantic indexing}
-    It is a mathematical way to learn the hidden (latent) concepts in documents by computing a low-rank representation of a documents-tokens matrix \cite{Foltz1996, Shapiro2000, Landauer1998}. This low-rank matrix is dense (figure 6). We use singular value decomposition ($SVD$) to decompose the full-rank matrix into a significantly lower rank matrix. The optimal rank to which a matrix to be decomposed is empirical in nature. We would choose ranks from higher to lower value and consequently the sum of singular values would also decrease with the rank. This decomposition follows the equation:
+    It is a mathematical way to learn the hidden (latent) concepts in documents by computing a low-rank representation of a documents-tokens matrix \cite{Foltz1996, Shapiro2000, Landauer1998}. This low-rank matrix is dense (figure 12). We use singular value decomposition ($SVD$) for this decomposition. The optimal rank to which a matrix needs to be decomposed to get the best approximation of the full-rank matrix is empirical in nature. We choose ranks from higher to lower for decomposition and consequently the sum of singular values also decreases with the rank. This decomposition follows the equation:
     
     \begin{equation}
     X_{n \times m} = U_{n \times n} \cdot S_{n \times m} \cdot V_{m \times m}^T
     \end{equation}
     
-    where $n$ is the number of documents and $m$ is the number of tokens. $S$ is a diagonal matrix containing the singular values in descending order. It contains the weights of the concepts present in the matrix. The matrices $U$ and $V$ and orthogonal matrices which satisfy:
+    where $n$ is the number of documents and $m$ is the number of tokens. $S$ is a diagonal matrix containing the singular values in descending order. It contains the weights of the concepts present in the documents-tokens matrix. The matrices $U$ and $V$ and orthogonal matrices and satisfy:
     
     \begin{equation}
     U^T \cdot U = I_{n \times n}
@@ -127,24 +123,23 @@ Using these approaches, we learn dense, $n$ dimensional vector for each document
 \begin{figure}[h]
 \begin{centering}
     {\includegraphics[scale=0.7]{figures/usv.pdf}}
-    \caption[Pictorial representation of singular value decomposition]{\textbf{Singular value decomposition}: The image shows that how a matrix is decomposed using singular value decomposition. A matrix $X$ is decomposed into three factor matrices, $U$, $S$ and $V$. The $k$ most important dimensions are kept and the rest are discarded. The value of $k$ is empirical and can be estimated using optimization taking frobenius norm as an error function.}
+    \caption[Pictorial representation of singular value decomposition]{\textbf{Singular value decomposition}: The image shows that how a matrix is decomposed using singular value decomposition. A matrix $X$ is decomposed into three matrices, $U$, $S$ and $V$. The $k$ ($<m$) most important dimensions are kept and the rest are discarded. The value of $k$ is empirical and can be estimated using optimization taking Frobenius norm as an error function.}
 \end{centering}
 \end{figure}
 
-Figure 6 explains \footnote{\url{http://theory.stanford.edu/~tim/s15/l/l9.pdf}} how $SVD$ of a matrix is carried out. The matrix $U$ contains information about how the tokens, arraged along the columns, are mapped to concepts and matrix $V$ stores information about how the concepts are mapped to documents arranged along the rows. 
-
+Figure 8 explains\footnote{\url{http://theory.stanford.edu/~tim/s15/l/l9.pdf}} how the $SVD$ of a matrix is carried out. The matrix $U$ contains information about how the tokens, arranged along the columns, are mapped to concepts. The matrix $V$ stores information about how the concepts are mapped to documents arranged along the rows.
 
 \subsubsection{Low-rank approximation}
-The low-rank approximation of a matrix is important to discard the features which are non-repeating or noise. Using this, we can collect the latent relations present in the documents-tokens matrices. We saw that our documents-tokens matrices suffer from sparseness and exhibit no relation among tokens. The approximation deals with these issues as well. The resulting matrices are dense and contain most of the singular values. The singular values which are small (the last entries of the $s$ matrix along the diagonal) are discarded \cite{DBLP:journals/corr/Yang15b}. The low-rank approximated matrix $X_k$ is computed as:
+The low-rank approximation of a matrix is important to discard the features which are non-repeating. These features with low scaling factors represent noise and by discarding these unimportant features, we can collect the latent relations present in the documents-tokens matrices. We have seen that our documents-tokens matrices suffer from sparsity and exhibit no relation among tokens. The low-rank approximation deals with these issues. The resulting matrices are dense and contain top singular values (which are higher in magnitude). The singular values which are small (the last entries of the $S$ matrix along the diagonal) are discarded \cite{DBLP:journals/corr/Yang15b}. The low-rank approximation $X_k$ ($k<m$) is computed as:
     \begin{equation}
     X_{n \times m} = U_{k} \cdot S_{k} \cdot V_{k}^T
     \end{equation}
-    where $U_{k}$ is the first $k$ columns of $U$, $V_{k}$ is the first $k$ rows and $S$ is the first $k$ singular values. $k$ is an empirical parameter. $X_k$ is called as the rank-k approximation of the full rank matrix $X$. Figure 7 shows the variation of the sum of singular values with the percentage rank of matrices. The percentage rank is $k \div K$ where $1 <= k <= K$ and $K$ is the original (full) rank of a matrix. We take it as the original ranks of the three matrices are not comparable. By doing this, we can show them on one plot. Similar idea we use for the sum of the singular values of each matrix. From figure 7, we can say that if we reduce the ranks of matrices to $70\%$ of the full-rank, we can still capture $\approx 90\%$ of the singular values. The reduction to half of the full-rank achieves $\approx 80\%$ of the sum of singular values. 
+    where $U_{k}$ is the first $k$ columns of $U$, $V_{k}$ is the first $k$ rows and $S$ is the first $k$ singular values. $k$ is an empirical parameter. $X_k$ is called as the rank-k approximation of the full-rank matrix $X$. Figure 10 shows how the rank varies with the sum of singular values for documents-tokens matrices for all the attributes. Figure 11 shows how the fraction of the sum of singular values vary with the fraction of ranks of documents-tokens matrices for all the attributes. The percentage rank is $k \div K$ where $1 <= k <= K$ and $K$ is the original (full) rank of a matrix. By taking fractions, we bring all the three plots from figure 10 into one plot. From figure 11, we can say that if we reduce the ranks of matrices to $70\%$ of the full-rank, we can still capture $\approx 90\%$ of the sum of singular values. The reduction to half of the full-rank achieves $\approx 80\%$ of the sum of singular values. We show the variation for input and output file types in figure 10 and 11 but we do not reduce its rank. That is for completeness.
 
 \begin{figure}[h]
 \begin{centering}
     {\includegraphics[scale=0.35]{figures/Singular_values.pdf}}
-    \caption[Singular values of documents-tokens matrices]{\textbf{Singular values of the documents-tokens matrices}: The plot shows singular values computed using singular value decomposition (equation 5). The diagonal matrix $S$ contains these singular values sorted in descending order. We can see that in (a), (b) and (c) that very few singular values have higher mangnitude and most of the singular values are smaller. }
+    \caption[Singular values of documents-tokens matrices]{\textbf{Singular values of the documents-tokens matrices}: The plot shows singular values computed using singular value decomposition (equation 5). The diagonal matrix $S$ contains these singular values sorted in descending order. We can see that in (a), (b) and (c) that very few singular values have higher mangnitude and most of the singular values are smaller.}
 \end{centering}
 \end{figure}
 
@@ -162,7 +157,7 @@ The low-rank approximation of a matrix is important to discard the features whic
 \end{centering}
 \end{figure}
 
-We reduce the rank of the original documents-tokens matrices and compute the dense and approximated low-rank matrices. Figure 8 shows the low-rank matrices for input and output file types and name and description attributes. For computing this, we use only $40\%$ of the full-rank. We can compare it with figure 5 and deduce that figure 8 is denser than figure 5. In these low-rank matrices, we have dense vector representations for documents along the rows. In each matrix, each row contains a vector for one document. Using these documents vectors, we can compute the correlation or similarity using any similarity measure. There are multiple similarity measures that can be used like euclidean distance, cosine similarity, manhattan distance. We use cosine angle similarity to compute the correlation between vectors. By this, we get a positive real number between $0.0$ and $1.0$ specifying how similar a pair of documents are. The higher the score, higher is the similarity. Computing this similarity for all the documents give us a similarity matrix $S_{n \times n}$ where $n$ is the number of documents. This square, symmetric matrix is called as similarity or correlation matrix. We compute three such matrices each corresponding to one attribute.
+We reduce the rank of the original documents-tokens matrices and compute the dense and low-rank approximations. Figure 12 shows the low-rank matrices for name and description and help text attributes. To compute this, we use only $5\%$ of the full-rank. We can compare it with figure 7 and verify that it is more dense than figure 7. In these low-rank matrices, we get dense vector representations for documents along the rows. In each matrix, each row contains a vector for one document. Using these documents vectors, we can compute the correlation or similarity using a similarity measure. There are multiple similarity measures which can be used like euclidean distance, cosine similarity, manhattan distance, jaccard index and many more. In our case, we use cosine angle similarity for name and description and help text and jaccard index for input and output file types to compute the correlation between vectors. We get a positive real number between $0.0$ and $1.0$ as similarity score between a pair of vectors specifying how similar they are. The higher the score, higher is the similarity. Computing this similarity for all the documents gives us a similarity matrix $S_{n \times n}$ where $n$ is the number of documents. This square, symmetric matrix is called as similarity or correlation matrix. We compute three such matrices, each corresponding to one attribute (input and output file types, name and description and help text).
   
 \begin{figure}[h]
 \begin{centering}
