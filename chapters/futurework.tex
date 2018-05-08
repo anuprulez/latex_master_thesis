@@ -1,9 +1,14 @@
 \chapter{Future Work}
 
-\section{Get true value}
-To quantify the improvements, we need to set absolute true values among tools. It means that we should create a dictionary of say $10$ similar tools for each tool. Using this constraint, we can verify our findings in a reliable way. Otherwise, we need to have a visualizer to look through the results to find whether we improve. On the other hand, it is not an easy task to create logical categories of thousands of tools.
+\section{Get true similarity values}
+To quantify the improvements, we need to set absolute true values among tools. It means that we should create a dictionary of say $10$ similar tools for each tool. Using this constraint, we can verify our findings in a more reliable way. Otherwise, we need to have a visualizer to look through the similar tools to verify whether we improve. On the other hand, it is not an easy task to create logical categories and have similarity scores for thousands of tools.
 
 \section{Correlation}
-Our similarity matrices are dense. We can nullify some low scores to retain only higher similarity scores. We can do it by finding the median value of similarity scores for a tool and set the scores to 0 which are lower than the median. After this, we can optimize the scores and see the distribution and results if we improve. 
+Our similarity matrices are dense. We can nullify some low scores to retain only the high similarity scores. We can do it by finding the median value of similarity scores for a tool and set the scores to $0$ which are lower than the median. After this, we can optimize the scores and see the distribution and results.
 
+\section{Other error functions}
+We used mean squared error as loss function for optimizing the weights parameters. We can try out other error measures like cross-entropy error. With this error, we need to redefine our true similarity value (as we took $1.0$ as the best similarity score between a pair of tools and with cross-entropy error, one term would always be zero) and similarity measures. Based on these entities, we can compute the gradient of the error function with respect to the weights parameters. 
+
+\section{More tools}
+We can increase the number of tools to do the analysis on. It would provide more data and consequently more context for the paragraph vectors to learn better semantics among the documents. 
 

@@ -7,7 +7,7 @@ Warning--empty journal in Sutskever
 Warning--empty journal in Botev
 You've used 13 entries,
             1876 wiz_defined-function locations,
-            570 strings with 5894 characters,
+            570 strings with 5852 characters,
 and the built_in function-call counts, 3433 in all, are:
 = -- 347
 > -- 115

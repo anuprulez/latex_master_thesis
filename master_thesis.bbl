@@ -24,7 +24,7 @@ H.~Sak, A.~W. Senior, and F.~Beaufays, ``Long short-term memory based recurrent
   neural network architectures for large vocabulary speech recognition,'' {\em
   CoRR}, vol.~abs/1402.1128, 2014.
 
-\bibitem{Robertson:2009:PRF:1704809.1704810}
+\bibitem{RobertsonBM25}
 S.~Robertson and H.~Zaragoza, ``The probabilistic relevance framework: Bm25 and
   beyond,'' {\em Found. Trends Inf. Retr.}, vol.~3, pp.~333--389, Apr. 2009.
 

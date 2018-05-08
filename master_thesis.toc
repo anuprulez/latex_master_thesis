@@ -12,10 +12,10 @@
 \contentsline {section}{\numberline {2.2}Learn dense vector for a document}{13}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Latent semantic indexing}{13}{subsection.2.2.1}
 \contentsline {subsubsection}{\nonumberline Low-rank approximation}{14}{section*.20}
-\contentsline {subsection}{\numberline {2.2.2}Paragraph vectors}{15}{subsection.2.2.2}
-\contentsline {subsubsection}{\nonumberline Approach}{16}{section*.25}
+\contentsline {subsection}{\numberline {2.2.2}Paragraph vectors}{16}{subsection.2.2.2}
+\contentsline {subsubsection}{\nonumberline Approach}{17}{section*.25}
 \contentsline {section}{\numberline {2.3}Similarity measures}{19}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Cosine similarity}{19}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.1}Cosine similarity}{20}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Jaccard index}{20}{subsection.2.3.2}
 \contentsline {section}{\numberline {2.4}Optimization}{21}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Gradient descent}{22}{subsection.2.4.1}
@@ -26,31 +26,33 @@
 \contentsline {subsubsection}{\nonumberline Gradient verification}{25}{section*.31}
 \contentsline {chapter}{\numberline {3}Experiments}{27}{chapter.3}
 \contentsline {section}{\numberline {3.1}Amount of help text}{27}{section.3.1}
-\contentsline {section}{\numberline {3.2}One and two sources instead of three}{27}{section.3.2}
+\contentsline {section}{\numberline {3.2}Number of attributes}{27}{section.3.2}
 \contentsline {section}{\numberline {3.3}Similarity measures}{27}{section.3.3}
-\contentsline {section}{\numberline {3.4}Latent Semantic Analysis}{27}{section.3.4}
-\contentsline {section}{\numberline {3.5}Paragraph Vector}{28}{section.3.5}
+\contentsline {section}{\numberline {3.4}Latent semantic analysis}{27}{section.3.4}
+\contentsline {section}{\numberline {3.5}Paragraph vector}{28}{section.3.5}
 \contentsline {subsection}{\numberline {3.5.1}Distributed bag-of-words}{28}{subsection.3.5.1}
-\contentsline {section}{\numberline {3.6}Gradient Descent}{28}{section.3.6}
+\contentsline {section}{\numberline {3.6}Gradient descent}{28}{section.3.6}
 \contentsline {subsection}{\numberline {3.6.1}Learning rates}{29}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}Code repositories}{29}{subsection.3.6.2}
+\contentsline {section}{\numberline {3.7}Code repositories}{29}{section.3.7}
 \contentsline {chapter}{\numberline {4}Results and Analysis}{30}{chapter.4}
 \contentsline {section}{\numberline {4.1}Latent Semantic Analysis}{30}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Full-rank matrices}{30}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}70\% of full-rank}{30}{subsection.4.1.2}
 \contentsline {subsection}{\numberline {4.1.3}30\% of full-rank}{31}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}5\% of full-rank}{32}{subsection.4.1.4}
-\contentsline {subsection}{\numberline {4.1.5}Improvement verification}{33}{subsection.4.1.5}
-\contentsline {subsubsection}{\nonumberline Reduction in error}{33}{section*.41}
-\contentsline {subsubsection}{\nonumberline Static visualizer}{34}{section*.45}
-\contentsline {section}{\numberline {4.2}Paragraph vectors}{35}{section.4.2}
-\contentsline {section}{\numberline {4.3}Comparison of latent semantic analysis and paragraph vectors approach}{35}{section.4.3}
-\contentsline {subsubsection}{\nonumberline Static visualizer}{36}{section*.53}
-\contentsline {chapter}{\numberline {5}Conclusion}{48}{chapter.5}
-\contentsline {section}{\numberline {5.1}Tools data}{48}{section.5.1}
-\contentsline {section}{\numberline {5.2}Approaches}{48}{section.5.2}
-\contentsline {section}{\numberline {5.3}Optimization}{49}{section.5.3}
-\contentsline {chapter}{\numberline {6}Future Work}{50}{chapter.6}
-\contentsline {section}{\numberline {6.1}Get true value}{50}{section.6.1}
-\contentsline {section}{\numberline {6.2}Correlation}{50}{section.6.2}
-\contentsline {chapter}{Bibliography}{51}{section.6.2}
+\contentsline {subsection}{\numberline {4.1.4}5\% of full-rank}{31}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}Improvement verification}{31}{subsection.4.1.5}
+\contentsline {subsubsection}{\nonumberline Reduction in error}{31}{section*.41}
+\contentsline {subsubsection}{\nonumberline Static visualizer}{32}{section*.45}
+\contentsline {section}{\numberline {4.2}Paragraph vectors}{32}{section.4.2}
+\contentsline {subsubsection}{\nonumberline Static visualizer}{33}{section*.46}
+\contentsline {section}{\numberline {4.3}Comparison of latent semantic analysis and paragraph vectors approaches}{33}{section.4.3}
+\contentsline {chapter}{\numberline {5}Conclusion}{51}{chapter.5}
+\contentsline {section}{\numberline {5.1}Tools data}{51}{section.5.1}
+\contentsline {section}{\numberline {5.2}Approaches}{51}{section.5.2}
+\contentsline {section}{\numberline {5.3}Optimization}{52}{section.5.3}
+\contentsline {chapter}{\numberline {6}Future Work}{53}{chapter.6}
+\contentsline {section}{\numberline {6.1}Get true similarity values}{53}{section.6.1}
+\contentsline {section}{\numberline {6.2}Correlation}{53}{section.6.2}
+\contentsline {section}{\numberline {6.3}Other error functions}{53}{section.6.3}
+\contentsline {section}{\numberline {6.4}More tools}{53}{section.6.4}
+\contentsline {chapter}{Bibliography}{54}{section.6.4}
