@@ -98,6 +98,13 @@ We observe a drop in mean squared error when we decrease the ranks of the matric
 \end{centering}
 \end{figure}
 
+\subsubsection{Static visualizer}
+We have created static html pages (visualizers) to look at the results. For latent semantic analysis approach, we have two such websites. In addition to showing similar tools for the selected tool, they show a few plots for the error, gradient and learning rate drop and the selected tool's similarity scores with all the other tools.
+
+\begin{itemize}
+\item Use full-rank documents-tokens matrices\footnote{\url{https://rawgit.com/anuprulez/similar_galaxy_tools/lsi/viz/similarity_viz.html}}
+\item Use $5\%$ of full-rank documents-tokens matrices\footnote{\url{https://rawgit.com/anuprulez/similar_galaxy_tools/lsi_005/viz/similarity_viz.html}}
+\end{itemize}
 
 \section{Paragraph vectors}
 
@@ -170,3 +177,6 @@ We see the similar tools for a few selected tools for the different stage of ran
     \caption[Similar tools (top-2) for "hisat" extracted using paragraph vectors approach]{\textbf{Similar tools (top-2) for "hisat" extracted using paragraph vectors approach}: The table shows top-2 similar tools selected for "hisat". The weights learned by optimization are 0.14 (input and output file types), 0.44 (name and description) and 0.42 (help text).}
     \label{tab:accuracy}
 \end{table}
+
+\subsubsection{Static visualizer}
+For paragraph vectors approach, the visualizer\footnote{\url{https://rawgit.com/anuprulez/similar_galaxy_tools/doc2vec/viz/similarity_viz.html}} shows similar tools by learning vectors for each document. In addition to showing similar tools for the selected tool, they show a few plots for the error, gradient and learning rate drop and the selected tool's similarity scores with all the other tools.
