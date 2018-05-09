@@ -1,3 +1,4 @@
+\contentsline {part}{\numberline {I}Find similar Galaxy tools}{1}{part.1}
 \contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}
 \contentsline {section}{\numberline {1.1}Galaxy}{2}{section.1.1}
 \contentsline {section}{\numberline {1.2}Galaxy tools}{3}{section.1.2}
@@ -55,4 +56,5 @@
 \contentsline {section}{\numberline {6.2}Correlation}{54}{section.6.2}
 \contentsline {section}{\numberline {6.3}Other error functions}{54}{section.6.3}
 \contentsline {section}{\numberline {6.4}More tools}{54}{section.6.4}
-\contentsline {chapter}{Bibliography}{55}{section.6.4}
+\contentsline {part}{\numberline {II}Predict next tools in Galaxy workflows}{55}{part.2}
+\contentsline {chapter}{Bibliography}{56}{section*.55}
