@@ -10,7 +10,7 @@
 \contentsline {subsubsection}{\nonumberline Use stemming}{8}{section*.13}
 \contentsline {subsubsection}{\nonumberline Learn relevance for words}{8}{section*.16}
 \contentsline {section}{\numberline {2.2}Learn dense vector for a document}{12}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Latent semantic indexing}{12}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.1}Latent semantic analysis}{12}{subsection.2.2.1}
 \contentsline {subsubsection}{\nonumberline Low-rank approximation}{13}{section*.20}
 \contentsline {subsection}{\numberline {2.2.2}Paragraph vectors}{16}{subsection.2.2.2}
 \contentsline {subsubsection}{\nonumberline Approach}{17}{section*.25}

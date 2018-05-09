@@ -90,7 +90,7 @@ where $k$ and $b$ are hyperparameters. The standard value of $k$ is $1.75$ and $
 
 Figure 7 shows a heatmap for documents-tokens matrices that belong to name and description and help text attributes. We can see that these plots are sparse. Each entry in these matrices contains BM25 score for each token in a document. This representation tells us which tokens are better representatives and which are not. But, they do not tell us anything about the co-occurrence of tokens in a document. It tells us that a token is important for a document if the BM25 score is higher but it does not tell us anything about its relation to other tokens. Due to this limitation, it does not acknowledge the presence of "concepts" or "context" hidden in a document. A concept in a document can be realised when we see the relation among a few words. To illustrate this idea, let's take an example of three words - "New York City". These three words mean little or point to different things if we look at them separately. But, if we see them together, it points towards a concept. The BM25 model lacks the ability to find the correlation among tokens. To learn the hidden concepts within documents and find correlation among multiple tokens, we explore two ideas:
 \begin{itemize}
-\item Latent semantic indexing/analysis\footnote{\url{http://lsa.colorado.edu/papers/dp1.LSAintro.pdf}}
+\item Latent semantic analysis\footnote{\url{http://lsa.colorado.edu/papers/dp1.LSAintro.pdf}}
 \item Paragraph vectors
 \end{itemize}
 
@@ -104,7 +104,7 @@ Using these approaches, we learn dense, multi-dimensional vector for each docume
 \end{figure}
 
 \section{Learn dense vector for a document}
-\subsection{Latent semantic indexing}
+\subsection{Latent semantic analysis}
     It is a mathematical way to learn the hidden (latent) concepts in documents by computing a low-rank representation of a documents-tokens matrix \cite{Foltz1996, Shapiro2000, Landauer1998}. This low-rank matrix is dense (figure 12). We use singular value decomposition ($SVD$) for this decomposition. The optimal rank to which a matrix needs to be decomposed to get the best approximation of the full-rank matrix is empirical in nature. We choose ranks from higher to lower for decomposition and consequently the sum of singular values also decreases with the rank. This decomposition follows the equation:
     
     \begin{equation}
@@ -167,7 +167,7 @@ We reduce the rank of the original documents-tokens matrices and compute the den
 \end{figure}
 
 \subsection{Paragraph vectors}
-Using latent semantic indexing (LSI), we learned dense vectors to represent each document. It learns better vector representations for documents compared to using full-rank documents-tokens matrices. One main limitation is to assess the quantity by which we need to lower the rank of a matrix in order to find the optimal results. There are ways to find the optimal reduced rank by optimizing the Frobenius norm but it is not simple. We would see in the analysis section that the similar tools for a tool are more dominated by the scores shared by the input and output file types. Due to this issue, the tools which are similar in their functions do not get pushed up in the ranking ladder. To avoid these limitations, we use an approach known as $doc2vec$ (document to vector) \cite{DBLP:journals/corr/LeM14}. It learns a dense, fixed-size vectors for each document using neural networks. These vectors are unique in a way that captures the semantics present in the documents. The documents which share similar context are represented by similar vectors. When we compute cosine distance between these vectors sharing similar context, we get a higher number (closer to 1.0). It allows the documents to have variable lengths.
+Using latent semantic analysis, we learned dense vectors to represent each document. It learns better vector representations for documents compared to using full-rank documents-tokens matrices. One main limitation is to assess the quantity by which we need to lower the rank of a matrix in order to find the optimal results. There are ways to find the optimal reduced rank by optimizing the Frobenius norm but it is not simple. We would see in the analysis section that the similar tools for a tool are more dominated by the scores shared by the input and output file types. Due to this issue, the tools which are similar in their functions do not get pushed up in the ranking ladder. To avoid these limitations, we use an approach known as $doc2vec$ (document to vector) \cite{DBLP:journals/corr/LeM14}. It learns a dense, fixed-size vectors for each document using neural networks. These vectors are unique in a way that captures the semantics present in the documents. The documents which share similar context are represented by similar vectors. When we compute cosine distance between these vectors sharing similar context, we get a higher number (closer to 1.0). It allows the documents to have variable lengths.
 
 
 \subsubsection{Approach}
