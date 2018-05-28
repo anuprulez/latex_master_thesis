@@ -1,1 +1,6 @@
-\chapter{Previous work}\label{chap:previous_work_wf}
+\chapter{Background}\label{chap:previous_work_wf}
+
+The paths we extract from workflows are sequential where tools are connected one after another. In order to predict the next tools, we should take into account all the previous connected tools. As our data possesses long chains of tools, we explore some literature from machine learning research which work on similar data. Interestingly, learning from sequential data is a popular task in many other fields like natural language processing \cite{0001KYS17, LiQYL16}. They use deep learning models to learn sequences of words which aims to classify sentiments in text, learn part-of-speech tagging and unique dense vector for each word. The classification of sentiments involves learning core contexts present in the chain of words. The part-of-speech tagging which divides a sentence into multiple parts of speech like adjective, adverb, conjunctions also depends on finding context hidden in the long chains of words. For sentiment analysis \cite{0001KYS17} achieves an accuracy of $\approx 85\%$ using recurrent neural network (gated recurrent unit). For part-of-speech tagging, the accuracy goes upto $\approx 93\%$. 
+
+
+For clinical data as well, learning long-range dependencies for tools proves to be beneficial \cite{LiptonKEW15}. In this work, patient's health states are analysed using a patient's electronic health records to predict the next possible health states. 

@@ -60,4 +60,14 @@ A.~Botev, G.~Lever, and D.~Barber, ``Nesterov's accelerated gradient and
   momentum as approximations to regularised update descent,'' pp.~pp.
   1899--1903., 2017.
 
+\bibitem{0001KYS17}
+W.~Yin, K.~Kann, M.~Yu, and H.~Sch{\"{u}}tze, ``Comparative study of {CNN} and
+  {RNN} for natural language processing,'' {\em CoRR}, vol.~abs/1702.01923,
+  2017.
+
+\bibitem{LiQYL16}
+X.~Li, T.~Qin, J.~Yang, and T.~Liu, ``Lightrnn: Memory and
+  computation-efficient recurrent neural networks,'' {\em CoRR},
+  vol.~abs/1610.09893, 2016.
+
 \end{thebibliography}

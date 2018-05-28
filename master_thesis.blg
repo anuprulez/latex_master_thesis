@@ -5,45 +5,45 @@ The style file: ieeetr.bst
 Database file #1: bib/topic1.bib
 Warning--empty journal in Sutskever
 Warning--empty journal in Botev
-You've used 13 entries,
+You've used 15 entries,
             1876 wiz_defined-function locations,
-            570 strings with 5852 characters,
-and the built_in function-call counts, 3433 in all, are:
-= -- 347
-> -- 115
+            580 strings with 6166 characters,
+and the built_in function-call counts, 3793 in all, are:
+= -- 373
+> -- 143
 < -- 0
-+ -- 44
-- -- 31
-* -- 247
-:= -- 490
-add.period$ -- 13
-call.type$ -- 13
-change.case$ -- 13
++ -- 54
+- -- 39
+* -- 279
+:= -- 554
+add.period$ -- 15
+call.type$ -- 15
+change.case$ -- 15
 chr.to.int$ -- 0
-cite$ -- 15
-duplicate$ -- 176
-empty$ -- 324
-format.name$ -- 31
-if$ -- 835
+cite$ -- 17
+duplicate$ -- 194
+empty$ -- 358
+format.name$ -- 39
+if$ -- 915
 int.to.chr$ -- 0
-int.to.str$ -- 13
-missing$ -- 13
-newline$ -- 42
-num.names$ -- 13
-pop$ -- 33
+int.to.str$ -- 15
+missing$ -- 15
+newline$ -- 48
+num.names$ -- 15
+pop$ -- 39
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 119
+skip$ -- 121
 stack$ -- 0
 substring$ -- 260
-swap$ -- 73
+swap$ -- 75
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 2
-while$ -- 31
-width$ -- 15
-write$ -- 124
+while$ -- 33
+width$ -- 17
+write$ -- 142
 (There were 2 warnings)

@@ -60,7 +60,7 @@
 \contentsline {chapter}{\numberline {7}Introduction}{56}{chapter.7}
 \contentsline {section}{\numberline {7.1}Galaxy workflows}{56}{section.7.1}
 \contentsline {chapter}{\numberline {8}Motivation}{58}{chapter.8}
-\contentsline {chapter}{\numberline {9}Previous work}{59}{chapter.9}
+\contentsline {chapter}{\numberline {9}Background}{59}{chapter.9}
 \contentsline {chapter}{\numberline {10}Our approach}{60}{chapter.10}
 \contentsline {section}{\numberline {10.1}Next tools}{60}{section.10.1}
 \contentsline {section}{\numberline {10.2}Compatible next tools}{60}{section.10.2}
