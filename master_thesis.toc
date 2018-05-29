@@ -63,21 +63,21 @@
 \contentsline {chapter}{\numberline {9}Related work}{59}{chapter.9}
 \contentsline {chapter}{\numberline {10}Our approach}{61}{chapter.10}
 \contentsline {section}{\numberline {10.1}Next tools}{61}{section.10.1}
-\contentsline {section}{\numberline {10.2}Compatible next tools}{61}{section.10.2}
-\contentsline {section}{\numberline {10.3}Variation of number of compatible tools}{61}{section.10.3}
-\contentsline {section}{\numberline {10.4}Topk predictions - absolute precision, top3, top5}{61}{section.10.4}
-\contentsline {section}{\numberline {10.5}Encoding the compatible types into the label vector}{61}{section.10.5}
-\contentsline {section}{\numberline {10.6}Compatible types just for verification}{61}{section.10.6}
-\contentsline {section}{\numberline {10.7}Length of input sequences}{61}{section.10.7}
-\contentsline {section}{\numberline {10.8}Effect of learning rates}{61}{section.10.8}
-\contentsline {section}{\numberline {10.9}Loss function}{61}{section.10.9}
-\contentsline {section}{\numberline {10.10}Optimizer}{61}{section.10.10}
-\contentsline {section}{\numberline {10.11}Classifiers - Neural network and classical ones}{61}{section.10.11}
-\contentsline {chapter}{\numberline {11}Experiments}{62}{chapter.11}
-\contentsline {chapter}{\numberline {12}Results and analysis}{63}{chapter.12}
-\contentsline {section}{\numberline {12.1}No decomposition of paths}{63}{section.12.1}
-\contentsline {section}{\numberline {12.2}Decomposition keeping first one fixed}{63}{section.12.2}
-\contentsline {section}{\numberline {12.3}Decomposition for each pair of tools}{63}{section.12.3}
-\contentsline {chapter}{\numberline {13}Conclusion}{64}{chapter.13}
-\contentsline {chapter}{\numberline {14}Future work}{65}{chapter.14}
-\contentsline {chapter}{Bibliography}{65}{chapter.14}
+\contentsline {section}{\numberline {10.2}Compatible next tools}{62}{section.10.2}
+\contentsline {section}{\numberline {10.3}Variation of number of compatible tools}{63}{section.10.3}
+\contentsline {section}{\numberline {10.4}Topk predictions - absolute precision, top3, top5}{63}{section.10.4}
+\contentsline {section}{\numberline {10.5}Encoding the compatible types into the label vector}{63}{section.10.5}
+\contentsline {section}{\numberline {10.6}Compatible types just for verification}{63}{section.10.6}
+\contentsline {section}{\numberline {10.7}Length of input sequences}{63}{section.10.7}
+\contentsline {section}{\numberline {10.8}Effect of learning rates}{63}{section.10.8}
+\contentsline {section}{\numberline {10.9}Loss function}{63}{section.10.9}
+\contentsline {section}{\numberline {10.10}Optimizer}{63}{section.10.10}
+\contentsline {section}{\numberline {10.11}Classifiers - Neural network and classical ones}{63}{section.10.11}
+\contentsline {chapter}{\numberline {11}Experiments}{64}{chapter.11}
+\contentsline {chapter}{\numberline {12}Results and analysis}{65}{chapter.12}
+\contentsline {section}{\numberline {12.1}No decomposition of paths}{65}{section.12.1}
+\contentsline {section}{\numberline {12.2}Decomposition keeping first one fixed}{65}{section.12.2}
+\contentsline {section}{\numberline {12.3}Decomposition for each pair of tools}{65}{section.12.3}
+\contentsline {chapter}{\numberline {13}Conclusion}{66}{chapter.13}
+\contentsline {chapter}{\numberline {14}Future work}{67}{chapter.14}
+\contentsline {chapter}{Bibliography}{67}{chapter.14}

@@ -1,8 +1,28 @@
 \chapter{Our approach}\label{chap:approach_wf}
+We discussed in section 7 that a workflow consists of multiple tools arranged one after another. To create a workflow, a user selects a tool from a set of tools. At each phase of tool selection to design a workflow, we propose to display a set of possible next tools. To compute this set of next tools, we need to design a learning algorithm that learns the connotations of tools connections. We designate this learning algorithm as a classifier. A classifier is an algorithm which indentifies the categories of input data. The complete data is divided into training and test sets. Each entry in the train or test set has a sample and its category. The classifier consumes the training set to learn the characteristics or features hidden in the data along with their categories. The robustness of learning by the classifier is verified on the test set. This is the basic principle followed in machine learning tasks. Moreover, there are two crucial features of this classifier - it should grasp the latent semantics in the tools connections and use them to predict next tools correctly (with an accuracy of $\geq90\%$). Along side, the learning time should be reasonable. While developing our classifier, we take note of the classifier's running-time complexity and its precision to predict next tools.
 
 \section{Next tools}
+From figure 33, we conclude that a workflow can have more than one path and these paths can share few tools. Also, one tool or a sequence of tools can connect to more than one tool at any stage of workflow creation. Our classifier needs data in the form of sample and its category. For our workflows data, a sample is either a tool or a sequence of tools. The category is also a tool or a set of tools which forms a set of next possible tools for the sample (a tool or a sequence of tools). To delineate this idea of extracting samples and their categories, let's take an example workflow from figure 33. We decompose this workflow into following smaller sequences of tools taking a path from tool "Get flanks" until "Bar chart".
+
+\begin{table}[ht]
+\begin{center}
+    \begin{tabular}{|l|l|}
+        \hline
+        Samples (tools sequences)          & Categories  \\ \hline
+        Get flanks                         & AWK         \\ \hline
+        Get flanks, AWK                    & Intersect   \\ \hline
+        Get flanks, AWK, Intersect         & Count, Extract genomic DNA \\ \hline
+        Get flanks, AWK, Intersect, Count  & Bar chart   \\ \hline
+    \end{tabular}
+    \end{center}
+    \caption[Workflow decomposition into samples and categories]{\textbf{Workflow decomposition into samples and categories}: This table shows multiple samples (tools sequences) and their categories computed using a workflow shown in figure 33. Each row in the table shows one sample with either one tool or a sequence of tools with its category (a tool or tools).}
+    \label{tab:toolsseqcategory}
+\end{table}
+
+Using the technique explained in table 5, we decompose the workflows into samples and their respective categories. We do it in this way because of the necessity of having prediction in the same way. It means that when we select "Get flanks" tool while creating a workflow, our classifier should sugges "AWK" as a next possible tool. Let's say we select "AWK" and our sequence becomes "Get flanks, AWK". Given this sequence, the classifier should predict "Intersect". When we select "Intersect" as the next tool, the classifier should predict two next tools - "Count" and "Extract genomic DNA" (as present in the workflow in figure 33). Following this approach, we compute samples and their categories. The categories that we assign are actual next tools which means that a tool or a sequence of tools is connected to these next tools (categories) in workflows. In the next section, we see that these categories are not the only tools that a tool or a sequence of tools can connect to.
 
 \section{Compatible next tools}
+The categories which we saw in the previous section we term them as actual categories. The tools in the workflows are connected because of their compatibility in their input and output file types. One tools cannot connect to all the other tools but only a handful. By extracting smaller tools sequences, we compute the actual next tools. But, there are other next tools which we should consider as well. The tool "Intersect" connects to multiple other tools given different or none previous tools in a sequence. For example, in a workflow - "Calling of methylated regions" > "Intersect" > "Differentially methylated region" > "Deeptools compute matrix" > "Deeptools heatmap", "Intersect" tool connects to "Differentially methylated region" tool. It means that these two tools are compatible as well in terms of their filetypes. There can be multiple other tools which can connect to "Intersect". We call these set of next tools as compatible tools. For each tool we assemble a set of compatible tools. The significance of these tools is that even if our classifier predicts tools present in this set as a next tool for a tool sequence, it is still a valid next tool on the account of being compatible. It can be used as a next tool. The actual next tools take into account the same tool sequence while the compatible next tools consider only the last tool in the tools sequence to find tools which are valid next tool. For example, "Intersect" tool can connect to these tools - "Subtract", "Convert", "Group", "Differentially methylated region" and many others. These form the compatible set of next tools for "Intersect".
 
 \section{Variation of number of compatible tools}
 
@@ -21,6 +41,4 @@
 \section{Optimizer}
 
 \section{Classifiers - Neural network and classical ones}
-
-\section{}
 
