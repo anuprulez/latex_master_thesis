@@ -70,4 +70,14 @@ X.~Li, T.~Qin, J.~Yang, and T.~Liu, ``Lightrnn: Memory and
   computation-efficient recurrent neural networks,'' {\em CoRR},
   vol.~abs/1610.09893, 2016.
 
+\bibitem{ChungGCB14}
+J.~Chung, {\c{C}}.~G{\"{u}}l{\c{c}}ehre, K.~Cho, and Y.~Bengio, ``Empirical
+  evaluation of gated recurrent neural networks on sequence modeling,'' {\em
+  CoRR}, vol.~abs/1412.3555, 2014.
+
+\bibitem{BoulangerICML2012}
+N.~Boulanger-Lewandowski, Y.~Bengio, and P.~Vincent, ``Modeling temporal
+  dependencies in high-dimensional sequences: Application to polyphonic music
+  generation and transcription,'' 2012.
+
 \end{thebibliography}

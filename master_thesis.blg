@@ -5,45 +5,46 @@ The style file: ieeetr.bst
 Database file #1: bib/topic1.bib
 Warning--empty journal in Sutskever
 Warning--empty journal in Botev
-You've used 15 entries,
+Warning--empty journal in BoulangerICML2012
+You've used 17 entries,
             1876 wiz_defined-function locations,
-            580 strings with 6166 characters,
-and the built_in function-call counts, 3793 in all, are:
-= -- 373
-> -- 143
+            590 strings with 6592 characters,
+and the built_in function-call counts, 4134 in all, are:
+= -- 397
+> -- 168
 < -- 0
-+ -- 54
-- -- 39
-* -- 279
-:= -- 554
-add.period$ -- 15
-call.type$ -- 15
-change.case$ -- 15
++ -- 63
+- -- 46
+* -- 307
+:= -- 613
+add.period$ -- 17
+call.type$ -- 17
+change.case$ -- 17
 chr.to.int$ -- 0
-cite$ -- 17
-duplicate$ -- 194
-empty$ -- 358
-format.name$ -- 39
-if$ -- 915
+cite$ -- 20
+duplicate$ -- 212
+empty$ -- 392
+format.name$ -- 46
+if$ -- 991
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 15
-newline$ -- 48
-num.names$ -- 15
-pop$ -- 39
+int.to.str$ -- 17
+missing$ -- 17
+newline$ -- 54
+num.names$ -- 17
+pop$ -- 48
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 121
+skip$ -- 123
 stack$ -- 0
 substring$ -- 260
-swap$ -- 75
+swap$ -- 76
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 2
-while$ -- 33
-width$ -- 17
-write$ -- 142
-(There were 2 warnings)
+warning$ -- 3
+while$ -- 35
+width$ -- 19
+write$ -- 158
+(There were 3 warnings)
