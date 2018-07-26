@@ -1,3 +1,7 @@
 Error(w^k) = \frac{1}{N} \times \sum_{j=1}^N [w^k \times SM^k - SM_{ideal})^2]_j
 
 Gradient(w^k) = \frac{\partial Error}{\partial w^k} = \frac{2}{N} \times ((w^k \times SM^k - SM_{ideal}) \cdot SM^k)
+
+w^k = w^k - \eta \times {Gradient(w^k)}
+
+p(x_T|x_1,x_2,....,x_{T-1})
