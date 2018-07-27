@@ -5,3 +5,51 @@ Gradient(w^k) = \frac{\partial Error}{\partial w^k} = \frac{2}{N} \times ((w^k \
 w^k = w^k - \eta \times {Gradient(w^k)}
 
 p(x_T|x_1,x_2,....,x_{T-1})
+
+
+X_{n \times m} = U_{n \times n} \cdot S_{n \times m} \cdot V_{m \times m}^T
+
+U^T \cdot U = I_{n \times n}
+
+V^T \cdot V = I_{m \times m}
+
+X_{n \times m} = U_{k} \cdot S_{k} \cdot V_{k}^T
+
+\frac{1}{T} \cdot \sum_{t=k}^{T-k} \log p(w_t|w_{t-k},...,w_{t+k})
+
+idf = \log \frac{N}{df}
+
+\alpha = (1-b) + \frac{b \cdot |D|}{|D|_{avg}}
+
+tf^* = tf \cdot \frac{k+1}{k \cdot \alpha + tf}
+
+bm25_{score} =tf^* \cdot idf
+
+j = \frac{A \cap B}{A \cup B}
+
+x \cdot y = |x| \times |y| \times \cos{\theta}
+
+update_{t+1} = \gamma \cdot update_t - \eta \cdot Gradient(w_t + \gamma \cdot update_t)
+
+
+w_{t+1} = w_t + update_{t+1}
+
+h_t = (1-z_t) \times h_{t-1} + z_t \times h^{'}_t
+
+z_t = \sigma(W_z \times x_t + U_z \times h_{t-1})
+
+h^{'}_t = \tanh(W \times x_t + U\times (r_t \odot h_{t-1})
+
+r_t = \sigma(W_r \times x_t + U_r \times h_{t-1})
+
+p(x_T|x_1,x_2,....,x_{T-1})
+
+
+    f(x) = 
+\begin{cases}
+    x,& \text{if } x > 0\\
+    \alpha \times (e^x-1),              & \text{if } x \leq 0, \alpha > 0\\
+\end{cases}
+
+
+f(x) = \frac{1}{1 + e^{-x}}
