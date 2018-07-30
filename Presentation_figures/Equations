@@ -53,3 +53,11 @@ p(x_T|x_1,x_2,....,x_{T-1})
 
 
 f(x) = \frac{1}{1 + e^{-x}}
+
+
+MeanSquare(w,t) = 0.9 \times MeanSquare(w, t-1) + 0.1 \times (\frac{\partial E}{\partial w} (t))^2 
+
+w_{t+1} = w_t - \frac{\eta}{\sqrt{MeanSquare(w,t) + \epsilon}} \times \frac{\partial E}{\partial w} (t)
+
+
+loss_{mean} = - \frac{1}{N} (\sum_{i=1}^N y_i \times log(p_i) + (1 - y_i) \times log(1 - p_i) )
